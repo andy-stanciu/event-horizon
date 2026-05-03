@@ -1,0 +1,15 @@
+[submodule "tdmpc2"]
+	path = tdmpc2
+	url = https://github.com/nicklashansen/tdmpc2
+[submodule "r2dreamer"]
+	path = r2dreamer
+	url = https://github.com/NM512/r2dreamer.git
+[submodule "Drama"]
+	path = Drama
+	url = https://github.com/realwenlongwang/Drama
+[submodule "OC-STORM"]
+	path = OC-STORM
+	url = https://github.com/weipu-zhang/OC-STORM
+[submodule "cleanrl"]
+	path = cleanrl
+	url = https://github.com/vwxyzjn/cleanrl
