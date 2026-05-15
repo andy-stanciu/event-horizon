@@ -225,13 +225,12 @@ def plot_losses(series, out: Path, tag: str, show: bool):
 
 
 # ── plot 4: imagination-reality gap (metric 3) ────────────────────────────────
-# Currently a stub — will be populated once imagined_return logging is added.
 
 def plot_imagination_gap(series, out: Path, tag: str, show: bool):
-    ir, iv = steps_values(series, "train/imagined_return")
-    er, ev = steps_values(series, "episode/eval_score")
+    ir, iv = steps_values(series, "train/tar")
+    er, ev = steps_values(series, "train/ret_replay_mean")
     if ir is None:
-        print("  [skip] train/imagined_return not yet logged — skipping gap plot")
+        print("  [skip] train/tar not found — skipping gap plot")
         return
 
     # interpolate eval scores to imagined_return steps
@@ -240,11 +239,13 @@ def plot_imagination_gap(series, out: Path, tag: str, show: bool):
 
     fig, ax = plt.subplots(figsize=(8, 4.5))
     ax.plot(ir, gap, color=C["eval"], lw=2)
+    ax.axhline(0, color="black", lw=0.8, linestyle="--", label="No gap")
     ax.fill_between(ir, 0, gap, where=(gap > 0), color=C["eval"], alpha=0.15,
-                    label="Exploitation region")
-    ax.axhline(0, color="black", lw=0.8, linestyle="--")
+                    label="Over-optimism")
+    ax.fill_between(ir, 0, gap, where=(gap < 0), color=C["train"], alpha=0.15,
+                    label="Under-optimism")
     ax.set_xlabel("Env steps", fontsize=12)
-    ax.set_ylabel("Imagined − actual return", fontsize=12)
+    ax.set_ylabel("Imagined − replay return", fontsize=12)
     ax.set_title(f"{tag}\nImagination-reality gap", fontsize=13, fontweight="bold")
     ax.xaxis.set_major_formatter(mticker.FuncFormatter(k_fmt))
     ax.grid(True, alpha=0.3, linestyle="--")
