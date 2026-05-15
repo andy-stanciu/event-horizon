@@ -136,14 +136,34 @@ def plot_train(series, out: Path, tag: str, show: bool):
         print("  [skip] no episode/score found")
         return
 
-    # group by unique step values (each step has 16 env entries)
-    step_groups: dict[int, list] = defaultdict(list)
-    for s, v in zip(ts.tolist(), tv.tolist()):
-        step_groups[s].append(v)
+    # ── bin episodes into windows so each bin has all 16 envs ──────────────
+    # auto-detect bin size as the smallest gap between distinct step clusters
+    unique_steps = np.unique(ts)
+    if len(unique_steps) > 1:
+        gaps = np.diff(unique_steps)
+        bin_size = int(np.min(gaps[gaps > 0])) * 16  # one full env-batch
+    else:
+        bin_size = 16000  # fallback
 
-    grp_steps  = np.array(sorted(step_groups.keys()))
-    grp_means  = np.array([np.mean(step_groups[s]) for s in grp_steps])
-    grp_stds   = np.array([np.std(step_groups[s])  for s in grp_steps])
+    max_step = int(ts.max())
+    bin_edges = np.arange(0, max_step + bin_size, bin_size)
+    bin_centers = (bin_edges[:-1] + bin_edges[1:]) / 2
+
+    grp_means, grp_stds = [], []
+    valid_centers = []
+    for lo, hi, center in zip(bin_edges[:-1], bin_edges[1:], bin_centers):
+        mask = (ts >= lo) & (ts < hi)
+        if mask.sum() == 0:
+            continue
+        vals = tv[mask]
+        grp_means.append(np.mean(vals))
+        grp_stds.append(np.std(vals))
+        valid_centers.append(center)
+
+    grp_steps = np.array(valid_centers)
+    grp_means = np.array(grp_means)
+    grp_stds  = np.array(grp_stds)
+    # ── end binning ────────────────────────────────────────────────────────
 
     fig, ax = plt.subplots(figsize=(8, 4.5))
 
