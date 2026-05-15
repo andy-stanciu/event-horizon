@@ -2,7 +2,7 @@
 # slurm_sweep.sh
 # --------------
 # Submit one SLURM job per (horizon x seed) combination for the DMC sweep.
-# Each job runs train_dreamer_dmc.sh on a single Quadro RTX 6000.
+# Each job runs train_dreamer_dmc.sh on a single GPU.
 # Run from the TOP-LEVEL directory (one above r2dreamer/).
 #
 # Usage:
@@ -11,9 +11,6 @@
 # Examples:
 #   bash scripts/slurm_sweep.sh
 #   bash scripts/slurm_sweep.sh dmc_cheetah_run "0 1 2"
-#
-# Hyak account/partition: edit ACCOUNT and PARTITION below to match your
-# klone allocation (e.g. account=cse, partition=gpu-rtx6k).
 
 set -euo pipefail
 
@@ -24,13 +21,19 @@ TASK="${1:-dmc_walker_walk}"
 SEEDS="${2:-0 1 2}"
 HORIZONS="5 15 30 60"
 
-# ── Hyak SLURM settings — edit these ─────────────────────────────────────────
-ACCOUNT="${SLURM_ACCOUNT:-cse}"
-PARTITION="${SLURM_PARTITION:-gpu-rtx6k}"
+# ── SLURM settings ────────────────────────────────────────────────────────────
+ACCOUNT="${SLURM_ACCOUNT:-andys22}"
+PARTITION="${SLURM_PARTITION:-gpu}"
+NODES=1
+NTASKS=1
 GPUS=1
 CPUS=8
 MEM="32G"
-TIME="12:00:00"       # 12 h per run — adjust based on your budget
+TIME="12:00:00"
+
+# ── Repo / environment ────────────────────────────────────────────────────────
+VENV_PATH="$REPO_DIR/.venv"             # path to your virtualenv
+PYTHONPATH_EXTRA="$REPO_DIR/r2dreamer"  # r2dreamer source lives here
 
 echo "=== EventHorizon: SLURM Horizon Sweep ==="
 echo "Task      : $TASK"
@@ -38,12 +41,17 @@ echo "Seeds     : $SEEDS"
 echo "Horizons  : $HORIZONS"
 echo "Account   : $ACCOUNT"
 echo "Partition : $PARTITION"
+echo "Repo      : $REPO_DIR"
 echo ""
 
 for H in $HORIZONS; do
     for SEED in $SEEDS; do
         RUN_NAME="dreamer_${TASK}_H${H}_seed${SEED}"
         LOGDIR="$REPO_DIR/logdir/${RUN_NAME}"
+        if [[ -f "$LOGDIR/metrics.jsonl" ]]; then
+            echo "Skipping $RUN_NAME — already exists"
+            continue
+        fi
         mkdir -p "$LOGDIR"
 
         JOB_SCRIPT="$LOGDIR/job.sh"
@@ -52,20 +60,29 @@ for H in $HORIZONS; do
 #SBATCH --job-name=${RUN_NAME}
 #SBATCH --account=${ACCOUNT}
 #SBATCH --partition=${PARTITION}
+#SBATCH --nodes=${NODES}
+#SBATCH --ntasks-per-node=${NTASKS}
 #SBATCH --gpus=${GPUS}
 #SBATCH --cpus-per-task=${CPUS}
 #SBATCH --mem=${MEM}
 #SBATCH --time=${TIME}
+#SBATCH --chdir=${REPO_DIR}
+#SBATCH --export=ALL
 #SBATCH --output=${LOGDIR}/slurm_%j.out
 #SBATCH --error=${LOGDIR}/slurm_%j.err
 
 echo "Job \$SLURM_JOB_ID starting on \$(hostname) at \$(date)"
+echo "Run: ${RUN_NAME}"
+
+# Activate virtualenv
+source ${VENV_PATH}/bin/activate
 
 # Set up MuJoCo EGL rendering on the allocated GPU
 export MUJOCO_GL=egl
 export MUJOCO_EGL_DEVICE_ID=\$(echo \$CUDA_VISIBLE_DEVICES | cut -d',' -f1)
+export PYTHONPATH="\${PYTHONPATH}:${PYTHONPATH_EXTRA}"
 
-bash ${SCRIPT_DIR}/train_dreamer_dmc.sh ${TASK} ${SEED} ${H}
+srun --gpus-per-node=${GPUS} bash ${SCRIPT_DIR}/train_dreamer_dmc.sh ${TASK} ${SEED} ${H}
 
 echo "Job finished at \$(date)"
 SLURM
@@ -76,4 +93,6 @@ SLURM
 done
 
 echo ""
-echo "=== All jobs submitted. Monitor with: squeue -u \$USER ==="
+echo "=== All jobs submitted ==="
+echo "Monitor : squeue -u \$USER"
+echo "Outputs : $REPO_DIR/logdir/"
