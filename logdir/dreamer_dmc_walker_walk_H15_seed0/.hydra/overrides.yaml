@@ -1,0 +1,6 @@
+- logdir=/homes/iws/andys22/579/event-horizon/logdir/dreamer_dmc_walker_walk_H15_seed0
+- model.rep_loss=dreamer
+- env=dmc_proprio
+- env.task=dmc_walker_walk
+- seed=0
+- batch_length=15
