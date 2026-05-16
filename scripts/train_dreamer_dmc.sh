@@ -23,7 +23,7 @@ VENV_PYTHON="$REPO_DIR/.venv/bin/python"
 TASK="${1:-dmc_walker_walk}"
 SEED="${2:-0}"
 HORIZON="${3:-15}"          # imagination horizon H (batch_length in r2dreamer)
-STEPS="${4:-510000}"        # total environment steps (not gradient steps) — 500k in DreamerV3 paper
+STEPS="${4:-200000}"        # total environment steps (not gradient steps) — 500k in DreamerV3 paper
 
 # ── Derived names ─────────────────────────────────────────────────────────────
 ALGO="dreamer"              # model.rep_loss selects dreamer vs r2dreamer
@@ -38,21 +38,6 @@ echo "Logdir         : $LOGDIR"
 echo "Run name       : $RUN_NAME"
 echo ""
 
-# ── Logdir collision check ────────────────────────────────────────────────────
-if [ -d "$LOGDIR" ]; then
-    echo "[warn] Logdir already exists: $LOGDIR"
-    read -r -p "       Overwrite and start fresh? [y/N] " confirm
-    case "$confirm" in
-        [yY][eE][sS]|[yY])
-            echo "       Deleting $LOGDIR..."
-            rm -rf "$LOGDIR"
-            ;;
-        *)
-            echo "       Aborting. Rename your run or delete the logdir manually."
-            exit 1
-            ;;
-    esac
-fi
 mkdir -p "$LOGDIR"
 
 # ── MuJoCo headless rendering (EGL preferred on GPU nodes) ───────────────────

@@ -18,8 +18,9 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 
 TASK="${1:-dmc_walker_walk}"
-SEEDS="${2:-0 1 2}"
+SEEDS="${2:-0}"
 HORIZONS="5 15 30 60"
+STEPS="200000"
 
 # ── SLURM settings ────────────────────────────────────────────────────────────
 ACCOUNT="${SLURM_ACCOUNT:-andys22}"
@@ -29,7 +30,7 @@ NTASKS=1
 GPUS=1
 CPUS=8
 MEM="32G"
-TIME="12:00:00"
+TIME="2:00:00"
 
 # ── Repo / environment ────────────────────────────────────────────────────────
 VENV_PATH="$REPO_DIR/.venv"             # path to your virtualenv
@@ -39,6 +40,7 @@ echo "=== EventHorizon: SLURM Horizon Sweep ==="
 echo "Task      : $TASK"
 echo "Seeds     : $SEEDS"
 echo "Horizons  : $HORIZONS"
+echo "Steps     : $STEPS"
 echo "Account   : $ACCOUNT"
 echo "Partition : $PARTITION"
 echo "Repo      : $REPO_DIR"
@@ -82,7 +84,7 @@ export MUJOCO_GL=egl
 export MUJOCO_EGL_DEVICE_ID=\$(echo \$CUDA_VISIBLE_DEVICES | cut -d',' -f1)
 export PYTHONPATH="\${PYTHONPATH}:${PYTHONPATH_EXTRA}"
 
-srun --gpus-per-node=${GPUS} bash ${SCRIPT_DIR}/train_dreamer_dmc.sh ${TASK} ${SEED} ${H}
+srun --gpus-per-node=${GPUS} bash ${SCRIPT_DIR}/train_dreamer_dmc.sh ${TASK} ${SEED} ${H} ${STEPS}
 
 echo "Job finished at \$(date)"
 SLURM

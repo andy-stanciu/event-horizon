@@ -1,2 +1,6 @@
 *.slurm
 events.out.**
+*.err
+*.out
+*.pt
+*.pth
