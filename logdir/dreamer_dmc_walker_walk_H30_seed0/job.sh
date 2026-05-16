@@ -4,7 +4,7 @@
 #SBATCH --partition=gpu
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --gpus=1
+#SBATCH --gpus=2
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=32G
 #SBATCH --time=2:00:00
@@ -24,6 +24,6 @@ export MUJOCO_GL=egl
 export MUJOCO_EGL_DEVICE_ID=$(echo $CUDA_VISIBLE_DEVICES | cut -d',' -f1)
 export PYTHONPATH="${PYTHONPATH}:/homes/iws/andys22/579/event-horizon/r2dreamer"
 
-srun --gpus-per-node=1 bash /homes/iws/andys22/579/event-horizon/scripts/train_dreamer_dmc.sh dmc_walker_walk 0 30 200000
+srun --gpus-per-node=2 bash /homes/iws/andys22/579/event-horizon/scripts/train_dreamer_dmc.sh dmc_walker_walk 0 30 200000
 
 echo "Job finished at $(date)"

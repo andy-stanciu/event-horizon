@@ -19,7 +19,7 @@ REPO_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 
 TASK="${1:-dmc_walker_walk}"
 SEEDS="${2:-0}"
-HORIZONS="5 15 30 60"
+HORIZONS="30"
 STEPS="200000"
 
 # ── SLURM settings ────────────────────────────────────────────────────────────
@@ -27,7 +27,7 @@ ACCOUNT="${SLURM_ACCOUNT:-andys22}"
 PARTITION="${SLURM_PARTITION:-gpu}"
 NODES=1
 NTASKS=1
-GPUS=1
+GPUS=2
 CPUS=8
 MEM="32G"
 TIME="2:00:00"

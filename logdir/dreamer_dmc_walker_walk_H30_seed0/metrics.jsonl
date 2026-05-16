@@ -1,1 +1,2 @@
 {"step": 0, "episode/eval_score": 22.20206069946289, "episode/eval_length": 500.0}
+{"step": 1024, "train/opt/updates": 0.0, "fps/fps": 0}

@@ -1,5 +1,7 @@
 Logdir /homes/iws/andys22/579/event-horizon/logdir/dreamer_dmc_walker_walk_H30_seed0
 Create envs.
+Logdir /homes/iws/andys22/579/event-horizon/logdir/dreamer_dmc_walker_walk_H30_seed0
+Create envs.
 Simulate agent.
 Encoder CNN shapes: {}
 Encoder MLP shapes: {'height': (1,), 'orientations': (14,), 'velocity': (9,)}
@@ -16,42 +18,4 @@ Optimizer has: 9738019 parameters.
 Compiling update function with torch.compile...
 Evaluating the policy...
 [0] episode/eval_score 22.2 / episode/eval_length 500.0
-Error executing job with overrides: ['logdir=/homes/iws/andys22/579/event-horizon/logdir/dreamer_dmc_walker_walk_H30_seed0', 'model.rep_loss=dreamer', 'env=dmc_proprio', 'env.task=dmc_walker_walk', 'env.steps=200000', 'seed=0', 'batch_length=30']
-Traceback (most recent call last):
-  File "/homes/iws/andys22/579/event-horizon/r2dreamer/train.py", line 52, in main
-    policy_trainer.begin(agent)
-  File "/homes/iws/andys22/579/event-horizon/r2dreamer/trainer.py", line 168, in begin
-    self.replay_buffer.add_transition(trans.detach())
-  File "/homes/iws/andys22/579/event-horizon/r2dreamer/buffer.py", line 25, in add_transition
-    self._buffer.extend(data.unsqueeze(1))
-  File "/homes/iws/andys22/579/event-horizon/.venv/lib/python3.11/site-packages/torchrl/data/replay_buffers/replay_buffers.py", line 778, in extend
-    return self._extend(data, update_priority=update_priority)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/homes/iws/andys22/579/event-horizon/.venv/lib/python3.11/site-packages/torchrl/data/replay_buffers/replay_buffers.py", line 736, in _extend
-    index = self._writer.extend(data)
-            ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/homes/iws/andys22/579/event-horizon/.venv/lib/python3.11/site-packages/torchrl/data/replay_buffers/writers.py", line 206, in extend
-    self._storage.set(index, data)
-  File "/homes/iws/andys22/579/event-horizon/.venv/lib/python3.11/site-packages/torchrl/data/replay_buffers/storages.py", line 857, in set
-    self._init(data[0])
-  File "/homes/iws/andys22/579/event-horizon/.venv/lib/python3.11/site-packages/torchrl/data/replay_buffers/storages.py", line 1117, in _init
-    out: TensorDictBase = torch.empty_like(
-                          ^^^^^^^^^^^^^^^^^
-  File "/homes/iws/andys22/579/event-horizon/.venv/lib/python3.11/site-packages/tensordict/base.py", line 658, in __torch_function__
-    return TD_HANDLED_FUNCTIONS[func](*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/homes/iws/andys22/579/event-horizon/.venv/lib/python3.11/site-packages/tensordict/_torch_func.py", line 301, in _empty_like
-    td_clone = td._fast_apply(
-               ^^^^^^^^^^^^^^^
-  File "/homes/iws/andys22/579/event-horizon/.venv/lib/python3.11/site-packages/tensordict/base.py", line 9004, in _fast_apply
-    result = func(
-             ^^^^^
-  File "/homes/iws/andys22/579/event-horizon/.venv/lib/python3.11/site-packages/tensordict/_td.py", line 1456, in _apply_nest
-    item_trsf = fn(item, *_others)
-                ^^^^^^^^^^^^^^^^^^
-  File "/homes/iws/andys22/579/event-horizon/.venv/lib/python3.11/site-packages/tensordict/_torch_func.py", line 299, in empty_like
-    return torch.empty_like(x, device=device, dtype=dtype, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 3.82 GiB. GPU 0 has a total capacity of 23.46 GiB of which 2.24 GiB is free. Process 721282 has 12.32 GiB memory in use. Including non-PyTorch memory, this process has 6.99 GiB memory in use. Of the allocated memory 6.78 GiB is allocated by PyTorch, and 6.64 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
-
-Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+[1024] train/opt/updates 0.0 / fps/fps 0.0
