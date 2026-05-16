@@ -1,0 +1,10 @@
+Run: dreamer_dmc_walker_walk_H30_seed0
+============================================================
+Eval score:
+  first=22.2 @ step 0
+  final=941.3 @ step 190,016
+  max  =941.3 @ step 190,016
+Train score:
+  first=65.1 @ step 16,000
+  final=923.5 @ step 192,015
+  max  =979.2 @ step 192,008
