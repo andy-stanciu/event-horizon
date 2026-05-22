@@ -28,7 +28,7 @@ We propose such a study. We evaluate five representative algorithms across four 
 - **Drama**: DreamerV3 with the GRU replaced by a Mamba-2 selective state-space model. Default horizon 15.
 - **STORM**: transformer-based world model in the Dreamer framework. Default horizon 15.
 
-We use official releases: `dreamerv3-torch`, `tdmpc2`, `realwenlongwang/Drama`, `weipu-zhang/STORM`, and `CleanRL` for PPO.
+We use official releases: `dreamerv3-torch`, `tdmpc2`, `realwenlongwang/Drama`, `weipu-zhang/OC-STORM`, and `CleanRL` for PPO.
 
 ### Benchmarks
 

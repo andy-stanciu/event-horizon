@@ -1,0 +1,7 @@
+- task=walker-walk
+- seed=0
+- steps=200000
+- horizon=30
+- save_video=false
+- enable_wandb=false
+- work_dir=/homes/iws/manfor/cse579/event-horizon/logdir/tdmpc2_dmc_walker_walk_H30_seed0

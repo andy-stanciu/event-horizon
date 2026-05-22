@@ -4,3 +4,5 @@ events.out.**
 *.out
 *.pt
 *.pth
+AGENTS.md
+.venv
