@@ -1,0 +1,14 @@
+- task=walker-walk
+- seed=1
+- steps=200000
+- horizon=10
+- model_size=5
+- data_dir=/homes/iws/andys22/579/event-horizon/logdir/tdmpc2_dmc_walker_walk_H10_seed1/buffer
+- save_video=false
+- save_agent=true
+- enable_wandb=false
+- wandb_project=none
+- wandb_entity=none
+- compile=false
+- work_dir=/homes/iws/andys22/579/event-horizon/logdir/tdmpc2_dmc_walker_walk_H10_seed1
+- exp_name=tdmpc2_dmc_walker_walk_H10_seed1

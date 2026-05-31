@@ -1,17 +1,26 @@
 #!/usr/bin/env python3
 """
 plot_metrics.py  —  HorizonBreak experiment visualizer
+Supports both DreamerV3 (metrics.jsonl) and TD-MPC2 (eval.csv + train.csv) log formats.
+
 Usage (from scripts/ directory):
-    python plot_metrics.py <logdir> [--out <output_dir>] [--show]
+    # DreamerV3 run:
+    python plot_metrics.py ../logdir/dreamer_dmc_walker_walk_H15
 
-Examples:
-    python plot_metrics.py ../logdir/dreamer_dmc_walker_walk_H15_seed0
-    python plot_metrics.py ../logdir/dreamer_dmc_walker_walk_H15_seed0 --out ../plots --show
+    # TD-MPC2 run:
+    python plot_metrics.py ../logdir/tdmpc2_dmc_walker_walk_H3
 
-Reads:  <logdir>/metrics.jsonl
+    # With options:
+    python plot_metrics.py ../logdir/... --out ../plots --show
+
+Reads (DreamerV3):  <logdir>/metrics.jsonl
+Reads (TD-MPC2):    <logdir>/eval.csv  +  <logdir>/train.csv
+
 Writes: <output_dir>/eval_curve.png
         <output_dir>/train_curve.png
-        <output_dir>/losses.png
+        <output_dir>/losses.png          (DreamerV3 only)
+        <output_dir>/imagination_gap.png
+        <output_dir>/value_pred_error.png (TD-MPC2 only)
         <output_dir>/summary.txt
 """
 
@@ -38,14 +47,37 @@ C = {
                "#FBC15E", "#8EBA42", "#FFB5B8"],
 }
 
-# ── helpers ───────────────────────────────────────────────────────────────────
 
-def load_metrics(logdir: Path) -> dict[str, list]:
-    """Parse metrics.jsonl → {key: [(step, value), ...]}"""
+# ── format helpers ────────────────────────────────────────────────────────────
+
+def k_fmt(x, _):
+    return f"{int(x/1000)}k" if x >= 1000 else str(int(x))
+
+
+def save_fig(fig, path: Path, show: bool):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(path, dpi=150, bbox_inches="tight")
+    print(f"  saved → {path}")
+    if show:
+        plt.show()
+    plt.close(fig)
+
+
+# ── source detection ──────────────────────────────────────────────────────────
+
+def detect_format(logdir: Path) -> str:
+    """Return 'dreamer' or 'tdmpc2' based on which files exist."""
+    if (logdir / "eval.csv").exists() or (logdir / "train.csv").exists():
+        return "tdmpc2"
+    if (logdir / "metrics.jsonl").exists():
+        return "dreamer"
+    sys.exit(f"[ERROR] No metrics.jsonl, eval.csv, or train.csv found in {logdir}")
+
+
+# ── DreamerV3 loader ──────────────────────────────────────────────────────────
+
+def load_dreamer(logdir: Path) -> dict:
     path = logdir / "metrics.jsonl"
-    if not path.exists():
-        sys.exit(f"[ERROR] metrics.jsonl not found in {logdir}")
-
     series: dict[str, list] = defaultdict(list)
     with open(path) as f:
         for line in f:
@@ -66,35 +98,76 @@ def load_metrics(logdir: Path) -> dict[str, list]:
                     series[k].append((int(step), float(v)))
                 except (TypeError, ValueError):
                     pass
-
-    # sort each series by step
     for k in series:
         series[k].sort(key=lambda x: x[0])
     return dict(series)
 
 
 def steps_values(series, key):
-    """Return (steps_array, values_array) or (None, None) if key missing."""
     if key not in series:
         return None, None
     pairs = series[key]
     return np.array([p[0] for p in pairs]), np.array([p[1] for p in pairs])
 
 
-def k_fmt(x, _):
-    return f"{int(x/1000)}k" if x >= 1000 else str(int(x))
+# ── TD-MPC2 loader ────────────────────────────────────────────────────────────
+
+def load_tdmpc2(logdir: Path) -> dict:
+    """
+    Load TD-MPC2 eval.csv and train.csv into a unified series dict
+    using key names that match the shared plot functions below.
+    """
+    import csv
+    series = {}
+
+    def read_csv(path):
+        rows = []
+        with open(path, newline="") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                parsed = {}
+                for k, v in row.items():
+                    try:
+                        parsed[k] = float(v)
+                    except (ValueError, TypeError):
+                        parsed[k] = None
+                rows.append(parsed)
+        return rows
+
+    # eval.csv → episode/eval_score, value_pred_error
+    eval_path = logdir / "eval.csv"
+    if eval_path.exists():
+        rows = read_csv(eval_path)
+        for key, col in [
+            ("episode/eval_score",    "episode_reward"),
+            ("value_pred_error",      "value_pred_error"),
+            ("value_pred_error_abs",  "value_pred_error_abs"),
+            ("episode/eval_length",   "episode_length"),
+        ]:
+            pairs = [(int(r["step"]), r[col]) for r in rows
+                     if r.get("step") is not None and r.get(col) is not None]
+            if pairs:
+                series[key] = sorted(pairs, key=lambda x: x[0])
+
+    # train.csv → episode/score, imagination_gap, imagined_return
+    train_path = logdir / "train.csv"
+    if train_path.exists():
+        rows = read_csv(train_path)
+        for key, col in [
+            ("episode/score",       "episode_reward"),
+            ("train/imagination_gap",    "imagination_gap"),
+            ("train/imagined_return",    "imagined_return"),
+            ("train/replay_return",      "replay_return"),
+        ]:
+            pairs = [(int(r["step"]), r[col]) for r in rows
+                     if r.get("step") is not None and r.get(col) is not None]
+            if pairs:
+                series[key] = sorted(pairs, key=lambda x: x[0])
+
+    return series
 
 
-def save_fig(fig, path: Path, show: bool):
-    path.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(path, dpi=150, bbox_inches="tight")
-    print(f"  saved → {path}")
-    if show:
-        plt.show()
-    plt.close(fig)
-
-
-# ── plot 1: eval learning curve ───────────────────────────────────────────────
+# ── shared plot 1: eval learning curve ───────────────────────────────────────
 
 def plot_eval(series, out: Path, tag: str, show: bool):
     es, ev = steps_values(series, "episode/eval_score")
@@ -103,20 +176,14 @@ def plot_eval(series, out: Path, tag: str, show: bool):
         return
 
     fig, ax = plt.subplots(figsize=(8, 4.5))
-
     ax.plot(es, ev, color=C["eval"], lw=2.5, marker="o", ms=5, label="Eval score")
-
-    # light fill under eval curve
     ax.fill_between(es, 0, ev, color=C["eval"], alpha=0.08)
-
-    # annotate final value
     ax.annotate(
         f"{ev[-1]:.1f}",
         xy=(es[-1], ev[-1]),
         xytext=(10, 6), textcoords="offset points",
         fontsize=10, color=C["eval"],
     )
-
     ax.set_xlabel("Env steps", fontsize=12)
     ax.set_ylabel("Episode return", fontsize=12)
     ax.set_title(f"{tag}\nEval learning curve", fontsize=13, fontweight="bold")
@@ -128,7 +195,7 @@ def plot_eval(series, out: Path, tag: str, show: bool):
     save_fig(fig, out / "eval_curve.png", show)
 
 
-# ── plot 2: train episodes ────────────────────────────────────────────────────
+# ── shared plot 2: train curve ────────────────────────────────────────────────
 
 def plot_train(series, out: Path, tag: str, show: bool):
     ts, tv = steps_values(series, "episode/score")
@@ -136,21 +203,18 @@ def plot_train(series, out: Path, tag: str, show: bool):
         print("  [skip] no episode/score found")
         return
 
-    # ── bin episodes into windows so each bin has all 16 envs ──────────────
-    # auto-detect bin size as the smallest gap between distinct step clusters
     unique_steps = np.unique(ts)
     if len(unique_steps) > 1:
         gaps = np.diff(unique_steps)
-        bin_size = int(np.min(gaps[gaps > 0])) * 16  # one full env-batch
+        bin_size = int(np.min(gaps[gaps > 0])) * 16
     else:
-        bin_size = 16000  # fallback
+        bin_size = 16000
 
     max_step = int(ts.max())
     bin_edges = np.arange(0, max_step + bin_size, bin_size)
     bin_centers = (bin_edges[:-1] + bin_edges[1:]) / 2
 
-    grp_means, grp_stds = [], []
-    valid_centers = []
+    grp_means, grp_stds, valid_centers = [], [], []
     for lo, hi, center in zip(bin_edges[:-1], bin_edges[1:], bin_centers):
         mask = (ts >= lo) & (ts < hi)
         if mask.sum() == 0:
@@ -163,16 +227,13 @@ def plot_train(series, out: Path, tag: str, show: bool):
     grp_steps = np.array(valid_centers)
     grp_means = np.array(grp_means)
     grp_stds  = np.array(grp_stds)
-    # ── end binning ────────────────────────────────────────────────────────
 
     fig, ax = plt.subplots(figsize=(8, 4.5))
-
     ax.fill_between(grp_steps, grp_means - grp_stds, grp_means + grp_stds,
                     color=C["band"], alpha=0.20, label="Train ±1σ")
     ax.plot(grp_steps, grp_means, color=C["train"], lw=2, linestyle="--",
-            label="Train mean (all envs)")
+            label="Train mean")
 
-    # overlay eval if present
     es, ev = steps_values(series, "episode/eval_score")
     if es is not None:
         ax.plot(es, ev, color=C["eval"], lw=2.5, marker="o", ms=5,
@@ -189,15 +250,11 @@ def plot_train(series, out: Path, tag: str, show: bool):
     save_fig(fig, out / "train_curve.png", show)
 
 
-# ── plot 3: loss curves ───────────────────────────────────────────────────────
+# ── DreamerV3-only plot: losses ───────────────────────────────────────────────
 
 LOSS_KEYS = [
-    "train/loss/dyn",
-    "train/loss/rep",
-    "train/loss/rew",
-    "train/loss/value",
-    "train/loss/policy",
-    "train/loss/repval",
+    "train/loss/dyn", "train/loss/rep", "train/loss/rew",
+    "train/loss/value", "train/loss/policy", "train/loss/repval",
     "train/opt/loss",
 ]
 
@@ -209,7 +266,6 @@ def plot_losses(series, out: Path, tag: str, show: bool):
         return
 
     fig, ax = plt.subplots(figsize=(8, 4.5))
-
     for i, (key, ss, vv) in enumerate(available):
         label = key.replace("train/loss/", "").replace("train/opt/", "opt/")
         ax.plot(ss, vv, lw=1.8, color=C["loss"][i % len(C["loss"])], label=label)
@@ -224,25 +280,42 @@ def plot_losses(series, out: Path, tag: str, show: bool):
     save_fig(fig, out / "losses.png", show)
 
 
-# ── plot 4: imagination-reality gap (metric 3) ────────────────────────────────
+# ── shared plot 3: imagination gap ───────────────────────────────────────────
 
 def plot_imagination_gap(series, out: Path, tag: str, show: bool):
+    # DreamerV3 keys
     ir, iv = steps_values(series, "train/tar")
     er, ev = steps_values(series, "train/ret_replay_mean")
+
+    # TD-MPC2 keys
     if ir is None:
-        print("  [skip] train/tar not found — skipping gap plot")
+        ir, iv = steps_values(series, "train/imagined_return")
+        er, ev = steps_values(series, "train/replay_return")
+        gap_s, gap_v = steps_values(series, "train/imagination_gap")
+        if gap_s is not None:
+            ir, iv = gap_s, gap_v  # use precomputed gap directly
+            er = None
+
+    if ir is None:
+        print("  [skip] no imagination gap data found")
         return
 
-    # interpolate eval scores to imagined_return steps
-    ev_interp = np.interp(ir, er, ev)
-    gap = iv - ev_interp
+    if er is not None:
+        # DreamerV3 path: compute gap by interpolation
+        ev_interp = np.interp(ir, er, ev)
+        gap = iv - ev_interp
+        steps = ir
+    else:
+        # TD-MPC2 path: gap already computed
+        gap = iv
+        steps = ir
 
     fig, ax = plt.subplots(figsize=(8, 4.5))
-    ax.plot(ir, gap, color=C["eval"], lw=2)
+    ax.plot(steps, gap, color=C["eval"], lw=2)
     ax.axhline(0, color="black", lw=0.8, linestyle="--", label="No gap")
-    ax.fill_between(ir, 0, gap, where=(gap > 0), color=C["eval"], alpha=0.15,
+    ax.fill_between(steps, 0, gap, where=(gap > 0), color=C["eval"], alpha=0.15,
                     label="Over-optimism")
-    ax.fill_between(ir, 0, gap, where=(gap < 0), color=C["train"], alpha=0.15,
+    ax.fill_between(steps, 0, gap, where=(gap < 0), color=C["train"], alpha=0.15,
                     label="Under-optimism")
     ax.set_xlabel("Env steps", fontsize=12)
     ax.set_ylabel("Imagined − replay return", fontsize=12)
@@ -254,16 +327,14 @@ def plot_imagination_gap(series, out: Path, tag: str, show: bool):
     save_fig(fig, out / "imagination_gap.png", show)
 
 
-# ── plot 5: world-model MSE per rollout step (metric 2) ───────────────────────
-# Keys expected:  train/wm_mse/step_0, train/wm_mse/step_1, ...
+# ── DreamerV3-only plot: WM MSE ───────────────────────────────────────────────
 
 def plot_wm_mse(series, out: Path, tag: str, show: bool):
     mse_keys = sorted([k for k in series if k.startswith("train/wm_mse/step_")])
     if not mse_keys:
-        print("  [skip] train/wm_mse/* not yet logged — skipping MSE plot")
+        print("  [skip] train/wm_mse/* not found — skipping MSE plot")
         return
 
-    # use last logged value for each rollout step
     rollout_steps, mse_vals = [], []
     for key in mse_keys:
         idx = int(key.split("_")[-1])
@@ -282,11 +353,48 @@ def plot_wm_mse(series, out: Path, tag: str, show: bool):
     save_fig(fig, out / "wm_mse.png", show)
 
 
-# ── summary text ─────────────────────────────────────────────────────────────
+# ── TD-MPC2-only plot: value prediction error ─────────────────────────────────
+
+def plot_value_pred_error(series, out: Path, tag: str, show: bool):
+    vs, vv = steps_values(series, "value_pred_error")
+    if vs is None:
+        print("  [skip] no value_pred_error found")
+        return
+
+    abs_s, abs_v = steps_values(series, "value_pred_error_abs")
+
+    fig, ax = plt.subplots(figsize=(8, 4.5))
+
+    ax.plot(vs, vv, color=C["train"], lw=2, label="Value pred error (signed)")
+    ax.fill_between(vs, 0, vv, where=(np.array(vv) > 0), color=C["eval"],
+                    alpha=0.15, label="Overestimate")
+    ax.fill_between(vs, 0, vv, where=(np.array(vv) < 0), color=C["train"],
+                    alpha=0.15, label="Underestimate")
+    if abs_s is not None:
+        ax.plot(abs_s, abs_v, color=C["eval"], lw=1.5, linestyle="--",
+                label="Abs error")
+
+    ax.axhline(0, color="black", lw=0.8, linestyle="--")
+    ax.annotate(
+        f"{vv[-1]:.1f}",
+        xy=(vs[-1], vv[-1]),
+        xytext=(10, 6), textcoords="offset points",
+        fontsize=10, color=C["train"],
+    )
+    ax.set_xlabel("Env steps", fontsize=12)
+    ax.set_ylabel("Q(s₀,a₀) − actual return", fontsize=12)
+    ax.set_title(f"{tag}\nValue prediction error", fontsize=13, fontweight="bold")
+    ax.xaxis.set_major_formatter(mticker.FuncFormatter(k_fmt))
+    ax.grid(True, alpha=0.3, linestyle="--")
+    ax.legend(fontsize=11)
+    fig.tight_layout()
+    save_fig(fig, out / "value_pred_error.png", show)
+
+
+# ── summary text ──────────────────────────────────────────────────────────────
 
 def write_summary(series, out: Path, tag: str):
     lines = [f"Run: {tag}", "=" * 60]
-
     for key in ("episode/eval_score", "episode/score"):
         ss, vv = steps_values(series, key)
         if ss is None:
@@ -298,6 +406,11 @@ def write_summary(series, out: Path, tag: str):
             f"  final={vv[-1]:.1f} @ step {ss[-1]:,}",
             f"  max  ={vv.max():.1f} @ step {ss[vv.argmax()]:,}",
         ]
+    for key, label in [("value_pred_error", "Value pred error (final)"),
+                        ("train/imagination_gap", "Imagination gap (final)")]:
+        ss, vv = steps_values(series, key)
+        if ss is not None:
+            lines.append(f"{label}: {vv[-1]:.2f}")
 
     path = out / "summary.txt"
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -309,9 +422,9 @@ def write_summary(series, out: Path, tag: str):
 # ── main ──────────────────────────────────────────────────────────────────────
 
 def main():
-    parser = argparse.ArgumentParser(description="Plot HorizonBreak metrics.jsonl")
+    parser = argparse.ArgumentParser(description="Plot HorizonBreak metrics")
     parser.add_argument("logdir", type=Path,
-                        help="Path to the run logdir containing metrics.jsonl")
+                        help="Path to run logdir (metrics.jsonl or eval.csv/train.csv)")
     parser.add_argument("--out", type=Path, default=None,
                         help="Output directory for plots (default: <logdir>/plots/)")
     parser.add_argument("--show", action="store_true",
@@ -320,18 +433,31 @@ def main():
 
     logdir = args.logdir.resolve()
     out    = (args.out or logdir / "plots").resolve()
-    tag    = logdir.name  # e.g. dreamer_dmc_walker_walk_H15_seed0
+    tag    = logdir.name
 
-    print(f"\nLoading metrics from: {logdir}/metrics.jsonl")
-    series = load_metrics(logdir)
+    fmt = detect_format(logdir)
+    print(f"\nDetected format: {fmt.upper()}")
+    print(f"Loading metrics from: {logdir}")
+
+    if fmt == "dreamer":
+        series = load_dreamer(logdir)
+    else:
+        series = load_tdmpc2(logdir)
+
     print(f"  {len(series)} metric keys found\n")
-
     print("Generating plots...")
+
+    # Shared plots (both algorithms)
     plot_eval(series, out, tag, args.show)
     plot_train(series, out, tag, args.show)
-    plot_losses(series, out, tag, args.show)
-    plot_imagination_gap(series, out, tag, args.show)  # stub until metric 3 logged
-    plot_wm_mse(series, out, tag, args.show)           # stub until metric 2 logged
+    plot_imagination_gap(series, out, tag, args.show)
+
+    # Algorithm-specific plots
+    if fmt == "dreamer":
+        plot_losses(series, out, tag, args.show)
+        plot_wm_mse(series, out, tag, args.show)
+    else:
+        plot_value_pred_error(series, out, tag, args.show)
 
     print("\nSummary:")
     write_summary(series, out, tag)

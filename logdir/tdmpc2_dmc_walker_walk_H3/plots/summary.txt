@@ -1,0 +1,12 @@
+Run: tdmpc2_dmc_walker_walk_H3
+============================================================
+Eval score:
+  first=28.8 @ step 0
+  final=982.7 @ step 200,000
+  max  =982.7 @ step 200,000
+Train score:
+  first=38.5 @ step 500
+  final=968.5 @ step 200,000
+  max  =995.2 @ step 101,500
+Value pred error (final): -800.92
+Imagination gap (final): -795.34
