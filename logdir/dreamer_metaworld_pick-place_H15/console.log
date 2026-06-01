@@ -1,0 +1,1211 @@
+Logdir /homes/iws/andys22/579/event-horizon/logdir/dreamer_metaworld_pick-place_H15_seed0
+Create envs.
+Simulate agent.
+Encoder CNN shapes: {'image': (64, 64, 3)}
+Encoder MLP shapes: {}
+Decoder CNN shapes: {'image': (64, 64, 3)}
+Decoder MLP shapes: {}
+     5,979,136: rssm
+       790,024: actor
+       853,503: value
+       721,407: reward
+       656,129: cont
+       220,416: encoder
+     1,272,003: decoder
+Optimizer has: 10492618 parameters.
+Compiling update function with torch.compile...
+Evaluating the policy...
+[0] episode/eval_score 6.4 / episode/eval_length 250.0 / episode/eval_success 0.0
+[544] train/opt/updates 0.0 / fps/fps 0.0
+[5568] train/dyn_entropy 27.9 / train/rep_entropy 25.0 / train/ret 0.8 / train/ret_005 10.3 / train/ret_095 11.9 / train/adv 0.1 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.0 / train/val 11.3 / train/tar 11.5 / train/slowval 11.2 / train/weight 1.0 / train/action_entropy 0.8 / train/action_mean 0.0 / train/action_std 0.6 / train/action_min -2.3 / train/action_max 3.0 / train/ret_replay_mean 11.4 / train/ret_replay_std 0.7 / train/ret_replay_min 10.0 / train/ret_replay_max 12.1 / train/value_replay_mean 11.1 / train/value_replay_std 0.6 / train/value_replay_min 9.6 / train/value_replay_max 11.6 / train/slow_value_replay_mean 11.0 / train/slow_value_replay_std 0.6 / train/slow_value_replay_min 9.6 / train/slow_value_replay_max 11.5 / train/loss/dyn 2.3 / train/loss/rep 2.3 / train/loss/image 11.4 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy 0.1 / train/loss/value 0.8 / train/loss/repval 0.9 / train/opt/loss 15.5 / train/opt/lr 0.0 / train/opt/grad_scale 1024.0 / train/opt/updates 5325.0 / fps/fps 18.5
+[8000] episode/score 14.5 / episode/length 250.0
+[8001] episode/score 9.7 / episode/length 250.0
+[8002] episode/score 12.7 / episode/length 250.0
+[8003] episode/score 6.5 / episode/length 250.0
+[8004] episode/score 6.4 / episode/length 250.0
+[8005] episode/score 12.0 / episode/length 250.0
+[8006] episode/score 3.5 / episode/length 250.0
+[8007] episode/score 15.7 / episode/length 250.0
+[8008] episode/score 14.7 / episode/length 250.0
+[8009] episode/score 10.0 / episode/length 250.0
+[8010] episode/score 11.8 / episode/length 250.0
+[8011] episode/score 5.7 / episode/length 250.0
+[8012] episode/score 7.4 / episode/length 250.0
+[8013] episode/score 15.6 / episode/length 250.0
+[8014] episode/score 6.2 / episode/length 250.0
+[8015] episode/score 5.7 / episode/length 250.0
+Evaluating the policy...
+[10016] episode/eval_score 18.1 / episode/eval_length 250.0 / episode/eval_success 0.0
+[10560] train/dyn_entropy 23.4 / train/rep_entropy 21.7 / train/ret 0.9 / train/ret_005 19.4 / train/ret_095 24.2 / train/adv 0.0 / train/adv_std 0.0 / train/con 1.0 / train/rew 0.1 / train/val 23.5 / train/tar 23.7 / train/slowval 23.4 / train/weight 1.0 / train/action_entropy -0.7 / train/action_mean -0.0 / train/action_std 0.6 / train/action_min -1.9 / train/action_max 2.7 / train/ret_replay_mean 23.5 / train/ret_replay_std 0.9 / train/ret_replay_min 20.9 / train/ret_replay_max 24.8 / train/value_replay_mean 23.3 / train/value_replay_std 0.9 / train/value_replay_min 20.6 / train/value_replay_max 24.3 / train/slow_value_replay_mean 23.2 / train/slow_value_replay_std 0.8 / train/slow_value_replay_min 20.7 / train/slow_value_replay_max 24.2 / train/loss/dyn 2.5 / train/loss/rep 2.5 / train/loss/image 8.0 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.1 / train/loss/repval 1.1 / train/opt/loss 12.7 / train/opt/lr 0.0 / train/opt/grad_scale 8192.0 / train/opt/updates 10650.0 / fps/fps 22.4
+[15552] train/dyn_entropy 25.4 / train/rep_entropy 24.2 / train/ret 0.4 / train/ret_005 26.9 / train/ret_095 33.3 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.1 / train/val 29.4 / train/tar 29.6 / train/slowval 29.3 / train/weight 1.0 / train/action_entropy -2.0 / train/action_mean -0.0 / train/action_std 0.6 / train/action_min -1.6 / train/action_max 1.8 / train/ret_replay_mean 29.1 / train/ret_replay_std 2.5 / train/ret_replay_min 24.8 / train/ret_replay_max 34.1 / train/value_replay_mean 29.0 / train/value_replay_std 2.3 / train/value_replay_min 24.7 / train/value_replay_max 33.6 / train/slow_value_replay_mean 28.9 / train/slow_value_replay_std 2.2 / train/slow_value_replay_min 24.6 / train/slow_value_replay_max 33.3 / train/loss/dyn 2.9 / train/loss/rep 2.9 / train/loss/image 8.6 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.0 / train/loss/repval 1.1 / train/opt/loss 13.6 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 15975.0 / fps/fps 23.2
+[16000] episode/score 12.0 / episode/length 250.0
+[16001] episode/score 12.0 / episode/length 250.0
+[16002] episode/score 37.3 / episode/length 250.0
+[16003] episode/score 14.2 / episode/length 250.0
+[16004] episode/score 12.8 / episode/length 250.0
+[16005] episode/score 9.1 / episode/length 250.0
+[16006] episode/score 35.2 / episode/length 250.0
+[16007] episode/score 31.6 / episode/length 250.0
+[16008] episode/score 14.3 / episode/length 250.0
+[16009] episode/score 34.2 / episode/length 250.0
+[16010] episode/score 13.4 / episode/length 250.0
+[16011] episode/score 7.9 / episode/length 250.0
+[16012] episode/score 24.3 / episode/length 250.0
+[16013] episode/score 12.6 / episode/length 250.0
+[16014] episode/score 8.8 / episode/length 250.0
+[16015] episode/score 10.1 / episode/length 250.0
+Evaluating the policy...
+[20000] episode/eval_score 23.2 / episode/eval_length 250.0 / episode/eval_success 0.0
+[20544] train/dyn_entropy 24.7 / train/rep_entropy 22.5 / train/ret 0.5 / train/ret_005 35.4 / train/ret_095 48.1 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.1 / train/val 41.2 / train/tar 41.6 / train/slowval 40.8 / train/weight 1.0 / train/action_entropy -2.1 / train/action_mean -0.0 / train/action_std 0.5 / train/action_min -2.5 / train/action_max 2.0 / train/ret_replay_mean 41.0 / train/ret_replay_std 4.6 / train/ret_replay_min 35.9 / train/ret_replay_max 49.2 / train/value_replay_mean 40.4 / train/value_replay_std 4.7 / train/value_replay_min 34.6 / train/value_replay_max 49.1 / train/slow_value_replay_mean 40.2 / train/slow_value_replay_std 4.8 / train/slow_value_replay_min 34.5 / train/slow_value_replay_max 49.1 / train/loss/dyn 2.6 / train/loss/rep 2.6 / train/loss/image 5.5 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 0.9 / train/loss/repval 0.9 / train/opt/loss 10.0 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 21300.0 / fps/fps 21.8
+[24000] episode/score 39.7 / episode/length 250.0
+[24001] episode/score 14.2 / episode/length 250.0
+[24002] episode/score 29.3 / episode/length 250.0
+[24003] episode/score 10.8 / episode/length 250.0
+[24004] episode/score 25.4 / episode/length 250.0
+[24005] episode/score 32.8 / episode/length 250.0
+[24006] episode/score 45.5 / episode/length 250.0
+[24007] episode/score 38.7 / episode/length 250.0
+[24008] episode/score 14.9 / episode/length 250.0
+[24009] episode/score 28.8 / episode/length 250.0
+[24010] episode/score 22.8 / episode/length 250.0
+[24011] episode/score 36.3 / episode/length 250.0
+[24012] episode/score 23.6 / episode/length 250.0
+[24013] episode/score 25.2 / episode/length 250.0
+[24014] episode/score 24.0 / episode/length 250.0
+[24015] episode/score 37.7 / episode/length 250.0
+[25568] train/dyn_entropy 24.9 / train/rep_entropy 22.4 / train/ret 0.5 / train/ret_005 47.4 / train/ret_095 58.4 / train/adv 0.0 / train/adv_std 0.0 / train/con 1.0 / train/rew 0.1 / train/val 53.1 / train/tar 53.2 / train/slowval 53.1 / train/weight 1.0 / train/action_entropy -0.8 / train/action_mean 0.0 / train/action_std 0.7 / train/action_min -2.1 / train/action_max 2.3 / train/ret_replay_mean 52.1 / train/ret_replay_std 3.5 / train/ret_replay_min 44.5 / train/ret_replay_max 57.2 / train/value_replay_mean 52.2 / train/value_replay_std 3.5 / train/value_replay_min 44.5 / train/value_replay_max 57.4 / train/slow_value_replay_mean 52.2 / train/slow_value_replay_std 3.6 / train/slow_value_replay_min 44.5 / train/slow_value_replay_max 57.5 / train/loss/dyn 2.2 / train/loss/rep 2.2 / train/loss/image 6.5 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.1 / train/loss/repval 1.1 / train/opt/loss 10.8 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 26659.0 / fps/fps 22.9
+Evaluating the policy...
+[30016] episode/eval_score 33.6 / episode/eval_length 250.0 / episode/eval_success 0.0
+[30560] train/dyn_entropy 25.3 / train/rep_entropy 22.5 / train/ret 0.3 / train/ret_005 55.8 / train/ret_095 67.0 / train/adv -0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.1 / train/val 59.9 / train/tar 59.7 / train/slowval 60.1 / train/weight 1.0 / train/action_entropy -0.2 / train/action_mean 0.1 / train/action_std 0.7 / train/action_min -2.1 / train/action_max 2.0 / train/ret_replay_mean 58.6 / train/ret_replay_std 3.2 / train/ret_replay_min 52.7 / train/ret_replay_max 66.7 / train/value_replay_mean 59.4 / train/value_replay_std 3.3 / train/value_replay_min 53.1 / train/value_replay_max 66.4 / train/slow_value_replay_mean 59.6 / train/slow_value_replay_std 3.5 / train/slow_value_replay_min 53.1 / train/slow_value_replay_max 66.6 / train/loss/dyn 2.1 / train/loss/rep 2.1 / train/loss/image 5.8 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.0 / train/loss/repval 1.1 / train/opt/loss 10.0 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 31983.0 / fps/fps 22.6
+[32000] episode/score 35.2 / episode/length 250.0
+[32001] episode/score 44.1 / episode/length 250.0
+[32002] episode/score 37.8 / episode/length 250.0
+[32003] episode/score 38.7 / episode/length 250.0
+[32004] episode/score 23.9 / episode/length 250.0
+[32005] episode/score 39.7 / episode/length 250.0
+[32006] episode/score 32.9 / episode/length 250.0
+[32007] episode/score 25.5 / episode/length 250.0
+[32008] episode/score 18.9 / episode/length 250.0
+[32009] episode/score 53.9 / episode/length 250.0
+[32010] episode/score 44.0 / episode/length 250.0
+[32011] episode/score 49.5 / episode/length 250.0
+[32012] episode/score 34.4 / episode/length 250.0
+[32013] episode/score 53.7 / episode/length 250.0
+[32014] episode/score 27.6 / episode/length 250.0
+[32015] episode/score 40.1 / episode/length 250.0
+[35552] train/dyn_entropy 26.3 / train/rep_entropy 24.2 / train/ret 0.5 / train/ret_005 58.4 / train/ret_095 72.7 / train/adv 0.0 / train/adv_std 0.0 / train/con 1.0 / train/rew 0.1 / train/val 64.7 / train/tar 65.0 / train/slowval 64.5 / train/weight 1.0 / train/action_entropy -0.8 / train/action_mean -0.1 / train/action_std 0.7 / train/action_min -2.0 / train/action_max 1.8 / train/ret_replay_mean 63.6 / train/ret_replay_std 4.1 / train/ret_replay_min 55.4 / train/ret_replay_max 69.7 / train/value_replay_mean 63.5 / train/value_replay_std 4.4 / train/value_replay_min 54.8 / train/value_replay_max 71.3 / train/slow_value_replay_mean 63.3 / train/slow_value_replay_std 4.3 / train/slow_value_replay_min 55.0 / train/slow_value_replay_max 70.8 / train/loss/dyn 2.2 / train/loss/rep 2.2 / train/loss/image 5.7 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 0.8 / train/loss/repval 0.9 / train/opt/loss 9.7 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 37308.0 / fps/fps 22.9
+Evaluating the policy...
+[40000] episode/eval_score 26.3 / episode/eval_length 250.0 / episode/eval_success 0.0
+[40000] episode/score 9.1 / episode/length 250.0
+[40001] episode/score 33.9 / episode/length 250.0
+[40002] episode/score 12.0 / episode/length 250.0
+[40003] episode/score 21.6 / episode/length 250.0
+[40004] episode/score 50.2 / episode/length 250.0
+[40005] episode/score 36.0 / episode/length 250.0
+[40006] episode/score 32.1 / episode/length 250.0
+[40007] episode/score 17.2 / episode/length 250.0
+[40008] episode/score 42.6 / episode/length 250.0
+[40009] episode/score 34.0 / episode/length 250.0
+[40010] episode/score 10.4 / episode/length 250.0
+[40011] episode/score 39.8 / episode/length 250.0
+[40012] episode/score 31.8 / episode/length 250.0
+[40013] episode/score 26.7 / episode/length 250.0
+[40014] episode/score 31.5 / episode/length 250.0
+[40015] episode/score 49.5 / episode/length 250.0
+[40544] train/dyn_entropy 26.8 / train/rep_entropy 23.6 / train/ret 0.4 / train/ret_005 59.8 / train/ret_095 72.9 / train/adv 0.0 / train/adv_std 0.0 / train/con 1.0 / train/rew 0.1 / train/val 64.5 / train/tar 64.5 / train/slowval 64.6 / train/weight 1.0 / train/action_entropy -1.0 / train/action_mean 0.0 / train/action_std 0.6 / train/action_min -2.1 / train/action_max 1.7 / train/ret_replay_mean 63.3 / train/ret_replay_std 4.9 / train/ret_replay_min 56.2 / train/ret_replay_max 73.0 / train/value_replay_mean 63.5 / train/value_replay_std 4.8 / train/value_replay_min 55.8 / train/value_replay_max 73.2 / train/slow_value_replay_mean 63.6 / train/slow_value_replay_std 4.8 / train/slow_value_replay_min 56.1 / train/slow_value_replay_max 73.2 / train/loss/dyn 2.2 / train/loss/rep 2.2 / train/loss/image 6.1 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 0.9 / train/loss/repval 1.0 / train/opt/loss 10.2 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 42633.0 / fps/fps 22.4
+[45568] train/dyn_entropy 28.9 / train/rep_entropy 24.9 / train/ret 0.6 / train/ret_005 64.8 / train/ret_095 75.7 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.1 / train/val 70.6 / train/tar 70.8 / train/slowval 70.2 / train/weight 1.0 / train/action_entropy -0.8 / train/action_mean 0.1 / train/action_std 0.7 / train/action_min -2.3 / train/action_max 2.5 / train/ret_replay_mean 69.4 / train/ret_replay_std 4.2 / train/ret_replay_min 62.7 / train/ret_replay_max 75.9 / train/value_replay_mean 69.2 / train/value_replay_std 4.2 / train/value_replay_min 63.7 / train/value_replay_max 75.8 / train/slow_value_replay_mean 68.9 / train/slow_value_replay_std 4.1 / train/slow_value_replay_min 63.6 / train/slow_value_replay_max 75.6 / train/loss/dyn 2.3 / train/loss/rep 2.3 / train/loss/image 4.9 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.1 / train/loss/repval 1.2 / train/opt/loss 9.4 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 47992.0 / fps/fps 23.1
+[48000] episode/score 32.0 / episode/length 250.0
+[48001] episode/score 35.0 / episode/length 250.0
+[48002] episode/score 45.7 / episode/length 250.0
+[48003] episode/score 31.8 / episode/length 250.0
+[48004] episode/score 42.6 / episode/length 250.0
+[48005] episode/score 56.5 / episode/length 250.0
+[48006] episode/score 31.3 / episode/length 250.0
+[48007] episode/score 49.7 / episode/length 250.0
+[48008] episode/score 56.3 / episode/length 250.0
+[48009] episode/score 48.2 / episode/length 250.0
+[48010] episode/score 51.0 / episode/length 250.0
+[48011] episode/score 40.1 / episode/length 250.0
+[48012] episode/score 54.8 / episode/length 250.0
+[48013] episode/score 41.3 / episode/length 250.0
+[48014] episode/score 58.0 / episode/length 250.0
+[48015] episode/score 49.7 / episode/length 250.0
+Evaluating the policy...
+[50016] episode/eval_score 43.2 / episode/eval_length 250.0 / episode/eval_success 0.0
+[50560] train/dyn_entropy 27.9 / train/rep_entropy 24.6 / train/ret 0.6 / train/ret_005 69.2 / train/ret_095 80.2 / train/adv -0.0 / train/adv_std 0.0 / train/con 1.0 / train/rew 0.2 / train/val 76.1 / train/tar 76.0 / train/slowval 76.0 / train/weight 1.0 / train/action_entropy -0.0 / train/action_mean 0.0 / train/action_std 0.7 / train/action_min -2.5 / train/action_max 2.8 / train/ret_replay_mean 75.1 / train/ret_replay_std 4.2 / train/ret_replay_min 63.2 / train/ret_replay_max 79.8 / train/value_replay_mean 75.3 / train/value_replay_std 4.2 / train/value_replay_min 63.4 / train/value_replay_max 79.9 / train/slow_value_replay_mean 75.2 / train/slow_value_replay_std 4.1 / train/slow_value_replay_min 63.5 / train/slow_value_replay_max 79.7 / train/loss/dyn 1.9 / train/loss/rep 1.9 / train/loss/image 5.1 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.1 / train/loss/repval 1.1 / train/opt/loss 9.1 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 53317.0 / fps/fps 22.5
+[55552] train/dyn_entropy 28.2 / train/rep_entropy 25.6 / train/ret 0.6 / train/ret_005 69.9 / train/ret_095 88.1 / train/adv 0.0 / train/adv_std 0.0 / train/con 1.0 / train/rew 0.2 / train/val 80.5 / train/tar 80.5 / train/slowval 80.5 / train/weight 1.0 / train/action_entropy 1.1 / train/action_mean 0.0 / train/action_std 0.8 / train/action_min -2.6 / train/action_max 2.5 / train/ret_replay_mean 79.2 / train/ret_replay_std 5.7 / train/ret_replay_min 66.2 / train/ret_replay_max 88.3 / train/value_replay_mean 79.6 / train/value_replay_std 5.7 / train/value_replay_min 66.5 / train/value_replay_max 90.0 / train/slow_value_replay_mean 79.6 / train/slow_value_replay_std 5.6 / train/slow_value_replay_min 66.5 / train/slow_value_replay_max 89.8 / train/loss/dyn 1.8 / train/loss/rep 1.8 / train/loss/image 4.5 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 0.9 / train/loss/repval 0.9 / train/opt/loss 8.1 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 58642.0 / fps/fps 23.7
+[56000] episode/score 31.0 / episode/length 250.0
+[56001] episode/score 71.6 / episode/length 250.0
+[56002] episode/score 37.6 / episode/length 250.0
+[56003] episode/score 38.9 / episode/length 250.0
+[56004] episode/score 15.7 / episode/length 250.0
+[56005] episode/score 26.6 / episode/length 250.0
+[56006] episode/score 71.5 / episode/length 250.0
+[56007] episode/score 41.8 / episode/length 250.0
+[56008] episode/score 38.7 / episode/length 250.0
+[56009] episode/score 40.5 / episode/length 250.0
+[56010] episode/score 37.5 / episode/length 250.0
+[56011] episode/score 36.4 / episode/length 250.0
+[56012] episode/score 47.4 / episode/length 250.0
+[56013] episode/score 40.9 / episode/length 250.0
+[56014] episode/score 52.3 / episode/length 250.0
+[56015] episode/score 44.8 / episode/length 250.0
+Evaluating the policy...
+[60000] episode/eval_score 28.2 / episode/eval_length 250.0 / episode/eval_success 0.0
+[60544] train/dyn_entropy 28.2 / train/rep_entropy 25.0 / train/ret 0.4 / train/ret_005 68.2 / train/ret_095 88.4 / train/adv -0.0 / train/adv_std 0.0 / train/con 1.0 / train/rew 0.1 / train/val 77.2 / train/tar 77.2 / train/slowval 77.5 / train/weight 1.0 / train/action_entropy 1.0 / train/action_mean 0.0 / train/action_std 0.7 / train/action_min -3.6 / train/action_max 3.4 / train/ret_replay_mean 75.7 / train/ret_replay_std 7.9 / train/ret_replay_min 64.7 / train/ret_replay_max 87.5 / train/value_replay_mean 76.2 / train/value_replay_std 8.1 / train/value_replay_min 63.9 / train/value_replay_max 87.8 / train/slow_value_replay_mean 76.5 / train/slow_value_replay_std 8.2 / train/slow_value_replay_min 64.3 / train/slow_value_replay_max 88.5 / train/loss/dyn 2.2 / train/loss/rep 2.2 / train/loss/image 4.4 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.1 / train/loss/repval 1.2 / train/opt/loss 8.6 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 63966.0 / fps/fps 22.8
+[64000] episode/score 44.4 / episode/length 250.0
+[64001] episode/score 19.8 / episode/length 250.0
+[64002] episode/score 17.4 / episode/length 250.0
+[64003] episode/score 35.5 / episode/length 250.0
+[64004] episode/score 35.8 / episode/length 250.0
+[64005] episode/score 34.5 / episode/length 250.0
+[64006] episode/score 52.7 / episode/length 250.0
+[64007] episode/score 37.7 / episode/length 250.0
+[64008] episode/score 32.5 / episode/length 250.0
+[64009] episode/score 46.6 / episode/length 250.0
+[64010] episode/score 11.9 / episode/length 250.0
+[64011] episode/score 26.5 / episode/length 250.0
+[64012] episode/score 29.0 / episode/length 250.0
+[64013] episode/score 11.2 / episode/length 250.0
+[64014] episode/score 21.0 / episode/length 250.0
+[64015] episode/score 55.1 / episode/length 250.0
+[65568] train/dyn_entropy 25.3 / train/rep_entropy 22.9 / train/ret 0.5 / train/ret_005 63.3 / train/ret_095 88.6 / train/adv -0.0 / train/adv_std 0.0 / train/con 1.0 / train/rew 0.2 / train/val 75.4 / train/tar 75.2 / train/slowval 75.4 / train/weight 1.0 / train/action_entropy 1.7 / train/action_mean 0.1 / train/action_std 0.8 / train/action_min -2.9 / train/action_max 3.1 / train/ret_replay_mean 74.4 / train/ret_replay_std 7.2 / train/ret_replay_min 63.6 / train/ret_replay_max 88.3 / train/value_replay_mean 74.7 / train/value_replay_std 7.2 / train/value_replay_min 64.0 / train/value_replay_max 88.6 / train/slow_value_replay_mean 74.6 / train/slow_value_replay_std 7.2 / train/slow_value_replay_min 63.8 / train/slow_value_replay_max 88.6 / train/loss/dyn 1.7 / train/loss/rep 1.7 / train/loss/image 3.8 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.1 / train/loss/repval 1.2 / train/opt/loss 7.7 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 69325.0 / fps/fps 23.5
+Evaluating the policy...
+[70016] episode/eval_score 35.6 / episode/eval_length 250.0 / episode/eval_success 0.0
+[70560] train/dyn_entropy 26.8 / train/rep_entropy 24.2 / train/ret 0.6 / train/ret_005 64.4 / train/ret_095 89.9 / train/adv 0.0 / train/adv_std 0.0 / train/con 1.0 / train/rew 0.1 / train/val 79.5 / train/tar 79.6 / train/slowval 79.3 / train/weight 1.0 / train/action_entropy 0.7 / train/action_mean 0.1 / train/action_std 0.7 / train/action_min -3.2 / train/action_max 2.9 / train/ret_replay_mean 78.1 / train/ret_replay_std 7.4 / train/ret_replay_min 67.7 / train/ret_replay_max 90.0 / train/value_replay_mean 78.0 / train/value_replay_std 7.7 / train/value_replay_min 65.1 / train/value_replay_max 91.4 / train/slow_value_replay_mean 77.5 / train/slow_value_replay_std 8.3 / train/slow_value_replay_min 63.6 / train/slow_value_replay_max 91.4 / train/loss/dyn 1.9 / train/loss/rep 1.9 / train/loss/image 4.6 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.0 / train/loss/repval 1.2 / train/opt/loss 8.5 / train/opt/lr 0.0 / train/opt/grad_scale 8192.0 / train/opt/updates 74650.0 / fps/fps 23.0
+[72000] episode/score 52.3 / episode/length 250.0
+[72001] episode/score 29.7 / episode/length 250.0
+[72002] episode/score 31.9 / episode/length 250.0
+[72003] episode/score 189.7 / episode/length 250.0
+[72004] episode/score 31.4 / episode/length 250.0
+[72005] episode/score 6.1 / episode/length 250.0
+[72006] episode/score 6.7 / episode/length 250.0
+[72007] episode/score 49.1 / episode/length 250.0
+[72008] episode/score 8.3 / episode/length 250.0
+[72009] episode/score 3.9 / episode/length 250.0
+[72010] episode/score 5.6 / episode/length 250.0
+[72011] episode/score 7.9 / episode/length 250.0
+[72012] episode/score 35.3 / episode/length 250.0
+[72013] episode/score 26.0 / episode/length 250.0
+[72014] episode/score 33.1 / episode/length 250.0
+[72015] episode/score 50.1 / episode/length 250.0
+[75552] train/dyn_entropy 25.9 / train/rep_entropy 23.4 / train/ret 0.5 / train/ret_005 68.0 / train/ret_095 108.7 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.2 / train/val 86.4 / train/tar 87.6 / train/slowval 85.3 / train/weight 1.0 / train/action_entropy 1.1 / train/action_mean -0.1 / train/action_std 0.8 / train/action_min -3.4 / train/action_max 2.7 / train/ret_replay_mean 84.3 / train/ret_replay_std 11.7 / train/ret_replay_min 69.8 / train/ret_replay_max 113.8 / train/value_replay_mean 84.0 / train/value_replay_std 12.1 / train/value_replay_min 68.1 / train/value_replay_max 111.0 / train/slow_value_replay_mean 83.1 / train/slow_value_replay_std 12.0 / train/slow_value_replay_min 67.6 / train/slow_value_replay_max 110.5 / train/loss/dyn 1.7 / train/loss/rep 1.7 / train/loss/image 4.0 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.1 / train/loss/repval 1.1 / train/opt/loss 7.9 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 79975.0 / fps/fps 23.2
+Evaluating the policy...
+[80000] episode/eval_score 70.3 / episode/eval_length 250.0 / episode/eval_success 0.0
+[80000] episode/score 43.1 / episode/length 250.0
+[80001] episode/score 7.8 / episode/length 250.0
+[80002] episode/score 25.4 / episode/length 250.0
+[80003] episode/score 56.4 / episode/length 250.0
+[80004] episode/score 22.9 / episode/length 250.0
+[80005] episode/score 31.8 / episode/length 250.0
+[80006] episode/score 14.7 / episode/length 250.0
+[80007] episode/score 11.4 / episode/length 250.0
+[80008] episode/score 101.3 / episode/length 250.0
+[80009] episode/score 26.4 / episode/length 250.0
+[80010] episode/score 48.7 / episode/length 250.0
+[80011] episode/score 44.1 / episode/length 250.0
+[80012] episode/score 27.1 / episode/length 250.0
+[80013] episode/score 38.5 / episode/length 250.0
+[80014] episode/score 32.3 / episode/length 250.0
+[80015] episode/score 12.7 / episode/length 250.0
+[80544] train/dyn_entropy 26.9 / train/rep_entropy 24.7 / train/ret 0.4 / train/ret_005 79.5 / train/ret_095 128.8 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.1 / train/val 96.4 / train/tar 97.2 / train/slowval 95.8 / train/weight 1.0 / train/action_entropy 0.9 / train/action_mean -0.0 / train/action_std 0.8 / train/action_min -3.3 / train/action_max 2.8 / train/ret_replay_mean 94.7 / train/ret_replay_std 11.1 / train/ret_replay_min 75.3 / train/ret_replay_max 118.4 / train/value_replay_mean 93.9 / train/value_replay_std 10.6 / train/value_replay_min 76.2 / train/value_replay_max 120.4 / train/slow_value_replay_mean 93.7 / train/slow_value_replay_std 10.4 / train/slow_value_replay_min 76.9 / train/slow_value_replay_max 120.3 / train/loss/dyn 1.8 / train/loss/rep 1.8 / train/loss/image 4.6 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 0.9 / train/loss/repval 1.1 / train/opt/loss 8.3 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 85300.0 / fps/fps 22.8
+[85568] train/dyn_entropy 27.7 / train/rep_entropy 25.5 / train/ret 0.3 / train/ret_005 108.9 / train/ret_095 133.2 / train/adv -0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.1 / train/val 117.7 / train/tar 117.0 / train/slowval 118.6 / train/weight 1.0 / train/action_entropy -0.7 / train/action_mean 0.1 / train/action_std 0.8 / train/action_min -2.2 / train/action_max 2.5 / train/ret_replay_mean 114.8 / train/ret_replay_std 9.6 / train/ret_replay_min 102.5 / train/ret_replay_max 130.8 / train/value_replay_mean 115.7 / train/value_replay_std 9.5 / train/value_replay_min 102.0 / train/value_replay_max 133.8 / train/slow_value_replay_mean 116.9 / train/slow_value_replay_std 8.9 / train/slow_value_replay_min 104.2 / train/slow_value_replay_max 134.5 / train/loss/dyn 1.7 / train/loss/rep 1.7 / train/loss/image 5.0 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 0.8 / train/loss/repval 1.0 / train/opt/loss 8.5 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 90659.0 / fps/fps 23.5
+[88000] episode/score 8.8 / episode/length 250.0
+[88001] episode/score 5.9 / episode/length 250.0
+[88002] episode/score 40.5 / episode/length 250.0
+[88003] episode/score 5.9 / episode/length 250.0
+[88004] episode/score 30.5 / episode/length 250.0
+[88005] episode/score 14.1 / episode/length 250.0
+[88006] episode/score 11.5 / episode/length 250.0
+[88007] episode/score 81.3 / episode/length 250.0
+[88008] episode/score 76.4 / episode/length 250.0
+[88009] episode/score 62.2 / episode/length 250.0
+[88010] episode/score 8.6 / episode/length 250.0
+[88011] episode/score 49.9 / episode/length 250.0
+[88012] episode/score 14.1 / episode/length 250.0
+[88013] episode/score 12.0 / episode/length 250.0
+[88014] episode/score 40.8 / episode/length 250.0
+[88015] episode/score 46.4 / episode/length 250.0
+Evaluating the policy...
+[90016] episode/eval_score 11.2 / episode/eval_length 250.0 / episode/eval_success 0.0
+[90560] train/dyn_entropy 27.4 / train/rep_entropy 24.6 / train/ret 0.3 / train/ret_005 113.4 / train/ret_095 169.3 / train/adv -0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.1 / train/val 131.1 / train/tar 130.1 / train/slowval 132.5 / train/weight 1.0 / train/action_entropy -0.8 / train/action_mean -0.0 / train/action_std 0.7 / train/action_min -3.1 / train/action_max 2.2 / train/ret_replay_mean 126.2 / train/ret_replay_std 9.5 / train/ret_replay_min 110.6 / train/ret_replay_max 147.2 / train/value_replay_mean 130.2 / train/value_replay_std 12.1 / train/value_replay_min 113.0 / train/value_replay_max 163.7 / train/slow_value_replay_mean 130.8 / train/slow_value_replay_std 12.8 / train/slow_value_replay_min 112.6 / train/slow_value_replay_max 171.1 / train/loss/dyn 1.7 / train/loss/rep 1.7 / train/loss/image 4.4 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.1 / train/loss/repval 1.3 / train/opt/loss 8.2 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 95983.0 / fps/fps 22.4
+[95552] train/dyn_entropy 28.1 / train/rep_entropy 26.2 / train/ret 0.3 / train/ret_005 157.5 / train/ret_095 205.5 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.1 / train/val 172.7 / train/tar 173.7 / train/slowval 170.7 / train/weight 1.0 / train/action_entropy 1.2 / train/action_mean -0.0 / train/action_std 0.9 / train/action_min -3.7 / train/action_max 3.3 / train/ret_replay_mean 167.9 / train/ret_replay_std 4.9 / train/ret_replay_min 158.1 / train/ret_replay_max 178.0 / train/value_replay_mean 167.6 / train/value_replay_std 7.3 / train/value_replay_min 154.9 / train/value_replay_max 186.8 / train/slow_value_replay_mean 165.8 / train/slow_value_replay_std 7.4 / train/slow_value_replay_min 153.9 / train/slow_value_replay_max 183.9 / train/loss/dyn 1.7 / train/loss/rep 1.7 / train/loss/image 4.8 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.1 / train/loss/repval 1.2 / train/opt/loss 8.7 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 101308.0 / fps/fps 23.1
+[96000] episode/score 30.8 / episode/length 250.0
+[96001] episode/score 11.4 / episode/length 250.0
+[96002] episode/score 39.6 / episode/length 250.0
+[96003] episode/score 26.2 / episode/length 250.0
+[96004] episode/score 61.0 / episode/length 250.0
+[96005] episode/score 19.8 / episode/length 250.0
+[96006] episode/score 16.4 / episode/length 250.0
+[96007] episode/score 15.5 / episode/length 250.0
+[96008] episode/score 62.9 / episode/length 250.0
+[96009] episode/score 13.7 / episode/length 250.0
+[96010] episode/score 59.3 / episode/length 250.0
+[96011] episode/score 74.8 / episode/length 250.0
+[96012] episode/score 194.0 / episode/length 250.0
+[96013] episode/score 43.4 / episode/length 250.0
+[96014] episode/score 53.8 / episode/length 250.0
+[96015] episode/score 67.2 / episode/length 250.0
+Evaluating the policy...
+[100000] episode/eval_score 33.3 / episode/eval_length 250.0 / episode/eval_success 0.0
+[100544] train/dyn_entropy 28.8 / train/rep_entropy 26.5 / train/ret 0.4 / train/ret_005 144.9 / train/ret_095 183.7 / train/adv -0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.1 / train/val 161.8 / train/tar 161.5 / train/slowval 161.7 / train/weight 1.0 / train/action_entropy -0.2 / train/action_mean -0.0 / train/action_std 0.7 / train/action_min -3.3 / train/action_max 2.3 / train/ret_replay_mean 156.8 / train/ret_replay_std 12.4 / train/ret_replay_min 137.3 / train/ret_replay_max 189.0 / train/value_replay_mean 157.7 / train/value_replay_std 13.1 / train/value_replay_min 138.8 / train/value_replay_max 192.6 / train/slow_value_replay_mean 157.7 / train/slow_value_replay_std 12.5 / train/slow_value_replay_min 139.8 / train/slow_value_replay_max 189.8 / train/loss/dyn 2.0 / train/loss/rep 2.0 / train/loss/image 5.3 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.0 / train/loss/repval 1.2 / train/opt/loss 9.3 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 106633.0 / fps/fps 22.4
+[104000] episode/score 4.2 / episode/length 250.0
+[104001] episode/score 8.6 / episode/length 250.0
+[104002] episode/score 7.6 / episode/length 250.0
+[104003] episode/score 6.4 / episode/length 250.0
+[104004] episode/score 9.0 / episode/length 250.0
+[104005] episode/score 6.0 / episode/length 250.0
+[104006] episode/score 8.0 / episode/length 250.0
+[104007] episode/score 11.7 / episode/length 250.0
+[104008] episode/score 65.8 / episode/length 250.0
+[104009] episode/score 61.1 / episode/length 250.0
+[104010] episode/score 6.7 / episode/length 250.0
+[104011] episode/score 77.6 / episode/length 250.0
+[104012] episode/score 72.1 / episode/length 250.0
+[104013] episode/score 5.5 / episode/length 250.0
+[104014] episode/score 6.2 / episode/length 250.0
+[104015] episode/score 10.3 / episode/length 250.0
+[105568] train/dyn_entropy 30.1 / train/rep_entropy 26.7 / train/ret 0.3 / train/ret_005 140.0 / train/ret_095 224.0 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.1 / train/val 161.6 / train/tar 161.6 / train/slowval 161.0 / train/weight 1.0 / train/action_entropy 0.4 / train/action_mean -0.1 / train/action_std 0.7 / train/action_min -2.8 / train/action_max 2.6 / train/ret_replay_mean 156.4 / train/ret_replay_std 16.1 / train/ret_replay_min 130.0 / train/ret_replay_max 191.4 / train/value_replay_mean 157.7 / train/value_replay_std 16.7 / train/value_replay_min 129.8 / train/value_replay_max 199.7 / train/slow_value_replay_mean 156.9 / train/slow_value_replay_std 16.7 / train/slow_value_replay_min 130.1 / train/slow_value_replay_max 198.9 / train/loss/dyn 1.9 / train/loss/rep 1.9 / train/loss/image 6.3 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.0 / train/loss/repval 1.1 / train/opt/loss 10.2 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 111992.0 / fps/fps 23.0
+Evaluating the policy...
+[110016] episode/eval_score 37.8 / episode/eval_length 250.0 / episode/eval_success 0.0
+[110560] train/dyn_entropy 30.1 / train/rep_entropy 27.3 / train/ret 0.4 / train/ret_005 131.0 / train/ret_095 212.6 / train/adv -0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.1 / train/val 161.2 / train/tar 160.7 / train/slowval 160.9 / train/weight 1.0 / train/action_entropy 1.5 / train/action_mean 0.1 / train/action_std 0.8 / train/action_min -3.4 / train/action_max 3.2 / train/ret_replay_mean 154.7 / train/ret_replay_std 30.7 / train/ret_replay_min 124.9 / train/ret_replay_max 232.2 / train/value_replay_mean 157.0 / train/value_replay_std 28.7 / train/value_replay_min 128.9 / train/value_replay_max 235.7 / train/slow_value_replay_mean 157.1 / train/slow_value_replay_std 27.8 / train/slow_value_replay_min 129.6 / train/slow_value_replay_max 233.4 / train/loss/dyn 1.7 / train/loss/rep 1.7 / train/loss/image 5.0 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.0 / train/loss/repval 1.1 / train/opt/loss 8.8 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 117317.0 / fps/fps 22.5
+[112000] episode/score 9.1 / episode/length 250.0
+[112001] episode/score 209.7 / episode/length 250.0
+[112002] episode/score 97.9 / episode/length 250.0
+[112003] episode/score 15.5 / episode/length 250.0
+[112004] episode/score 12.7 / episode/length 250.0
+[112005] episode/score 8.6 / episode/length 250.0
+[112006] episode/score 14.6 / episode/length 250.0
+[112007] episode/score 3.3 / episode/length 250.0
+[112008] episode/score 6.7 / episode/length 250.0
+[112009] episode/score 3.0 / episode/length 250.0
+[112010] episode/score 12.3 / episode/length 250.0
+[112011] episode/score 3.9 / episode/length 250.0
+[112012] episode/score 19.2 / episode/length 250.0
+[112013] episode/score 10.8 / episode/length 250.0
+[112014] episode/score 3.0 / episode/length 250.0
+[112015] episode/score 3.0 / episode/length 250.0
+[115552] train/dyn_entropy 30.4 / train/rep_entropy 27.7 / train/ret 0.5 / train/ret_005 131.1 / train/ret_095 184.1 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.2 / train/val 155.5 / train/tar 155.9 / train/slowval 154.1 / train/weight 1.0 / train/action_entropy 0.3 / train/action_mean -0.0 / train/action_std 0.8 / train/action_min -3.2 / train/action_max 2.6 / train/ret_replay_mean 151.6 / train/ret_replay_std 17.0 / train/ret_replay_min 121.9 / train/ret_replay_max 198.5 / train/value_replay_mean 150.6 / train/value_replay_std 16.2 / train/value_replay_min 124.2 / train/value_replay_max 186.3 / train/slow_value_replay_mean 149.4 / train/slow_value_replay_std 16.0 / train/slow_value_replay_min 123.4 / train/slow_value_replay_max 182.8 / train/loss/dyn 2.1 / train/loss/rep 2.1 / train/loss/image 5.1 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.0 / train/loss/repval 1.1 / train/opt/loss 9.2 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 122642.0 / fps/fps 23.2
+Evaluating the policy...
+[120000] episode/eval_score 54.2 / episode/eval_length 250.0 / episode/eval_success 0.0
+[120000] episode/score 31.2 / episode/length 250.0
+[120001] episode/score 147.7 / episode/length 250.0
+[120002] episode/score 15.8 / episode/length 250.0
+[120003] episode/score 4.4 / episode/length 250.0
+[120004] episode/score 79.9 / episode/length 250.0
+[120005] episode/score 72.2 / episode/length 250.0
+[120006] episode/score 27.5 / episode/length 250.0
+[120007] episode/score 21.3 / episode/length 250.0
+[120008] episode/score 44.6 / episode/length 250.0
+[120009] episode/score 3.6 / episode/length 250.0
+[120010] episode/score 34.6 / episode/length 250.0
+[120011] episode/score 3.6 / episode/length 250.0
+[120012] episode/score 27.8 / episode/length 250.0
+[120013] episode/score 140.9 / episode/length 250.0
+[120014] episode/score 22.3 / episode/length 250.0
+[120015] episode/score 26.3 / episode/length 250.0
+[120544] train/dyn_entropy 27.1 / train/rep_entropy 25.3 / train/ret 0.6 / train/ret_005 129.2 / train/ret_095 179.8 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.3 / train/val 156.1 / train/tar 157.7 / train/slowval 155.5 / train/weight 1.0 / train/action_entropy -0.2 / train/action_mean 0.0 / train/action_std 0.8 / train/action_min -2.9 / train/action_max 2.6 / train/ret_replay_mean 153.5 / train/ret_replay_std 13.0 / train/ret_replay_min 134.2 / train/ret_replay_max 217.5 / train/value_replay_mean 151.8 / train/value_replay_std 20.2 / train/value_replay_min 123.9 / train/value_replay_max 232.2 / train/slow_value_replay_mean 151.1 / train/slow_value_replay_std 20.2 / train/slow_value_replay_min 122.9 / train/slow_value_replay_max 230.8 / train/loss/dyn 1.6 / train/loss/rep 1.6 / train/loss/image 4.5 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.1 / train/loss/repval 1.3 / train/opt/loss 8.3 / train/opt/lr 0.0 / train/opt/grad_scale 8192.0 / train/opt/updates 127966.0 / fps/fps 22.4
+[125568] train/dyn_entropy 29.5 / train/rep_entropy 27.2 / train/ret 0.5 / train/ret_005 92.4 / train/ret_095 166.4 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.2 / train/val 125.7 / train/tar 127.1 / train/slowval 125.2 / train/weight 1.0 / train/action_entropy 0.3 / train/action_mean 0.0 / train/action_std 0.7 / train/action_min -2.9 / train/action_max 3.2 / train/ret_replay_mean 125.3 / train/ret_replay_std 16.9 / train/ret_replay_min 101.4 / train/ret_replay_max 162.8 / train/value_replay_mean 121.8 / train/value_replay_std 15.6 / train/value_replay_min 95.5 / train/value_replay_max 154.6 / train/slow_value_replay_mean 121.6 / train/slow_value_replay_std 15.0 / train/slow_value_replay_min 95.7 / train/slow_value_replay_max 152.8 / train/loss/dyn 1.7 / train/loss/rep 1.7 / train/loss/image 4.3 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.1 / train/loss/repval 1.3 / train/opt/loss 8.1 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 133325.0 / fps/fps 23.3
+[128000] episode/score 16.0 / episode/length 250.0
+[128001] episode/score 39.3 / episode/length 250.0
+[128002] episode/score 92.8 / episode/length 250.0
+[128003] episode/score 19.7 / episode/length 250.0
+[128004] episode/score 9.5 / episode/length 250.0
+[128005] episode/score 18.9 / episode/length 250.0
+[128006] episode/score 12.5 / episode/length 250.0
+[128007] episode/score 13.5 / episode/length 250.0
+[128008] episode/score 139.7 / episode/length 250.0
+[128009] episode/score 60.4 / episode/length 250.0
+[128010] episode/score 182.8 / episode/length 250.0
+[128011] episode/score 14.7 / episode/length 250.0
+[128012] episode/score 27.2 / episode/length 250.0
+[128013] episode/score 15.5 / episode/length 250.0
+[128014] episode/score 11.5 / episode/length 250.0
+[128015] episode/score 27.5 / episode/length 250.0
+Evaluating the policy...
+[130016] episode/eval_score 36.4 / episode/eval_length 250.0 / episode/eval_success 0.1
+[130560] train/dyn_entropy 30.8 / train/rep_entropy 28.2 / train/ret 0.6 / train/ret_005 118.7 / train/ret_095 236.1 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.3 / train/val 184.1 / train/tar 188.8 / train/slowval 179.4 / train/weight 1.0 / train/action_entropy -0.4 / train/action_mean -0.0 / train/action_std 0.8 / train/action_min -4.2 / train/action_max 3.0 / train/ret_replay_mean 182.8 / train/ret_replay_std 24.0 / train/ret_replay_min 137.2 / train/ret_replay_max 257.8 / train/value_replay_mean 175.8 / train/value_replay_std 24.8 / train/value_replay_min 122.7 / train/value_replay_max 243.1 / train/slow_value_replay_mean 170.5 / train/slow_value_replay_std 25.0 / train/slow_value_replay_min 116.8 / train/slow_value_replay_max 238.8 / train/loss/dyn 1.7 / train/loss/rep 1.7 / train/loss/image 4.7 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.3 / train/loss/repval 1.6 / train/opt/loss 8.7 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 138650.0 / fps/fps 22.7
+[135552] train/dyn_entropy 30.1 / train/rep_entropy 27.5 / train/ret 0.2 / train/ret_005 90.0 / train/ret_095 152.8 / train/adv -0.0 / train/adv_std 0.0 / train/con 1.0 / train/rew 0.1 / train/val 104.7 / train/tar 104.2 / train/slowval 104.9 / train/weight 1.0 / train/action_entropy 1.2 / train/action_mean -0.0 / train/action_std 0.8 / train/action_min -3.6 / train/action_max 3.0 / train/ret_replay_mean 101.7 / train/ret_replay_std 9.5 / train/ret_replay_min 83.3 / train/ret_replay_max 118.7 / train/value_replay_mean 103.6 / train/value_replay_std 9.6 / train/value_replay_min 84.9 / train/value_replay_max 127.6 / train/slow_value_replay_mean 103.8 / train/slow_value_replay_std 9.9 / train/slow_value_replay_min 84.8 / train/slow_value_replay_max 128.8 / train/loss/dyn 2.0 / train/loss/rep 2.0 / train/loss/image 4.7 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 0.9 / train/loss/repval 1.1 / train/opt/loss 8.6 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 143975.0 / fps/fps 24.0
+[136000] episode/score 14.4 / episode/length 250.0
+[136001] episode/score 20.7 / episode/length 250.0
+[136002] episode/score 44.9 / episode/length 250.0
+[136003] episode/score 123.1 / episode/length 250.0
+[136004] episode/score 51.7 / episode/length 250.0
+[136005] episode/score 55.2 / episode/length 250.0
+[136006] episode/score 62.9 / episode/length 250.0
+[136007] episode/score 46.6 / episode/length 250.0
+[136008] episode/score 18.8 / episode/length 250.0
+[136009] episode/score 12.2 / episode/length 250.0
+[136010] episode/score 24.9 / episode/length 250.0
+[136011] episode/score 26.8 / episode/length 250.0
+[136012] episode/score 60.0 / episode/length 250.0
+[136013] episode/score 26.1 / episode/length 250.0
+[136014] episode/score 13.0 / episode/length 250.0
+[136015] episode/score 17.4 / episode/length 250.0
+Evaluating the policy...
+[140000] episode/eval_score 64.4 / episode/eval_length 250.0 / episode/eval_success 0.0
+[140544] train/dyn_entropy 30.7 / train/rep_entropy 27.9 / train/ret 0.4 / train/ret_005 139.7 / train/ret_095 255.0 / train/adv -0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.3 / train/val 185.9 / train/tar 185.7 / train/slowval 186.4 / train/weight 1.0 / train/action_entropy 0.7 / train/action_mean -0.0 / train/action_std 0.8 / train/action_min -2.8 / train/action_max 2.7 / train/ret_replay_mean 179.9 / train/ret_replay_std 34.9 / train/ret_replay_min 131.3 / train/ret_replay_max 291.0 / train/value_replay_mean 180.5 / train/value_replay_std 30.9 / train/value_replay_min 137.1 / train/value_replay_max 294.4 / train/slow_value_replay_mean 180.7 / train/slow_value_replay_std 32.2 / train/slow_value_replay_min 136.5 / train/slow_value_replay_max 294.4 / train/loss/dyn 1.8 / train/loss/rep 1.8 / train/loss/image 4.3 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.3 / train/loss/repval 1.5 / train/opt/loss 8.6 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 149300.0 / fps/fps 23.3
+[144000] episode/score 21.8 / episode/length 250.0
+[144001] episode/score 32.9 / episode/length 250.0
+[144002] episode/score 17.3 / episode/length 250.0
+[144003] episode/score 417.4 / episode/length 250.0
+[144004] episode/score 92.5 / episode/length 250.0
+[144005] episode/score 9.3 / episode/length 250.0
+[144006] episode/score 17.1 / episode/length 250.0
+[144007] episode/score 722.4 / episode/length 250.0
+[144008] episode/score 24.6 / episode/length 250.0
+[144009] episode/score 13.0 / episode/length 250.0
+[144010] episode/score 13.6 / episode/length 250.0
+[144011] episode/score 306.6 / episode/length 250.0
+[144012] episode/score 980.1 / episode/length 250.0
+[144013] episode/score 15.4 / episode/length 250.0
+[144014] episode/score 218.8 / episode/length 250.0
+[144015] episode/score 66.8 / episode/length 250.0
+[145568] train/dyn_entropy 30.8 / train/rep_entropy 28.6 / train/ret 0.5 / train/ret_005 235.7 / train/ret_095 396.9 / train/adv -0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.3 / train/val 315.9 / train/tar 312.9 / train/slowval 321.3 / train/weight 1.0 / train/action_entropy 0.4 / train/action_mean -0.0 / train/action_std 0.8 / train/action_min -3.3 / train/action_max 3.0 / train/ret_replay_mean 305.4 / train/ret_replay_std 46.8 / train/ret_replay_min 249.8 / train/ret_replay_max 426.9 / train/value_replay_mean 309.6 / train/value_replay_std 43.4 / train/value_replay_min 248.6 / train/value_replay_max 416.8 / train/slow_value_replay_mean 314.3 / train/slow_value_replay_std 44.4 / train/slow_value_replay_min 248.9 / train/slow_value_replay_max 420.5 / train/loss/dyn 1.9 / train/loss/rep 1.9 / train/loss/image 5.7 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.3 / train/loss/repval 1.4 / train/opt/loss 10.0 / train/opt/lr 0.0 / train/opt/grad_scale 8192.0 / train/opt/updates 154659.0 / fps/fps 23.8
+Evaluating the policy...
+[150016] episode/eval_score 212.3 / episode/eval_length 250.0 / episode/eval_success 0.0
+[150560] train/dyn_entropy 31.2 / train/rep_entropy 29.2 / train/ret 0.5 / train/ret_005 158.6 / train/ret_095 373.4 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.1 / train/val 264.3 / train/tar 268.7 / train/slowval 260.7 / train/weight 1.0 / train/action_entropy -0.3 / train/action_mean -0.2 / train/action_std 0.7 / train/action_min -2.9 / train/action_max 2.9 / train/ret_replay_mean 255.8 / train/ret_replay_std 59.8 / train/ret_replay_min 143.8 / train/ret_replay_max 377.2 / train/value_replay_mean 251.9 / train/value_replay_std 56.5 / train/value_replay_min 146.8 / train/value_replay_max 359.9 / train/slow_value_replay_mean 248.0 / train/slow_value_replay_std 53.7 / train/slow_value_replay_min 145.9 / train/slow_value_replay_max 354.6 / train/loss/dyn 2.3 / train/loss/rep 2.3 / train/loss/image 5.8 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.3 / train/loss/repval 1.6 / train/opt/loss 10.6 / train/opt/lr 0.0 / train/opt/grad_scale 8192.0 / train/opt/updates 159983.0 / fps/fps 22.6
+[152000] episode/score 20.7 / episode/length 250.0
+[152001] episode/score 5.9 / episode/length 250.0
+[152002] episode/score 9.3 / episode/length 250.0
+[152003] episode/score 9.0 / episode/length 250.0
+[152004] episode/score 16.5 / episode/length 250.0
+[152005] episode/score 12.9 / episode/length 250.0
+[152006] episode/score 348.4 / episode/length 250.0
+[152007] episode/score 5.7 / episode/length 250.0
+[152008] episode/score 2.9 / episode/length 250.0
+[152009] episode/score 340.0 / episode/length 250.0
+[152010] episode/score 406.3 / episode/length 250.0
+[152011] episode/score 13.2 / episode/length 250.0
+[152012] episode/score 8.8 / episode/length 250.0
+[152013] episode/score 1029.2 / episode/length 250.0
+[152014] episode/score 131.7 / episode/length 250.0
+[152015] episode/score 6.7 / episode/length 250.0
+[155552] train/dyn_entropy 32.0 / train/rep_entropy 30.2 / train/ret 0.4 / train/ret_005 261.4 / train/ret_095 453.8 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.2 / train/val 332.1 / train/tar 334.0 / train/slowval 330.5 / train/weight 1.0 / train/action_entropy 1.6 / train/action_mean -0.1 / train/action_std 0.9 / train/action_min -3.5 / train/action_max 3.5 / train/ret_replay_mean 317.2 / train/ret_replay_std 54.7 / train/ret_replay_min 236.8 / train/ret_replay_max 436.1 / train/value_replay_mean 319.9 / train/value_replay_std 50.4 / train/value_replay_min 243.8 / train/value_replay_max 440.5 / train/slow_value_replay_mean 317.1 / train/slow_value_replay_std 52.5 / train/slow_value_replay_min 243.1 / train/slow_value_replay_max 441.8 / train/loss/dyn 1.9 / train/loss/rep 1.9 / train/loss/image 6.1 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.2 / train/loss/repval 1.4 / train/opt/loss 10.2 / train/opt/lr 0.0 / train/opt/grad_scale 8192.0 / train/opt/updates 165308.0 / fps/fps 23.0
+Evaluating the policy...
+[160000] episode/eval_score 154.3 / episode/eval_length 250.0 / episode/eval_success 0.0
+[160000] episode/score 31.7 / episode/length 250.0
+[160001] episode/score 975.4 / episode/length 250.0
+[160002] episode/score 20.4 / episode/length 250.0
+[160003] episode/score 20.1 / episode/length 250.0
+[160004] episode/score 20.8 / episode/length 250.0
+[160005] episode/score 29.7 / episode/length 250.0
+[160006] episode/score 103.6 / episode/length 250.0
+[160007] episode/score 18.1 / episode/length 250.0
+[160008] episode/score 1296.9 / episode/length 250.0
+[160009] episode/score 945.8 / episode/length 250.0
+[160010] episode/score 141.7 / episode/length 250.0
+[160011] episode/score 10.1 / episode/length 250.0
+[160012] episode/score 23.4 / episode/length 250.0
+[160013] episode/score 17.7 / episode/length 250.0
+[160014] episode/score 26.5 / episode/length 250.0
+[160015] episode/score 53.6 / episode/length 250.0
+[160544] train/dyn_entropy 32.0 / train/rep_entropy 29.0 / train/ret 0.6 / train/ret_005 483.4 / train/ret_095 709.6 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.4 / train/val 605.8 / train/tar 610.4 / train/slowval 603.5 / train/weight 1.0 / train/action_entropy 0.0 / train/action_mean -0.1 / train/action_std 0.8 / train/action_min -3.0 / train/action_max 2.3 / train/ret_replay_mean 590.0 / train/ret_replay_std 68.0 / train/ret_replay_min 480.2 / train/ret_replay_max 750.5 / train/value_replay_mean 584.4 / train/value_replay_std 64.6 / train/value_replay_min 473.0 / train/value_replay_max 735.9 / train/slow_value_replay_mean 581.6 / train/slow_value_replay_std 65.4 / train/slow_value_replay_min 469.9 / train/slow_value_replay_max 735.2 / train/loss/dyn 1.6 / train/loss/rep 1.6 / train/loss/image 4.5 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 0.9 / train/loss/repval 1.2 / train/opt/loss 8.1 / train/opt/lr 0.0 / train/opt/grad_scale 8192.0 / train/opt/updates 170633.0 / fps/fps 22.8
+[165568] train/dyn_entropy 31.1 / train/rep_entropy 28.8 / train/ret 0.4 / train/ret_005 488.4 / train/ret_095 886.8 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.8 / train/val 626.3 / train/tar 635.5 / train/slowval 622.7 / train/weight 1.0 / train/action_entropy 1.3 / train/action_mean 0.0 / train/action_std 0.9 / train/action_min -3.7 / train/action_max 3.2 / train/ret_replay_mean 623.3 / train/ret_replay_std 166.0 / train/ret_replay_min 472.5 / train/ret_replay_max 965.7 / train/value_replay_mean 600.4 / train/value_replay_std 133.1 / train/value_replay_min 479.3 / train/value_replay_max 925.4 / train/slow_value_replay_mean 597.8 / train/slow_value_replay_std 132.9 / train/slow_value_replay_min 480.5 / train/slow_value_replay_max 931.0 / train/loss/dyn 2.0 / train/loss/rep 2.0 / train/loss/image 5.3 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.4 / train/loss/repval 1.9 / train/opt/loss 9.9 / train/opt/lr 0.0 / train/opt/grad_scale 8192.0 / train/opt/updates 175992.0 / fps/fps 23.4
+[168000] episode/score 11.4 / episode/length 250.0
+[168001] episode/score 10.4 / episode/length 250.0
+[168002] episode/score 5.6 / episode/length 250.0
+[168003] episode/score 8.0 / episode/length 250.0
+[168004] episode/score 1153.5 / episode/length 250.0
+[168005] episode/score 33.8 / episode/length 250.0
+[168006] episode/score 36.9 / episode/length 250.0
+[168007] episode/score 6.9 / episode/length 250.0
+[168008] episode/score 4.8 / episode/length 250.0
+[168009] episode/score 13.8 / episode/length 250.0
+[168010] episode/score 17.8 / episode/length 250.0
+[168011] episode/score 1030.6 / episode/length 250.0
+[168012] episode/score 4.8 / episode/length 250.0
+[168013] episode/score 3.2 / episode/length 250.0
+[168014] episode/score 10.0 / episode/length 250.0
+[168015] episode/score 51.5 / episode/length 250.0
+Evaluating the policy...
+[170016] episode/eval_score 129.7 / episode/eval_length 250.0 / episode/eval_success 0.0
+[170560] train/dyn_entropy 31.6 / train/rep_entropy 29.2 / train/ret 0.3 / train/ret_005 689.1 / train/ret_095 1086.6 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.2 / train/val 827.4 / train/tar 826.5 / train/slowval 829.4 / train/weight 1.0 / train/action_entropy 0.7 / train/action_mean 0.0 / train/action_std 0.9 / train/action_min -3.2 / train/action_max 2.8 / train/ret_replay_mean 795.0 / train/ret_replay_std 126.5 / train/ret_replay_min 678.2 / train/ret_replay_max 1093.5 / train/value_replay_mean 803.6 / train/value_replay_std 116.4 / train/value_replay_min 680.0 / train/value_replay_max 1076.4 / train/slow_value_replay_mean 804.6 / train/slow_value_replay_std 116.6 / train/slow_value_replay_min 679.9 / train/slow_value_replay_max 1082.6 / train/loss/dyn 1.7 / train/loss/rep 1.7 / train/loss/image 4.8 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 0.9 / train/loss/repval 1.1 / train/opt/loss 8.4 / train/opt/lr 0.0 / train/opt/grad_scale 8192.0 / train/opt/updates 181317.0 / fps/fps 22.5
+[175552] train/dyn_entropy 33.1 / train/rep_entropy 30.1 / train/ret 0.3 / train/ret_005 554.0 / train/ret_095 850.5 / train/adv -0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.4 / train/val 658.3 / train/tar 656.9 / train/slowval 659.3 / train/weight 1.0 / train/action_entropy 1.5 / train/action_mean 0.0 / train/action_std 0.9 / train/action_min -3.5 / train/action_max 3.3 / train/ret_replay_mean 637.7 / train/ret_replay_std 173.0 / train/ret_replay_min 521.3 / train/ret_replay_max 1215.4 / train/value_replay_mean 636.9 / train/value_replay_std 149.7 / train/value_replay_min 529.2 / train/value_replay_max 1166.4 / train/slow_value_replay_mean 636.3 / train/slow_value_replay_std 143.7 / train/slow_value_replay_min 537.2 / train/slow_value_replay_max 1151.1 / train/loss/dyn 1.9 / train/loss/rep 1.9 / train/loss/image 4.9 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.2 / train/loss/repval 1.3 / train/opt/loss 9.1 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 186642.0 / fps/fps 23.7
+[176000] episode/score 4.9 / episode/length 250.0
+[176001] episode/score 8.7 / episode/length 250.0
+[176002] episode/score 4.7 / episode/length 250.0
+[176003] episode/score 9.5 / episode/length 250.0
+[176004] episode/score 5.3 / episode/length 250.0
+[176005] episode/score 4.2 / episode/length 250.0
+[176006] episode/score 6.8 / episode/length 250.0
+[176007] episode/score 1063.6 / episode/length 250.0
+[176008] episode/score 4.4 / episode/length 250.0
+[176009] episode/score 5.2 / episode/length 250.0
+[176010] episode/score 7.5 / episode/length 250.0
+[176011] episode/score 6.4 / episode/length 250.0
+[176012] episode/score 6.5 / episode/length 250.0
+[176013] episode/score 7.9 / episode/length 250.0
+[176014] episode/score 4.8 / episode/length 250.0
+[176015] episode/score 19.2 / episode/length 250.0
+Evaluating the policy...
+[180000] episode/eval_score 10.2 / episode/eval_length 250.0 / episode/eval_success 0.0
+[180544] train/dyn_entropy 32.3 / train/rep_entropy 29.7 / train/ret 0.6 / train/ret_005 372.1 / train/ret_095 935.5 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.1 / train/val 681.3 / train/tar 703.8 / train/slowval 657.6 / train/weight 1.0 / train/action_entropy 0.2 / train/action_mean -0.0 / train/action_std 0.8 / train/action_min -3.5 / train/action_max 3.1 / train/ret_replay_mean 667.3 / train/ret_replay_std 195.0 / train/ret_replay_min 340.2 / train/ret_replay_max 971.5 / train/value_replay_mean 636.2 / train/value_replay_std 193.1 / train/value_replay_min 305.2 / train/value_replay_max 995.7 / train/slow_value_replay_mean 610.9 / train/slow_value_replay_std 190.6 / train/slow_value_replay_min 296.7 / train/slow_value_replay_max 971.2 / train/loss/dyn 2.4 / train/loss/rep 2.4 / train/loss/image 5.7 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.6 / train/loss/repval 1.7 / train/opt/loss 10.9 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 191966.0 / fps/fps 23.0
+[184000] episode/score 35.5 / episode/length 250.0
+[184001] episode/score 16.7 / episode/length 250.0
+[184002] episode/score 4.9 / episode/length 250.0
+[184003] episode/score 4.8 / episode/length 250.0
+[184004] episode/score 7.9 / episode/length 250.0
+[184005] episode/score 4.5 / episode/length 250.0
+[184006] episode/score 32.1 / episode/length 250.0
+[184007] episode/score 4.5 / episode/length 250.0
+[184008] episode/score 8.4 / episode/length 250.0
+[184009] episode/score 6.1 / episode/length 250.0
+[184010] episode/score 3.5 / episode/length 250.0
+[184011] episode/score 10.9 / episode/length 250.0
+[184012] episode/score 4.4 / episode/length 250.0
+[184013] episode/score 8.7 / episode/length 250.0
+[184014] episode/score 5.5 / episode/length 250.0
+[184015] episode/score 6.5 / episode/length 250.0
+[185568] train/dyn_entropy 32.1 / train/rep_entropy 29.9 / train/ret 0.5 / train/ret_005 313.8 / train/ret_095 665.5 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.1 / train/val 468.5 / train/tar 477.9 / train/slowval 464.2 / train/weight 1.0 / train/action_entropy 1.7 / train/action_mean -0.0 / train/action_std 0.9 / train/action_min -3.3 / train/action_max 3.3 / train/ret_replay_mean 456.4 / train/ret_replay_std 120.0 / train/ret_replay_min 295.3 / train/ret_replay_max 655.0 / train/value_replay_mean 443.9 / train/value_replay_std 114.2 / train/value_replay_min 304.6 / train/value_replay_max 651.5 / train/slow_value_replay_mean 437.7 / train/slow_value_replay_std 112.4 / train/slow_value_replay_min 306.6 / train/slow_value_replay_max 657.2 / train/loss/dyn 1.8 / train/loss/rep 1.8 / train/loss/image 4.9 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.3 / train/loss/repval 1.4 / train/opt/loss 9.0 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 197325.0 / fps/fps 23.0
+Evaluating the policy...
+[190016] episode/eval_score 239.0 / episode/eval_length 250.0 / episode/eval_success 0.1
+[190560] train/dyn_entropy 32.3 / train/rep_entropy 29.9 / train/ret 0.2 / train/ret_005 277.4 / train/ret_095 454.1 / train/adv -0.0 / train/adv_std 0.0 / train/con 1.0 / train/rew 0.1 / train/val 317.2 / train/tar 316.3 / train/slowval 320.2 / train/weight 1.0 / train/action_entropy 3.2 / train/action_mean 0.1 / train/action_std 1.1 / train/action_min -4.5 / train/action_max 4.1 / train/ret_replay_mean 303.0 / train/ret_replay_std 21.9 / train/ret_replay_min 280.8 / train/ret_replay_max 381.1 / train/value_replay_mean 308.4 / train/value_replay_std 19.0 / train/value_replay_min 288.8 / train/value_replay_max 378.7 / train/slow_value_replay_mean 311.3 / train/slow_value_replay_std 20.4 / train/slow_value_replay_min 289.2 / train/slow_value_replay_max 385.2 / train/loss/dyn 1.7 / train/loss/rep 1.7 / train/loss/image 4.1 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.2 / train/loss/repval 1.1 / train/opt/loss 8.0 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 202650.0 / fps/fps 22.5
+[192000] episode/score 5.2 / episode/length 250.0
+[192001] episode/score 6.9 / episode/length 250.0
+[192002] episode/score 6.6 / episode/length 250.0
+[192003] episode/score 9.6 / episode/length 250.0
+[192004] episode/score 167.9 / episode/length 250.0
+[192005] episode/score 774.6 / episode/length 250.0
+[192006] episode/score 7.1 / episode/length 250.0
+[192007] episode/score 18.5 / episode/length 250.0
+[192008] episode/score 5.5 / episode/length 250.0
+[192009] episode/score 5.7 / episode/length 250.0
+[192010] episode/score 446.0 / episode/length 250.0
+[192011] episode/score 11.3 / episode/length 250.0
+[192012] episode/score 6.2 / episode/length 250.0
+[192013] episode/score 15.5 / episode/length 250.0
+[192014] episode/score 4.4 / episode/length 250.0
+[192015] episode/score 21.3 / episode/length 250.0
+[195552] train/dyn_entropy 34.7 / train/rep_entropy 31.8 / train/ret 0.4 / train/ret_005 637.1 / train/ret_095 1014.1 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.4 / train/val 783.8 / train/tar 793.9 / train/slowval 776.4 / train/weight 1.0 / train/action_entropy 0.7 / train/action_mean 0.1 / train/action_std 0.9 / train/action_min -3.7 / train/action_max 3.1 / train/ret_replay_mean 761.9 / train/ret_replay_std 126.2 / train/ret_replay_min 658.2 / train/ret_replay_max 1216.1 / train/value_replay_mean 756.5 / train/value_replay_std 125.1 / train/value_replay_min 615.4 / train/value_replay_max 1197.5 / train/slow_value_replay_mean 751.6 / train/slow_value_replay_std 127.9 / train/slow_value_replay_min 588.4 / train/slow_value_replay_max 1195.8 / train/loss/dyn 1.8 / train/loss/rep 1.8 / train/loss/image 5.0 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.2 / train/loss/repval 1.2 / train/opt/loss 9.0 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 207975.0 / fps/fps 23.1
+Evaluating the policy...
+[200000] episode/eval_score 123.9 / episode/eval_length 250.0 / episode/eval_success 0.0
+[200000] episode/score 7.2 / episode/length 250.0
+[200001] episode/score 8.8 / episode/length 250.0
+[200002] episode/score 18.7 / episode/length 250.0
+[200003] episode/score 14.1 / episode/length 250.0
+[200004] episode/score 843.7 / episode/length 250.0
+[200005] episode/score 1018.4 / episode/length 250.0
+[200006] episode/score 30.5 / episode/length 250.0
+[200007] episode/score 5.5 / episode/length 250.0
+[200008] episode/score 168.1 / episode/length 250.0
+[200009] episode/score 941.8 / episode/length 250.0
+[200010] episode/score 23.7 / episode/length 250.0
+[200011] episode/score 1031.4 / episode/length 250.0
+[200012] episode/score 3.7 / episode/length 250.0
+[200013] episode/score 1257.9 / episode/length 250.0
+[200014] episode/score 6.4 / episode/length 250.0
+[200015] episode/score 501.4 / episode/length 250.0
+[200544] train/dyn_entropy 32.5 / train/rep_entropy 30.3 / train/ret 0.3 / train/ret_005 618.2 / train/ret_095 1033.3 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.3 / train/val 731.0 / train/tar 736.0 / train/slowval 726.6 / train/weight 1.0 / train/action_entropy 1.0 / train/action_mean 0.0 / train/action_std 0.9 / train/action_min -3.6 / train/action_max 3.5 / train/ret_replay_mean 710.7 / train/ret_replay_std 94.3 / train/ret_replay_min 586.0 / train/ret_replay_max 961.7 / train/value_replay_mean 708.5 / train/value_replay_std 78.9 / train/value_replay_min 560.4 / train/value_replay_max 979.0 / train/slow_value_replay_mean 703.7 / train/slow_value_replay_std 80.0 / train/slow_value_replay_min 549.0 / train/slow_value_replay_max 976.1 / train/loss/dyn 1.8 / train/loss/rep 1.8 / train/loss/image 5.1 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.1 / train/loss/repval 1.5 / train/opt/loss 9.1 / train/opt/lr 0.0 / train/opt/grad_scale 8192.0 / train/opt/updates 213300.0 / fps/fps 22.4
+[205568] train/dyn_entropy 32.4 / train/rep_entropy 29.7 / train/ret 0.6 / train/ret_005 539.5 / train/ret_095 1110.7 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.4 / train/val 849.6 / train/tar 863.4 / train/slowval 832.3 / train/weight 1.0 / train/action_entropy 2.3 / train/action_mean 0.0 / train/action_std 1.0 / train/action_min -3.2 / train/action_max 4.0 / train/ret_replay_mean 827.5 / train/ret_replay_std 172.6 / train/ret_replay_min 516.3 / train/ret_replay_max 1199.4 / train/value_replay_mean 815.1 / train/value_replay_std 173.9 / train/value_replay_min 495.0 / train/value_replay_max 1138.8 / train/slow_value_replay_mean 791.6 / train/slow_value_replay_std 187.8 / train/slow_value_replay_min 469.9 / train/slow_value_replay_max 1113.7 / train/loss/dyn 1.7 / train/loss/rep 1.7 / train/loss/image 4.1 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy 0.1 / train/loss/value 1.3 / train/loss/repval 1.6 / train/opt/loss 8.3 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 218659.0 / fps/fps 22.9
+[208000] episode/score 5.6 / episode/length 250.0
+[208001] episode/score 8.1 / episode/length 250.0
+[208002] episode/score 4.4 / episode/length 250.0
+[208003] episode/score 5.3 / episode/length 250.0
+[208004] episode/score 12.5 / episode/length 250.0
+[208005] episode/score 14.0 / episode/length 250.0
+[208006] episode/score 9.7 / episode/length 250.0
+[208007] episode/score 250.1 / episode/length 250.0
+[208008] episode/score 6.8 / episode/length 250.0
+[208009] episode/score 4.6 / episode/length 250.0
+[208010] episode/score 8.7 / episode/length 250.0
+[208011] episode/score 9.8 / episode/length 250.0
+[208012] episode/score 36.8 / episode/length 250.0
+[208013] episode/score 49.1 / episode/length 250.0
+[208014] episode/score 19.4 / episode/length 250.0
+[208015] episode/score 3.5 / episode/length 250.0
+Evaluating the policy...
+[210016] episode/eval_score 140.9 / episode/eval_length 250.0 / episode/eval_success 0.0
+[210560] train/dyn_entropy 33.8 / train/rep_entropy 31.0 / train/ret 0.4 / train/ret_005 760.0 / train/ret_095 1004.6 / train/adv -0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.0 / train/val 864.6 / train/tar 863.1 / train/slowval 864.8 / train/weight 1.0 / train/action_entropy 0.4 / train/action_mean 0.2 / train/action_std 0.8 / train/action_min -3.0 / train/action_max 3.3 / train/ret_replay_mean 830.4 / train/ret_replay_std 48.4 / train/ret_replay_min 744.6 / train/ret_replay_max 956.8 / train/value_replay_mean 837.8 / train/value_replay_std 56.7 / train/value_replay_min 755.2 / train/value_replay_max 976.6 / train/slow_value_replay_mean 838.5 / train/slow_value_replay_std 55.7 / train/slow_value_replay_min 755.2 / train/slow_value_replay_max 977.1 / train/loss/dyn 2.1 / train/loss/rep 2.1 / train/loss/image 6.7 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.0 / train/loss/repval 1.1 / train/opt/loss 10.8 / train/opt/lr 0.0 / train/opt/grad_scale 8192.0 / train/opt/updates 223983.0 / fps/fps 22.4
+[215552] train/dyn_entropy 34.0 / train/rep_entropy 31.7 / train/ret 0.4 / train/ret_005 678.4 / train/ret_095 960.9 / train/adv -0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 1.0 / train/val 783.9 / train/tar 778.5 / train/slowval 789.8 / train/weight 1.0 / train/action_entropy 0.2 / train/action_mean 0.1 / train/action_std 0.9 / train/action_min -2.8 / train/action_max 3.0 / train/ret_replay_mean 764.0 / train/ret_replay_std 126.3 / train/ret_replay_min 618.4 / train/ret_replay_max 1109.9 / train/value_replay_mean 771.6 / train/value_replay_std 136.7 / train/value_replay_min 623.7 / train/value_replay_max 1165.4 / train/slow_value_replay_mean 777.5 / train/slow_value_replay_std 142.5 / train/slow_value_replay_min 622.2 / train/slow_value_replay_max 1177.8 / train/loss/dyn 1.7 / train/loss/rep 1.7 / train/loss/image 4.4 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.1 / train/loss/repval 1.3 / train/opt/loss 8.1 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 229308.0 / fps/fps 22.9
+[216000] episode/score 241.0 / episode/length 250.0
+[216001] episode/score 43.3 / episode/length 250.0
+[216002] episode/score 7.9 / episode/length 250.0
+[216003] episode/score 6.2 / episode/length 250.0
+[216004] episode/score 6.6 / episode/length 250.0
+[216005] episode/score 350.0 / episode/length 250.0
+[216006] episode/score 14.2 / episode/length 250.0
+[216007] episode/score 9.7 / episode/length 250.0
+[216008] episode/score 2.5 / episode/length 250.0
+[216009] episode/score 382.1 / episode/length 250.0
+[216010] episode/score 439.5 / episode/length 250.0
+[216011] episode/score 4.3 / episode/length 250.0
+[216012] episode/score 7.5 / episode/length 250.0
+[216013] episode/score 749.7 / episode/length 250.0
+[216014] episode/score 16.1 / episode/length 250.0
+[216015] episode/score 15.5 / episode/length 250.0
+Evaluating the policy...
+[220000] episode/eval_score 12.6 / episode/eval_length 250.0 / episode/eval_success 0.0
+[220544] train/dyn_entropy 33.7 / train/rep_entropy 31.6 / train/ret 0.3 / train/ret_005 767.6 / train/ret_095 1288.2 / train/adv -0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.3 / train/val 944.9 / train/tar 938.9 / train/slowval 940.7 / train/weight 1.0 / train/action_entropy 1.0 / train/action_mean -0.0 / train/action_std 1.0 / train/action_min -3.4 / train/action_max 2.9 / train/ret_replay_mean 905.9 / train/ret_replay_std 127.7 / train/ret_replay_min 713.6 / train/ret_replay_max 1283.8 / train/value_replay_mean 930.5 / train/value_replay_std 128.8 / train/value_replay_min 732.1 / train/value_replay_max 1373.2 / train/slow_value_replay_mean 926.7 / train/slow_value_replay_std 128.8 / train/slow_value_replay_min 732.4 / train/slow_value_replay_max 1374.1 / train/loss/dyn 1.8 / train/loss/rep 1.8 / train/loss/image 4.3 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.0 / train/loss/repval 1.2 / train/opt/loss 8.1 / train/opt/lr 0.0 / train/opt/grad_scale 8192.0 / train/opt/updates 234633.0 / fps/fps 22.5
+[224000] episode/score 8.2 / episode/length 250.0
+[224001] episode/score 5.6 / episode/length 250.0
+[224002] episode/score 786.4 / episode/length 250.0
+[224003] episode/score 5.9 / episode/length 250.0
+[224004] episode/score 5.8 / episode/length 250.0
+[224005] episode/score 230.3 / episode/length 250.0
+[224006] episode/score 3.2 / episode/length 250.0
+[224007] episode/score 6.0 / episode/length 250.0
+[224008] episode/score 7.0 / episode/length 250.0
+[224009] episode/score 25.5 / episode/length 250.0
+[224010] episode/score 966.1 / episode/length 250.0
+[224011] episode/score 26.1 / episode/length 250.0
+[224012] episode/score 716.0 / episode/length 250.0
+[224013] episode/score 11.7 / episode/length 250.0
+[224014] episode/score 4.9 / episode/length 250.0
+[224015] episode/score 4.7 / episode/length 250.0
+[225568] train/dyn_entropy 32.9 / train/rep_entropy 30.5 / train/ret 0.2 / train/ret_005 635.4 / train/ret_095 950.2 / train/adv -0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.0 / train/val 712.2 / train/tar 704.9 / train/slowval 718.3 / train/weight 1.0 / train/action_entropy 0.5 / train/action_mean 0.1 / train/action_std 0.9 / train/action_min -3.6 / train/action_max 3.1 / train/ret_replay_mean 681.8 / train/ret_replay_std 60.3 / train/ret_replay_min 592.8 / train/ret_replay_max 825.1 / train/value_replay_mean 696.4 / train/value_replay_std 61.2 / train/value_replay_min 611.1 / train/value_replay_max 981.1 / train/slow_value_replay_mean 703.7 / train/slow_value_replay_std 60.8 / train/slow_value_replay_min 617.1 / train/slow_value_replay_max 1006.9 / train/loss/dyn 2.0 / train/loss/rep 2.0 / train/loss/image 6.6 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 0.9 / train/loss/repval 1.3 / train/opt/loss 10.5 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 239992.0 / fps/fps 23.1
+Evaluating the policy...
+[230016] episode/eval_score 4.4 / episode/eval_length 250.0 / episode/eval_success 0.0
+[230560] train/dyn_entropy 33.1 / train/rep_entropy 30.6 / train/ret 0.3 / train/ret_005 653.5 / train/ret_095 1024.7 / train/adv 0.0 / train/adv_std 0.0 / train/con 1.0 / train/rew 0.0 / train/val 756.5 / train/tar 763.5 / train/slowval 753.9 / train/weight 1.0 / train/action_entropy 0.4 / train/action_mean 0.2 / train/action_std 0.9 / train/action_min -3.6 / train/action_max 2.8 / train/ret_replay_mean 731.0 / train/ret_replay_std 50.8 / train/ret_replay_min 649.3 / train/ret_replay_max 853.8 / train/value_replay_mean 725.5 / train/value_replay_std 46.2 / train/value_replay_min 650.4 / train/value_replay_max 861.0 / train/slow_value_replay_mean 723.7 / train/slow_value_replay_std 47.8 / train/slow_value_replay_min 648.3 / train/slow_value_replay_max 862.7 / train/loss/dyn 2.1 / train/loss/rep 2.1 / train/loss/image 4.7 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.0 / train/loss/repval 1.2 / train/opt/loss 8.8 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 245317.0 / fps/fps 22.5
+[232000] episode/score 686.2 / episode/length 250.0
+[232001] episode/score 270.1 / episode/length 250.0
+[232002] episode/score 6.1 / episode/length 250.0
+[232003] episode/score 5.7 / episode/length 250.0
+[232004] episode/score 65.4 / episode/length 250.0
+[232005] episode/score 5.9 / episode/length 250.0
+[232006] episode/score 5.3 / episode/length 250.0
+[232007] episode/score 5.0 / episode/length 250.0
+[232008] episode/score 18.1 / episode/length 250.0
+[232009] episode/score 15.9 / episode/length 250.0
+[232010] episode/score 10.3 / episode/length 250.0
+[232011] episode/score 260.3 / episode/length 250.0
+[232012] episode/score 3.3 / episode/length 250.0
+[232013] episode/score 16.0 / episode/length 250.0
+[232014] episode/score 25.7 / episode/length 250.0
+[232015] episode/score 7.2 / episode/length 250.0
+[235552] train/dyn_entropy 34.8 / train/rep_entropy 31.9 / train/ret 0.2 / train/ret_005 747.9 / train/ret_095 952.1 / train/adv -0.0 / train/adv_std 0.0 / train/con 1.0 / train/rew 0.0 / train/val 786.5 / train/tar 781.7 / train/slowval 791.8 / train/weight 1.0 / train/action_entropy 0.8 / train/action_mean 0.1 / train/action_std 0.9 / train/action_min -3.6 / train/action_max 2.9 / train/ret_replay_mean 752.5 / train/ret_replay_std 32.9 / train/ret_replay_min 696.8 / train/ret_replay_max 820.6 / train/value_replay_mean 767.0 / train/value_replay_std 27.7 / train/value_replay_min 707.7 / train/value_replay_max 841.3 / train/slow_value_replay_mean 773.0 / train/slow_value_replay_std 26.4 / train/slow_value_replay_min 724.2 / train/slow_value_replay_max 843.3 / train/loss/dyn 2.2 / train/loss/rep 2.2 / train/loss/image 4.9 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.0 / train/loss/repval 1.1 / train/opt/loss 9.1 / train/opt/lr 0.0 / train/opt/grad_scale 8192.0 / train/opt/updates 250642.0 / fps/fps 22.7
+Evaluating the policy...
+[240000] episode/eval_score 13.7 / episode/eval_length 250.0 / episode/eval_success 0.0
+[240000] episode/score 11.0 / episode/length 250.0
+[240001] episode/score 4.7 / episode/length 250.0
+[240002] episode/score 9.2 / episode/length 250.0
+[240003] episode/score 38.7 / episode/length 250.0
+[240004] episode/score 11.8 / episode/length 250.0
+[240005] episode/score 7.7 / episode/length 250.0
+[240006] episode/score 14.5 / episode/length 250.0
+[240007] episode/score 25.7 / episode/length 250.0
+[240008] episode/score 5.1 / episode/length 250.0
+[240009] episode/score 13.9 / episode/length 250.0
+[240010] episode/score 5.4 / episode/length 250.0
+[240011] episode/score 8.7 / episode/length 250.0
+[240012] episode/score 280.3 / episode/length 250.0
+[240013] episode/score 8.7 / episode/length 250.0
+[240014] episode/score 35.8 / episode/length 250.0
+[240015] episode/score 13.2 / episode/length 250.0
+[240544] train/dyn_entropy 34.6 / train/rep_entropy 32.1 / train/ret 0.3 / train/ret_005 459.9 / train/ret_095 947.1 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.1 / train/val 573.0 / train/tar 593.6 / train/slowval 556.0 / train/weight 1.0 / train/action_entropy 2.3 / train/action_mean -0.2 / train/action_std 1.0 / train/action_min -4.7 / train/action_max 3.0 / train/ret_replay_mean 588.4 / train/ret_replay_std 124.3 / train/ret_replay_min 446.3 / train/ret_replay_max 880.7 / train/value_replay_mean 537.5 / train/value_replay_std 80.4 / train/value_replay_min 458.2 / train/value_replay_max 876.4 / train/slow_value_replay_mean 525.5 / train/slow_value_replay_std 69.5 / train/slow_value_replay_min 459.5 / train/slow_value_replay_max 752.1 / train/loss/dyn 1.8 / train/loss/rep 1.8 / train/loss/image 4.7 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.5 / train/loss/repval 2.7 / train/opt/loss 9.4 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 255966.0 / fps/fps 22.3
+[245568] train/dyn_entropy 32.9 / train/rep_entropy 30.4 / train/ret 0.3 / train/ret_005 575.9 / train/ret_095 1032.9 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.6 / train/val 715.4 / train/tar 721.9 / train/slowval 712.5 / train/weight 1.0 / train/action_entropy 1.5 / train/action_mean 0.1 / train/action_std 1.0 / train/action_min -3.5 / train/action_max 3.5 / train/ret_replay_mean 700.6 / train/ret_replay_std 156.4 / train/ret_replay_min 555.0 / train/ret_replay_max 1069.8 / train/value_replay_mean 687.4 / train/value_replay_std 132.9 / train/value_replay_min 557.0 / train/value_replay_max 1065.6 / train/slow_value_replay_mean 684.4 / train/slow_value_replay_std 126.5 / train/slow_value_replay_min 558.7 / train/slow_value_replay_max 1061.4 / train/loss/dyn 1.9 / train/loss/rep 1.9 / train/loss/image 5.3 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.1 / train/loss/repval 1.4 / train/opt/loss 9.4 / train/opt/lr 0.0 / train/opt/grad_scale 8192.0 / train/opt/updates 261325.0 / fps/fps 23.2
+[248000] episode/score 115.0 / episode/length 250.0
+[248001] episode/score 10.8 / episode/length 250.0
+[248002] episode/score 8.5 / episode/length 250.0
+[248003] episode/score 8.1 / episode/length 250.0
+[248004] episode/score 12.0 / episode/length 250.0
+[248005] episode/score 836.1 / episode/length 250.0
+[248006] episode/score 13.4 / episode/length 250.0
+[248007] episode/score 7.3 / episode/length 250.0
+[248008] episode/score 3.5 / episode/length 250.0
+[248009] episode/score 1046.5 / episode/length 250.0
+[248010] episode/score 4.7 / episode/length 250.0
+[248011] episode/score 2.6 / episode/length 250.0
+[248012] episode/score 2.3 / episode/length 250.0
+[248013] episode/score 2.3 / episode/length 250.0
+[248014] episode/score 15.6 / episode/length 250.0
+[248015] episode/score 15.2 / episode/length 250.0
+Evaluating the policy...
+[250016] episode/eval_score 54.6 / episode/eval_length 250.0 / episode/eval_success 0.0
+[250560] train/dyn_entropy 33.9 / train/rep_entropy 31.4 / train/ret 0.4 / train/ret_005 520.2 / train/ret_095 1051.4 / train/adv 0.1 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.2 / train/val 700.9 / train/tar 727.6 / train/slowval 670.2 / train/weight 1.0 / train/action_entropy 0.2 / train/action_mean -0.0 / train/action_std 0.9 / train/action_min -3.7 / train/action_max 3.7 / train/ret_replay_mean 689.2 / train/ret_replay_std 119.6 / train/ret_replay_min 553.5 / train/ret_replay_max 1052.0 / train/value_replay_mean 646.2 / train/value_replay_std 100.1 / train/value_replay_min 512.2 / train/value_replay_max 1001.3 / train/slow_value_replay_mean 617.5 / train/slow_value_replay_std 85.9 / train/slow_value_replay_min 498.7 / train/slow_value_replay_max 922.6 / train/loss/dyn 1.9 / train/loss/rep 1.9 / train/loss/image 5.7 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.8 / train/loss/repval 2.1 / train/opt/loss 10.8 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 266650.0 / fps/fps 21.9
+[255552] train/dyn_entropy 33.1 / train/rep_entropy 31.0 / train/ret 0.3 / train/ret_005 755.9 / train/ret_095 1167.3 / train/adv -0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.6 / train/val 871.1 / train/tar 866.7 / train/slowval 881.6 / train/weight 1.0 / train/action_entropy 2.2 / train/action_mean -0.1 / train/action_std 1.0 / train/action_min -3.9 / train/action_max 3.3 / train/ret_replay_mean 843.6 / train/ret_replay_std 80.3 / train/ret_replay_min 725.5 / train/ret_replay_max 1050.6 / train/value_replay_mean 856.2 / train/value_replay_std 99.1 / train/value_replay_min 727.4 / train/value_replay_max 1229.9 / train/slow_value_replay_mean 870.2 / train/slow_value_replay_std 117.0 / train/slow_value_replay_min 720.4 / train/slow_value_replay_max 1307.8 / train/loss/dyn 2.2 / train/loss/rep 2.2 / train/loss/image 4.8 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.2 / train/loss/repval 1.5 / train/opt/loss 9.2 / train/opt/lr 0.0 / train/opt/grad_scale 8192.0 / train/opt/updates 271975.0 / fps/fps 22.8
+[256000] episode/score 12.0 / episode/length 250.0
+[256001] episode/score 8.9 / episode/length 250.0
+[256002] episode/score 5.3 / episode/length 250.0
+[256003] episode/score 10.9 / episode/length 250.0
+[256004] episode/score 23.8 / episode/length 250.0
+[256005] episode/score 4.9 / episode/length 250.0
+[256006] episode/score 40.6 / episode/length 250.0
+[256007] episode/score 11.8 / episode/length 250.0
+[256008] episode/score 9.8 / episode/length 250.0
+[256009] episode/score 7.0 / episode/length 250.0
+[256010] episode/score 5.6 / episode/length 250.0
+[256011] episode/score 1031.0 / episode/length 250.0
+[256012] episode/score 691.5 / episode/length 250.0
+[256013] episode/score 10.6 / episode/length 250.0
+[256014] episode/score 8.8 / episode/length 250.0
+[256015] episode/score 17.4 / episode/length 250.0
+Evaluating the policy...
+[260000] episode/eval_score 101.8 / episode/eval_length 250.0 / episode/eval_success 0.0
+[260544] train/dyn_entropy 36.0 / train/rep_entropy 33.4 / train/ret 0.4 / train/ret_005 765.5 / train/ret_095 1278.4 / train/adv -0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.8 / train/val 950.1 / train/tar 946.9 / train/slowval 952.6 / train/weight 1.0 / train/action_entropy 1.1 / train/action_mean -0.1 / train/action_std 0.9 / train/action_min -3.7 / train/action_max 3.3 / train/ret_replay_mean 914.1 / train/ret_replay_std 251.1 / train/ret_replay_min 720.5 / train/ret_replay_max 1502.8 / train/value_replay_mean 929.9 / train/value_replay_std 229.7 / train/value_replay_min 749.3 / train/value_replay_max 1493.3 / train/slow_value_replay_mean 932.6 / train/slow_value_replay_std 226.7 / train/slow_value_replay_min 754.1 / train/slow_value_replay_max 1477.0 / train/loss/dyn 2.2 / train/loss/rep 2.2 / train/loss/image 5.9 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.0 / train/loss/repval 1.2 / train/opt/loss 10.2 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 277300.0 / fps/fps 22.4
+[264000] episode/score 100.3 / episode/length 250.0
+[264001] episode/score 6.9 / episode/length 250.0
+[264002] episode/score 968.8 / episode/length 250.0
+[264003] episode/score 524.8 / episode/length 250.0
+[264004] episode/score 1224.3 / episode/length 250.0
+[264005] episode/score 5.9 / episode/length 250.0
+[264006] episode/score 1404.3 / episode/length 250.0
+[264007] episode/score 4.1 / episode/length 250.0
+[264008] episode/score 5.7 / episode/length 250.0
+[264009] episode/score 987.5 / episode/length 250.0
+[264010] episode/score 3.7 / episode/length 250.0
+[264011] episode/score 1004.3 / episode/length 250.0
+[264012] episode/score 9.1 / episode/length 250.0
+[264013] episode/score 3.5 / episode/length 250.0
+[264014] episode/score 7.4 / episode/length 250.0
+[264015] episode/score 3.4 / episode/length 250.0
+[265568] train/dyn_entropy 39.1 / train/rep_entropy 36.0 / train/ret 0.3 / train/ret_005 436.8 / train/ret_095 1206.8 / train/adv -0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 1.0 / train/val 664.1 / train/tar 657.2 / train/slowval 693.4 / train/weight 1.0 / train/action_entropy 2.2 / train/action_mean -0.1 / train/action_std 0.9 / train/action_min -3.7 / train/action_max 3.8 / train/ret_replay_mean 618.1 / train/ret_replay_std 200.2 / train/ret_replay_min 384.6 / train/ret_replay_max 1118.8 / train/value_replay_mean 664.4 / train/value_replay_std 182.8 / train/value_replay_min 408.4 / train/value_replay_max 1177.2 / train/slow_value_replay_mean 694.5 / train/slow_value_replay_std 184.0 / train/slow_value_replay_min 415.2 / train/slow_value_replay_max 1200.2 / train/loss/dyn 2.6 / train/loss/rep 2.6 / train/loss/image 6.5 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.9 / train/loss/repval 2.7 / train/opt/loss 12.4 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 282659.0 / fps/fps 22.6
+Evaluating the policy...
+[270016] episode/eval_score 110.2 / episode/eval_length 250.0 / episode/eval_success 0.0
+[270560] train/dyn_entropy 35.1 / train/rep_entropy 32.4 / train/ret 0.1 / train/ret_005 385.5 / train/ret_095 973.2 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.1 / train/val 454.0 / train/tar 459.2 / train/slowval 448.2 / train/weight 1.0 / train/action_entropy 2.0 / train/action_mean -0.1 / train/action_std 0.9 / train/action_min -3.7 / train/action_max 3.5 / train/ret_replay_mean 442.6 / train/ret_replay_std 94.7 / train/ret_replay_min 356.9 / train/ret_replay_max 679.2 / train/value_replay_mean 437.2 / train/value_replay_std 83.2 / train/value_replay_min 355.6 / train/value_replay_max 718.8 / train/slow_value_replay_mean 433.8 / train/slow_value_replay_std 74.7 / train/slow_value_replay_min 360.0 / train/slow_value_replay_max 711.9 / train/loss/dyn 1.9 / train/loss/rep 1.9 / train/loss/image 5.6 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.3 / train/loss/repval 1.6 / train/opt/loss 10.0 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 287983.0 / fps/fps 22.5
+[272000] episode/score 12.1 / episode/length 250.0
+[272001] episode/score 14.0 / episode/length 250.0
+[272002] episode/score 6.7 / episode/length 250.0
+[272003] episode/score 6.5 / episode/length 250.0
+[272004] episode/score 1043.9 / episode/length 250.0
+[272005] episode/score 8.6 / episode/length 250.0
+[272006] episode/score 14.0 / episode/length 250.0
+[272007] episode/score 9.9 / episode/length 250.0
+[272008] episode/score 23.6 / episode/length 250.0
+[272009] episode/score 25.3 / episode/length 250.0
+[272010] episode/score 11.8 / episode/length 250.0
+[272011] episode/score 4.3 / episode/length 250.0
+[272012] episode/score 313.9 / episode/length 250.0
+[272013] episode/score 11.4 / episode/length 250.0
+[272014] episode/score 9.6 / episode/length 250.0
+[272015] episode/score 8.8 / episode/length 250.0
+[275552] train/dyn_entropy 36.1 / train/rep_entropy 34.3 / train/ret 0.1 / train/ret_005 315.9 / train/ret_095 630.2 / train/adv -0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.1 / train/val 363.8 / train/tar 358.9 / train/slowval 367.3 / train/weight 1.0 / train/action_entropy 2.8 / train/action_mean -0.1 / train/action_std 1.0 / train/action_min -3.8 / train/action_max 3.9 / train/ret_replay_mean 348.0 / train/ret_replay_std 45.3 / train/ret_replay_min 297.7 / train/ret_replay_max 541.3 / train/value_replay_mean 354.6 / train/value_replay_std 36.8 / train/value_replay_min 310.1 / train/value_replay_max 474.4 / train/slow_value_replay_mean 358.6 / train/slow_value_replay_std 36.8 / train/slow_value_replay_min 314.6 / train/slow_value_replay_max 483.5 / train/loss/dyn 1.8 / train/loss/rep 1.8 / train/loss/image 4.8 / train/loss/rew 0.3 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.2 / train/loss/repval 1.4 / train/opt/loss 8.7 / train/opt/lr 0.0 / train/opt/grad_scale 8192.0 / train/opt/updates 293308.0 / fps/fps 22.8
+Evaluating the policy...
+[280000] episode/eval_score 56.6 / episode/eval_length 250.0 / episode/eval_success 0.0
+[280000] episode/score 16.1 / episode/length 250.0
+[280001] episode/score 207.8 / episode/length 250.0
+[280002] episode/score 12.8 / episode/length 250.0
+[280003] episode/score 13.9 / episode/length 250.0
+[280004] episode/score 12.1 / episode/length 250.0
+[280005] episode/score 14.0 / episode/length 250.0
+[280006] episode/score 8.4 / episode/length 250.0
+[280007] episode/score 416.7 / episode/length 250.0
+[280008] episode/score 463.9 / episode/length 250.0
+[280009] episode/score 31.0 / episode/length 250.0
+[280010] episode/score 22.9 / episode/length 250.0
+[280011] episode/score 6.1 / episode/length 250.0
+[280012] episode/score 9.5 / episode/length 250.0
+[280013] episode/score 1018.2 / episode/length 250.0
+[280014] episode/score 21.6 / episode/length 250.0
+[280015] episode/score 21.2 / episode/length 250.0
+[280544] train/dyn_entropy 36.6 / train/rep_entropy 34.2 / train/ret 0.4 / train/ret_005 559.7 / train/ret_095 1327.1 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.4 / train/val 856.5 / train/tar 858.7 / train/slowval 846.9 / train/weight 1.0 / train/action_entropy 0.1 / train/action_mean -0.0 / train/action_std 0.8 / train/action_min -3.9 / train/action_max 3.0 / train/ret_replay_mean 821.9 / train/ret_replay_std 245.4 / train/ret_replay_min 521.2 / train/ret_replay_max 1408.6 / train/value_replay_mean 832.7 / train/value_replay_std 240.7 / train/value_replay_min 549.3 / train/value_replay_max 1403.0 / train/slow_value_replay_mean 819.5 / train/slow_value_replay_std 245.0 / train/slow_value_replay_min 548.5 / train/slow_value_replay_max 1403.6 / train/loss/dyn 2.1 / train/loss/rep 2.1 / train/loss/image 6.2 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.4 / train/loss/repval 1.6 / train/opt/loss 10.9 / train/opt/lr 0.0 / train/opt/grad_scale 8192.0 / train/opt/updates 298633.0 / fps/fps 22.6
+[285568] train/dyn_entropy 34.8 / train/rep_entropy 32.2 / train/ret 0.3 / train/ret_005 378.5 / train/ret_095 879.0 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.5 / train/val 511.1 / train/tar 514.2 / train/slowval 504.5 / train/weight 1.0 / train/action_entropy 2.3 / train/action_mean -0.1 / train/action_std 0.9 / train/action_min -4.2 / train/action_max 3.7 / train/ret_replay_mean 501.0 / train/ret_replay_std 160.8 / train/ret_replay_min 355.9 / train/ret_replay_max 1006.6 / train/value_replay_mean 495.6 / train/value_replay_std 157.0 / train/value_replay_min 361.5 / train/value_replay_max 1034.8 / train/slow_value_replay_mean 490.1 / train/slow_value_replay_std 154.4 / train/slow_value_replay_min 360.3 / train/slow_value_replay_max 1032.1 / train/loss/dyn 1.6 / train/loss/rep 1.6 / train/loss/image 5.4 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.2 / train/loss/repval 1.4 / train/opt/loss 9.3 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 303992.0 / fps/fps 22.9
+[288000] episode/score 14.2 / episode/length 250.0
+[288001] episode/score 40.5 / episode/length 250.0
+[288002] episode/score 6.4 / episode/length 250.0
+[288003] episode/score 1286.7 / episode/length 250.0
+[288004] episode/score 1046.6 / episode/length 250.0
+[288005] episode/score 821.3 / episode/length 250.0
+[288006] episode/score 1087.4 / episode/length 250.0
+[288007] episode/score 573.0 / episode/length 250.0
+[288008] episode/score 1152.4 / episode/length 250.0
+[288009] episode/score 562.7 / episode/length 250.0
+[288010] episode/score 10.1 / episode/length 250.0
+[288011] episode/score 30.6 / episode/length 250.0
+[288012] episode/score 560.1 / episode/length 250.0
+[288013] episode/score 17.2 / episode/length 250.0
+[288014] episode/score 12.8 / episode/length 250.0
+[288015] episode/score 533.3 / episode/length 250.0
+Evaluating the policy...
+[290016] episode/eval_score 255.2 / episode/eval_length 250.0 / episode/eval_success 0.0
+[290560] train/dyn_entropy 35.5 / train/rep_entropy 32.9 / train/ret 0.6 / train/ret_005 627.0 / train/ret_095 1369.3 / train/adv -0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.8 / train/val 1050.9 / train/tar 1045.0 / train/slowval 1065.7 / train/weight 1.0 / train/action_entropy 1.8 / train/action_mean -0.1 / train/action_std 1.0 / train/action_min -4.2 / train/action_max 3.7 / train/ret_replay_mean 1020.4 / train/ret_replay_std 214.9 / train/ret_replay_min 523.6 / train/ret_replay_max 1468.9 / train/value_replay_mean 1032.5 / train/value_replay_std 206.2 / train/value_replay_min 543.4 / train/value_replay_max 1462.7 / train/slow_value_replay_mean 1047.6 / train/slow_value_replay_std 206.8 / train/slow_value_replay_min 546.5 / train/slow_value_replay_max 1455.9 / train/loss/dyn 2.1 / train/loss/rep 2.1 / train/loss/image 5.7 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.2 / train/loss/repval 1.4 / train/opt/loss 10.0 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 309317.0 / fps/fps 22.9
+[295552] train/dyn_entropy 36.6 / train/rep_entropy 34.2 / train/ret 0.2 / train/ret_005 743.9 / train/ret_095 1377.2 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.2 / train/val 895.7 / train/tar 896.6 / train/slowval 903.1 / train/weight 1.0 / train/action_entropy 1.7 / train/action_mean -0.1 / train/action_std 1.0 / train/action_min -3.8 / train/action_max 3.1 / train/ret_replay_mean 864.1 / train/ret_replay_std 174.1 / train/ret_replay_min 702.3 / train/ret_replay_max 1401.9 / train/value_replay_mean 864.1 / train/value_replay_std 130.2 / train/value_replay_min 719.6 / train/value_replay_max 1263.7 / train/slow_value_replay_mean 869.5 / train/slow_value_replay_std 126.4 / train/slow_value_replay_min 722.1 / train/slow_value_replay_max 1281.4 / train/loss/dyn 2.0 / train/loss/rep 2.0 / train/loss/image 6.7 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.2 / train/loss/repval 1.4 / train/opt/loss 10.9 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 314642.0 / fps/fps 23.4
+[296000] episode/score 36.2 / episode/length 250.0
+[296001] episode/score 915.8 / episode/length 250.0
+[296002] episode/score 7.1 / episode/length 250.0
+[296003] episode/score 1593.8 / episode/length 250.0
+[296004] episode/score 1054.3 / episode/length 250.0
+[296005] episode/score 1186.4 / episode/length 250.0
+[296006] episode/score 951.8 / episode/length 250.0
+[296007] episode/score 19.6 / episode/length 250.0
+[296008] episode/score 1149.9 / episode/length 250.0
+[296009] episode/score 16.0 / episode/length 250.0
+[296010] episode/score 14.7 / episode/length 250.0
+[296011] episode/score 773.7 / episode/length 250.0
+[296012] episode/score 2.6 / episode/length 250.0
+[296013] episode/score 10.5 / episode/length 250.0
+[296014] episode/score 1447.7 / episode/length 250.0
+[296015] episode/score 1281.6 / episode/length 250.0
+Evaluating the policy...
+[300000] episode/eval_score 582.1 / episode/eval_length 250.0 / episode/eval_success 0.0
+[300544] train/dyn_entropy 36.2 / train/rep_entropy 34.0 / train/ret 0.5 / train/ret_005 714.3 / train/ret_095 1370.8 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.4 / train/val 1013.2 / train/tar 1015.5 / train/slowval 1005.9 / train/weight 1.0 / train/action_entropy 1.4 / train/action_mean 0.1 / train/action_std 0.9 / train/action_min -3.7 / train/action_max 3.2 / train/ret_replay_mean 979.0 / train/ret_replay_std 191.3 / train/ret_replay_min 648.3 / train/ret_replay_max 1315.5 / train/value_replay_mean 986.0 / train/value_replay_std 190.7 / train/value_replay_min 664.1 / train/value_replay_max 1357.7 / train/slow_value_replay_mean 978.7 / train/slow_value_replay_std 192.4 / train/slow_value_replay_min 662.6 / train/slow_value_replay_max 1358.6 / train/loss/dyn 1.8 / train/loss/rep 1.8 / train/loss/image 4.6 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.2 / train/loss/repval 1.2 / train/opt/loss 8.5 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 319966.0 / fps/fps 22.6
+[304000] episode/score 50.1 / episode/length 250.0
+[304001] episode/score 141.6 / episode/length 250.0
+[304002] episode/score 508.4 / episode/length 250.0
+[304003] episode/score 1102.2 / episode/length 250.0
+[304004] episode/score 6.3 / episode/length 250.0
+[304005] episode/score 1460.4 / episode/length 250.0
+[304006] episode/score 48.7 / episode/length 250.0
+[304007] episode/score 29.3 / episode/length 250.0
+[304008] episode/score 630.6 / episode/length 250.0
+[304009] episode/score 1076.5 / episode/length 250.0
+[304010] episode/score 1280.0 / episode/length 250.0
+[304011] episode/score 19.7 / episode/length 250.0
+[304012] episode/score 1035.1 / episode/length 250.0
+[304013] episode/score 772.4 / episode/length 250.0
+[304014] episode/score 46.3 / episode/length 250.0
+[304015] episode/score 975.9 / episode/length 250.0
+[305568] train/dyn_entropy 34.8 / train/rep_entropy 32.2 / train/ret 0.4 / train/ret_005 760.6 / train/ret_095 1361.3 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.6 / train/val 956.9 / train/tar 977.8 / train/slowval 936.6 / train/weight 1.0 / train/action_entropy 1.0 / train/action_mean 0.0 / train/action_std 0.9 / train/action_min -4.3 / train/action_max 3.5 / train/ret_replay_mean 939.6 / train/ret_replay_std 199.3 / train/ret_replay_min 702.2 / train/ret_replay_max 1466.2 / train/value_replay_mean 917.2 / train/value_replay_std 195.8 / train/value_replay_min 685.0 / train/value_replay_max 1485.0 / train/slow_value_replay_mean 896.7 / train/slow_value_replay_std 191.0 / train/slow_value_replay_min 676.1 / train/slow_value_replay_max 1469.4 / train/loss/dyn 2.4 / train/loss/rep 2.4 / train/loss/image 6.9 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.3 / train/loss/repval 1.7 / train/opt/loss 11.9 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 325325.0 / fps/fps 23.3
+Evaluating the policy...
+[310016] episode/eval_score 356.6 / episode/eval_length 250.0 / episode/eval_success 0.0
+[310560] train/dyn_entropy 34.7 / train/rep_entropy 32.4 / train/ret 0.5 / train/ret_005 825.5 / train/ret_095 1500.2 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 1.6 / train/val 1167.2 / train/tar 1173.8 / train/slowval 1161.0 / train/weight 1.0 / train/action_entropy -0.0 / train/action_mean 0.0 / train/action_std 0.8 / train/action_min -3.5 / train/action_max 3.5 / train/ret_replay_mean 1143.4 / train/ret_replay_std 275.3 / train/ret_replay_min 778.3 / train/ret_replay_max 1646.3 / train/value_replay_mean 1136.3 / train/value_replay_std 264.7 / train/value_replay_min 810.3 / train/value_replay_max 1633.0 / train/slow_value_replay_mean 1133.4 / train/slow_value_replay_std 260.1 / train/slow_value_replay_min 805.9 / train/slow_value_replay_max 1631.7 / train/loss/dyn 1.8 / train/loss/rep 1.8 / train/loss/image 4.4 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.2 / train/loss/repval 1.3 / train/opt/loss 8.4 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 330650.0 / fps/fps 23.9
+[312000] episode/score 1667.3 / episode/length 250.0
+[312001] episode/score 1471.2 / episode/length 250.0
+[312002] episode/score 60.8 / episode/length 250.0
+[312003] episode/score 19.1 / episode/length 250.0
+[312004] episode/score 39.6 / episode/length 250.0
+[312005] episode/score 7.9 / episode/length 250.0
+[312006] episode/score 1626.1 / episode/length 250.0
+[312007] episode/score 484.0 / episode/length 250.0
+[312008] episode/score 1459.9 / episode/length 250.0
+[312009] episode/score 1165.2 / episode/length 250.0
+[312010] episode/score 1241.6 / episode/length 250.0
+[312011] episode/score 15.3 / episode/length 250.0
+[312012] episode/score 779.0 / episode/length 250.0
+[312013] episode/score 484.1 / episode/length 250.0
+[312014] episode/score 1023.0 / episode/length 250.0
+[312015] episode/score 1011.8 / episode/length 250.0
+[315552] train/dyn_entropy 36.6 / train/rep_entropy 34.5 / train/ret 0.4 / train/ret_005 612.1 / train/ret_095 1276.5 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.7 / train/val 850.7 / train/tar 877.3 / train/slowval 818.9 / train/weight 1.0 / train/action_entropy -0.0 / train/action_mean 0.1 / train/action_std 0.8 / train/action_min -3.3 / train/action_max 3.2 / train/ret_replay_mean 850.5 / train/ret_replay_std 226.8 / train/ret_replay_min 598.4 / train/ret_replay_max 1538.9 / train/value_replay_mean 801.7 / train/value_replay_std 210.8 / train/value_replay_min 613.9 / train/value_replay_max 1529.9 / train/slow_value_replay_mean 778.3 / train/slow_value_replay_std 210.1 / train/slow_value_replay_min 609.3 / train/slow_value_replay_max 1531.1 / train/loss/dyn 1.7 / train/loss/rep 1.7 / train/loss/image 4.7 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.6 / train/loss/repval 1.9 / train/opt/loss 9.2 / train/opt/lr 0.0 / train/opt/grad_scale 32768.0 / train/opt/updates 335975.0 / fps/fps 24.1
+Evaluating the policy...
+[320000] episode/eval_score 606.1 / episode/eval_length 250.0 / episode/eval_success 0.0
+[320000] episode/score 1161.6 / episode/length 250.0
+[320001] episode/score 217.9 / episode/length 250.0
+[320002] episode/score 1025.6 / episode/length 250.0
+[320003] episode/score 5.2 / episode/length 250.0
+[320004] episode/score 8.9 / episode/length 250.0
+[320005] episode/score 911.0 / episode/length 250.0
+[320006] episode/score 8.1 / episode/length 250.0
+[320007] episode/score 65.1 / episode/length 250.0
+[320008] episode/score 676.7 / episode/length 250.0
+[320009] episode/score 5.0 / episode/length 250.0
+[320010] episode/score 12.0 / episode/length 250.0
+[320011] episode/score 24.1 / episode/length 250.0
+[320012] episode/score 910.9 / episode/length 250.0
+[320013] episode/score 1096.3 / episode/length 250.0
+[320014] episode/score 1259.5 / episode/length 250.0
+[320015] episode/score 973.9 / episode/length 250.0
+[320544] train/dyn_entropy 37.9 / train/rep_entropy 35.5 / train/ret 0.2 / train/ret_005 801.5 / train/ret_095 1588.7 / train/adv -0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.1 / train/val 990.5 / train/tar 985.8 / train/slowval 994.2 / train/weight 1.0 / train/action_entropy 1.9 / train/action_mean 0.2 / train/action_std 0.9 / train/action_min -3.7 / train/action_max 3.4 / train/ret_replay_mean 952.6 / train/ret_replay_std 143.8 / train/ret_replay_min 722.3 / train/ret_replay_max 1277.8 / train/value_replay_mean 979.1 / train/value_replay_std 185.2 / train/value_replay_min 698.7 / train/value_replay_max 1423.1 / train/slow_value_replay_mean 980.9 / train/slow_value_replay_std 193.3 / train/slow_value_replay_min 691.3 / train/slow_value_replay_max 1447.3 / train/loss/dyn 2.2 / train/loss/rep 2.2 / train/loss/image 4.6 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.3 / train/loss/repval 1.6 / train/opt/loss 9.3 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 341300.0 / fps/fps 22.3
+[325568] train/dyn_entropy 37.7 / train/rep_entropy 35.1 / train/ret 0.4 / train/ret_005 1185.0 / train/ret_095 1824.9 / train/adv -0.0 / train/adv_std 0.0 / train/con 1.0 / train/rew 0.8 / train/val 1430.0 / train/tar 1425.2 / train/slowval 1435.3 / train/weight 1.0 / train/action_entropy 0.4 / train/action_mean 0.2 / train/action_std 0.8 / train/action_min -3.3 / train/action_max 3.0 / train/ret_replay_mean 1384.9 / train/ret_replay_std 167.2 / train/ret_replay_min 1127.7 / train/ret_replay_max 1695.0 / train/value_replay_mean 1390.0 / train/value_replay_std 161.4 / train/value_replay_min 1133.1 / train/value_replay_max 1706.4 / train/slow_value_replay_mean 1397.7 / train/slow_value_replay_std 162.5 / train/slow_value_replay_min 1134.9 / train/slow_value_replay_max 1703.4 / train/loss/dyn 2.2 / train/loss/rep 2.2 / train/loss/image 5.7 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 0.9 / train/loss/repval 1.1 / train/opt/loss 9.9 / train/opt/lr 0.0 / train/opt/grad_scale 8192.0 / train/opt/updates 346659.0 / fps/fps 23.3
+[328000] episode/score 928.6 / episode/length 250.0
+[328001] episode/score 6.7 / episode/length 250.0
+[328002] episode/score 2.7 / episode/length 250.0
+[328003] episode/score 1704.8 / episode/length 250.0
+[328004] episode/score 1240.6 / episode/length 250.0
+[328005] episode/score 1385.6 / episode/length 250.0
+[328006] episode/score 667.6 / episode/length 250.0
+[328007] episode/score 1753.3 / episode/length 250.0
+[328008] episode/score 789.0 / episode/length 250.0
+[328009] episode/score 696.5 / episode/length 250.0
+[328010] episode/score 10.6 / episode/length 250.0
+[328011] episode/score 14.1 / episode/length 250.0
+[328012] episode/score 2621.3 / episode/length 250.0
+[328013] episode/score 1597.8 / episode/length 250.0
+[328014] episode/score 27.4 / episode/length 250.0
+[328015] episode/score 348.9 / episode/length 250.0
+Evaluating the policy...
+[330016] episode/eval_score 532.7 / episode/eval_length 250.0 / episode/eval_success 0.0
+[330560] train/dyn_entropy 38.7 / train/rep_entropy 36.3 / train/ret 0.3 / train/ret_005 1237.5 / train/ret_095 1835.2 / train/adv -0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.7 / train/val 1412.9 / train/tar 1403.7 / train/slowval 1421.4 / train/weight 1.0 / train/action_entropy 1.0 / train/action_mean 0.1 / train/action_std 0.9 / train/action_min -3.2 / train/action_max 3.3 / train/ret_replay_mean 1354.8 / train/ret_replay_std 150.8 / train/ret_replay_min 1173.9 / train/ret_replay_max 1634.4 / train/value_replay_mean 1380.1 / train/value_replay_std 155.2 / train/value_replay_min 1199.4 / train/value_replay_max 1647.2 / train/slow_value_replay_mean 1388.8 / train/slow_value_replay_std 154.0 / train/slow_value_replay_min 1203.0 / train/slow_value_replay_max 1650.6 / train/loss/dyn 2.1 / train/loss/rep 2.1 / train/loss/image 5.4 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.0 / train/loss/repval 1.1 / train/opt/loss 9.6 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 351983.0 / fps/fps 22.6
+[335552] train/dyn_entropy 37.3 / train/rep_entropy 34.8 / train/ret 0.6 / train/ret_005 1182.5 / train/ret_095 2145.1 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 1.0 / train/val 1761.3 / train/tar 1762.4 / train/slowval 1743.5 / train/weight 1.0 / train/action_entropy 0.1 / train/action_mean 0.1 / train/action_std 0.8 / train/action_min -3.2 / train/action_max 3.7 / train/ret_replay_mean 1688.2 / train/ret_replay_std 287.7 / train/ret_replay_min 1286.4 / train/ret_replay_max 2173.4 / train/value_replay_mean 1689.3 / train/value_replay_std 288.4 / train/value_replay_min 1258.8 / train/value_replay_max 2219.6 / train/slow_value_replay_mean 1668.9 / train/slow_value_replay_std 272.7 / train/slow_value_replay_min 1256.2 / train/slow_value_replay_max 2193.6 / train/loss/dyn 1.9 / train/loss/rep 1.9 / train/loss/image 4.2 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.1 / train/loss/repval 1.3 / train/opt/loss 8.2 / train/opt/lr 0.0 / train/opt/grad_scale 8192.0 / train/opt/updates 357308.0 / fps/fps 22.4
+[336000] episode/score 22.5 / episode/length 250.0
+[336001] episode/score 2125.1 / episode/length 250.0
+[336002] episode/score 433.2 / episode/length 250.0
+[336003] episode/score 41.2 / episode/length 250.0
+[336004] episode/score 66.6 / episode/length 250.0
+[336005] episode/score 599.2 / episode/length 250.0
+[336006] episode/score 2346.2 / episode/length 250.0
+[336007] episode/score 14.6 / episode/length 250.0
+[336008] episode/score 4.6 / episode/length 250.0
+[336009] episode/score 1249.4 / episode/length 250.0
+[336010] episode/score 4.3 / episode/length 250.0
+[336011] episode/score 21.8 / episode/length 250.0
+[336012] episode/score 1419.9 / episode/length 250.0
+[336013] episode/score 1625.3 / episode/length 250.0
+[336014] episode/score 3.5 / episode/length 250.0
+[336015] episode/score 5.5 / episode/length 250.0
+Evaluating the policy...
+[340000] episode/eval_score 792.2 / episode/eval_length 250.0 / episode/eval_success 0.0
+[340544] train/dyn_entropy 36.1 / train/rep_entropy 33.6 / train/ret 0.3 / train/ret_005 1269.4 / train/ret_095 2297.9 / train/adv -0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 1.0 / train/val 1610.2 / train/tar 1599.0 / train/slowval 1617.3 / train/weight 1.0 / train/action_entropy 0.6 / train/action_mean 0.1 / train/action_std 0.8 / train/action_min -3.2 / train/action_max 2.9 / train/ret_replay_mean 1551.2 / train/ret_replay_std 349.6 / train/ret_replay_min 1173.4 / train/ret_replay_max 2404.2 / train/value_replay_mean 1571.4 / train/value_replay_std 334.5 / train/value_replay_min 1201.9 / train/value_replay_max 2429.1 / train/slow_value_replay_mean 1578.5 / train/slow_value_replay_std 330.7 / train/slow_value_replay_min 1207.2 / train/slow_value_replay_max 2445.7 / train/loss/dyn 2.0 / train/loss/rep 2.0 / train/loss/image 5.4 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.2 / train/loss/repval 1.3 / train/opt/loss 9.6 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 362633.0 / fps/fps 22.0
+[344000] episode/score 944.7 / episode/length 250.0
+[344001] episode/score 17.9 / episode/length 250.0
+[344002] episode/score 1682.3 / episode/length 250.0
+[344003] episode/score 1505.3 / episode/length 250.0
+[344004] episode/score 5.1 / episode/length 250.0
+[344005] episode/score 1922.4 / episode/length 250.0
+[344006] episode/score 2061.1 / episode/length 250.0
+[344007] episode/score 44.6 / episode/length 250.0
+[344008] episode/score 1840.5 / episode/length 250.0
+[344009] episode/score 3.1 / episode/length 250.0
+[344010] episode/score 9.4 / episode/length 250.0
+[344011] episode/score 9.1 / episode/length 250.0
+[344012] episode/score 10.5 / episode/length 250.0
+[344013] episode/score 28.9 / episode/length 250.0
+[344014] episode/score 39.2 / episode/length 250.0
+[344015] episode/score 3.8 / episode/length 250.0
+[345568] train/dyn_entropy 35.8 / train/rep_entropy 33.8 / train/ret 0.4 / train/ret_005 1350.0 / train/ret_095 2345.9 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 2.0 / train/val 1730.0 / train/tar 1754.9 / train/slowval 1708.2 / train/weight 1.0 / train/action_entropy 0.5 / train/action_mean 0.2 / train/action_std 0.8 / train/action_min -3.1 / train/action_max 4.4 / train/ret_replay_mean 1687.5 / train/ret_replay_std 422.8 / train/ret_replay_min 1296.6 / train/ret_replay_max 2674.4 / train/value_replay_mean 1667.7 / train/value_replay_std 379.5 / train/value_replay_min 1295.0 / train/value_replay_max 2626.4 / train/slow_value_replay_mean 1650.5 / train/slow_value_replay_std 366.4 / train/slow_value_replay_min 1311.2 / train/slow_value_replay_max 2625.7 / train/loss/dyn 1.8 / train/loss/rep 1.8 / train/loss/image 4.6 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.1 / train/loss/repval 1.3 / train/opt/loss 8.6 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 367992.0 / fps/fps 23.0
+Evaluating the policy...
+[350016] episode/eval_score 623.8 / episode/eval_length 250.0 / episode/eval_success 0.0
+[350560] train/dyn_entropy 36.5 / train/rep_entropy 34.7 / train/ret 0.6 / train/ret_005 1549.8 / train/ret_095 2923.6 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 2.0 / train/val 2365.0 / train/tar 2386.7 / train/slowval 2346.9 / train/weight 1.0 / train/action_entropy -0.2 / train/action_mean 0.1 / train/action_std 0.8 / train/action_min -4.1 / train/action_max 2.9 / train/ret_replay_mean 2300.7 / train/ret_replay_std 458.9 / train/ret_replay_min 1612.7 / train/ret_replay_max 3087.0 / train/value_replay_mean 2288.4 / train/value_replay_std 482.8 / train/value_replay_min 1416.5 / train/value_replay_max 3068.6 / train/slow_value_replay_mean 2270.4 / train/slow_value_replay_std 487.7 / train/slow_value_replay_min 1403.0 / train/slow_value_replay_max 3068.2 / train/loss/dyn 1.9 / train/loss/rep 1.9 / train/loss/image 5.0 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.0 / train/loss/repval 1.3 / train/opt/loss 9.0 / train/opt/lr 0.0 / train/opt/grad_scale 32768.0 / train/opt/updates 373317.0 / fps/fps 21.9
+[352000] episode/score 6.3 / episode/length 250.0
+[352001] episode/score 5.4 / episode/length 250.0
+[352002] episode/score 1.7 / episode/length 250.0
+[352003] episode/score 897.0 / episode/length 250.0
+[352004] episode/score 2053.7 / episode/length 250.0
+[352005] episode/score 1.9 / episode/length 250.0
+[352006] episode/score 2363.5 / episode/length 250.0
+[352007] episode/score 31.0 / episode/length 250.0
+[352008] episode/score 7.8 / episode/length 250.0
+[352009] episode/score 24.4 / episode/length 250.0
+[352010] episode/score 2776.1 / episode/length 250.0
+[352011] episode/score 46.6 / episode/length 250.0
+[352012] episode/score 2.4 / episode/length 250.0
+[352013] episode/score 83.4 / episode/length 250.0
+[352014] episode/score 2398.5 / episode/length 250.0
+[352015] episode/score 718.4 / episode/length 250.0
+[355552] train/dyn_entropy 37.7 / train/rep_entropy 34.8 / train/ret 0.3 / train/ret_005 1338.1 / train/ret_095 2155.1 / train/adv -0.0 / train/adv_std 0.0 / train/con 1.0 / train/rew 0.6 / train/val 1558.8 / train/tar 1547.4 / train/slowval 1563.4 / train/weight 1.0 / train/action_entropy 0.4 / train/action_mean -0.1 / train/action_std 0.7 / train/action_min -3.4 / train/action_max 3.0 / train/ret_replay_mean 1513.0 / train/ret_replay_std 275.5 / train/ret_replay_min 1276.1 / train/ret_replay_max 2157.2 / train/value_replay_mean 1528.0 / train/value_replay_std 238.8 / train/value_replay_min 1291.5 / train/value_replay_max 2232.9 / train/slow_value_replay_mean 1534.1 / train/slow_value_replay_std 219.7 / train/slow_value_replay_min 1323.3 / train/slow_value_replay_max 2205.2 / train/loss/dyn 2.2 / train/loss/rep 2.2 / train/loss/image 5.8 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 0.9 / train/loss/repval 1.2 / train/opt/loss 9.9 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 378642.0 / fps/fps 22.6
+Evaluating the policy...
+[360000] episode/eval_score 1447.3 / episode/eval_length 250.0 / episode/eval_success 0.2
+[360000] episode/score 9.2 / episode/length 250.0
+[360001] episode/score 1924.5 / episode/length 250.0
+[360002] episode/score 1842.4 / episode/length 250.0
+[360003] episode/score 9.3 / episode/length 250.0
+[360004] episode/score 1162.6 / episode/length 250.0
+[360005] episode/score 2418.1 / episode/length 250.0
+[360006] episode/score 2433.5 / episode/length 250.0
+[360007] episode/score 712.3 / episode/length 250.0
+[360008] episode/score 2152.6 / episode/length 250.0
+[360009] episode/score 1581.1 / episode/length 250.0
+[360010] episode/score 6.7 / episode/length 250.0
+[360011] episode/score 4.1 / episode/length 250.0
+[360012] episode/score 24.1 / episode/length 250.0
+[360013] episode/score 2283.4 / episode/length 250.0
+[360014] episode/score 2268.2 / episode/length 250.0
+[360015] episode/score 12.0 / episode/length 250.0
+[360544] train/dyn_entropy 38.0 / train/rep_entropy 35.5 / train/ret 0.6 / train/ret_005 1602.8 / train/ret_095 2893.1 / train/adv 0.0 / train/adv_std 0.0 / train/con 1.0 / train/rew 1.9 / train/val 2338.4 / train/tar 2346.3 / train/slowval 2330.8 / train/weight 1.0 / train/action_entropy 0.5 / train/action_mean 0.2 / train/action_std 0.8 / train/action_min -3.9 / train/action_max 3.1 / train/ret_replay_mean 2273.1 / train/ret_replay_std 475.1 / train/ret_replay_min 1665.1 / train/ret_replay_max 3054.2 / train/value_replay_mean 2276.2 / train/value_replay_std 445.2 / train/value_replay_min 1642.1 / train/value_replay_max 3058.9 / train/slow_value_replay_mean 2266.2 / train/slow_value_replay_std 435.7 / train/slow_value_replay_min 1645.0 / train/slow_value_replay_max 3059.7 / train/loss/dyn 1.8 / train/loss/rep 1.8 / train/loss/image 4.7 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.0 / train/loss/repval 1.3 / train/opt/loss 8.5 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 383966.0 / fps/fps 22.4
+[365568] train/dyn_entropy 39.0 / train/rep_entropy 35.9 / train/ret 0.4 / train/ret_005 1462.9 / train/ret_095 3436.3 / train/adv -0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 1.5 / train/val 2209.5 / train/tar 2191.6 / train/slowval 2188.5 / train/weight 1.0 / train/action_entropy -0.1 / train/action_mean 0.1 / train/action_std 0.8 / train/action_min -3.1 / train/action_max 3.0 / train/ret_replay_mean 2093.0 / train/ret_replay_std 715.2 / train/ret_replay_min 1339.1 / train/ret_replay_max 3618.7 / train/value_replay_mean 2172.5 / train/value_replay_std 682.9 / train/value_replay_min 1376.9 / train/value_replay_max 3595.5 / train/slow_value_replay_mean 2146.5 / train/slow_value_replay_std 686.6 / train/slow_value_replay_min 1365.4 / train/slow_value_replay_max 3595.1 / train/loss/dyn 2.2 / train/loss/rep 2.2 / train/loss/image 4.8 / train/loss/rew 0.6 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.2 / train/loss/repval 1.7 / train/opt/loss 9.5 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 389325.0 / fps/fps 22.9
+[368000] episode/score 2807.3 / episode/length 250.0
+[368001] episode/score 1488.3 / episode/length 250.0
+[368002] episode/score 78.2 / episode/length 250.0
+[368003] episode/score 18.7 / episode/length 250.0
+[368004] episode/score 2096.3 / episode/length 250.0
+[368005] episode/score 2033.0 / episode/length 250.0
+[368006] episode/score 10.1 / episode/length 250.0
+[368007] episode/score 14.8 / episode/length 250.0
+[368008] episode/score 1857.7 / episode/length 250.0
+[368009] episode/score 1688.8 / episode/length 250.0
+[368010] episode/score 24.2 / episode/length 250.0
+[368011] episode/score 8.4 / episode/length 250.0
+[368012] episode/score 16.4 / episode/length 250.0
+[368013] episode/score 2429.5 / episode/length 250.0
+[368014] episode/score 2749.7 / episode/length 250.0
+[368015] episode/score 16.6 / episode/length 250.0
+Evaluating the policy...
+[370016] episode/eval_score 1410.7 / episode/eval_length 250.0 / episode/eval_success 0.1
+[370560] train/dyn_entropy 37.2 / train/rep_entropy 34.6 / train/ret 0.5 / train/ret_005 1772.2 / train/ret_095 3417.6 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 1.8 / train/val 2498.5 / train/tar 2516.4 / train/slowval 2502.4 / train/weight 1.0 / train/action_entropy 0.4 / train/action_mean 0.1 / train/action_std 0.9 / train/action_min -3.6 / train/action_max 3.7 / train/ret_replay_mean 2419.6 / train/ret_replay_std 554.7 / train/ret_replay_min 1687.1 / train/ret_replay_max 3526.3 / train/value_replay_mean 2405.5 / train/value_replay_std 501.4 / train/value_replay_min 1693.4 / train/value_replay_max 3537.4 / train/slow_value_replay_mean 2416.1 / train/slow_value_replay_std 506.0 / train/slow_value_replay_min 1688.9 / train/slow_value_replay_max 3539.1 / train/loss/dyn 1.7 / train/loss/rep 1.7 / train/loss/image 4.7 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.3 / train/loss/repval 1.2 / train/opt/loss 8.7 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 394650.0 / fps/fps 22.3
+[375552] train/dyn_entropy 37.3 / train/rep_entropy 35.6 / train/ret 0.3 / train/ret_005 1409.7 / train/ret_095 2955.9 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.3 / train/val 1854.1 / train/tar 1865.4 / train/slowval 1833.9 / train/weight 1.0 / train/action_entropy 1.3 / train/action_mean -0.0 / train/action_std 0.9 / train/action_min -4.0 / train/action_max 3.4 / train/ret_replay_mean 1797.3 / train/ret_replay_std 405.7 / train/ret_replay_min 1246.7 / train/ret_replay_max 2735.1 / train/value_replay_mean 1801.1 / train/value_replay_std 377.4 / train/value_replay_min 1286.2 / train/value_replay_max 2683.5 / train/slow_value_replay_mean 1774.5 / train/slow_value_replay_std 371.4 / train/slow_value_replay_min 1284.2 / train/slow_value_replay_max 2662.0 / train/loss/dyn 2.1 / train/loss/rep 2.1 / train/loss/image 6.0 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.1 / train/loss/repval 1.2 / train/opt/loss 10.2 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 399975.0 / fps/fps 23.1
+[376000] episode/score 1296.5 / episode/length 250.0
+[376001] episode/score 33.8 / episode/length 250.0
+[376002] episode/score 1441.8 / episode/length 250.0
+[376003] episode/score 2021.2 / episode/length 250.0
+[376004] episode/score 2590.8 / episode/length 250.0
+[376005] episode/score 2.6 / episode/length 250.0
+[376006] episode/score 3714.0 / episode/length 250.0
+[376007] episode/score 1663.3 / episode/length 250.0
+[376008] episode/score 3.6 / episode/length 250.0
+[376009] episode/score 9.6 / episode/length 250.0
+[376010] episode/score 4.3 / episode/length 250.0
+[376011] episode/score 1898.6 / episode/length 250.0
+[376012] episode/score 2815.1 / episode/length 250.0
+[376013] episode/score 2795.8 / episode/length 250.0
+[376014] episode/score 2801.8 / episode/length 250.0
+[376015] episode/score 1511.6 / episode/length 250.0
+Evaluating the policy...
+[380000] episode/eval_score 700.9 / episode/eval_length 250.0 / episode/eval_success 0.0
+[380544] train/dyn_entropy 36.7 / train/rep_entropy 34.3 / train/ret 0.5 / train/ret_005 1342.9 / train/ret_095 2754.1 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 2.0 / train/val 2025.0 / train/tar 2025.6 / train/slowval 2034.2 / train/weight 1.0 / train/action_entropy 0.8 / train/action_mean 0.1 / train/action_std 0.8 / train/action_min -3.6 / train/action_max 3.4 / train/ret_replay_mean 1972.9 / train/ret_replay_std 433.9 / train/ret_replay_min 1260.0 / train/ret_replay_max 2558.5 / train/value_replay_mean 1984.2 / train/value_replay_std 421.1 / train/value_replay_min 1306.2 / train/value_replay_max 2617.1 / train/slow_value_replay_mean 1993.0 / train/slow_value_replay_std 422.2 / train/slow_value_replay_min 1325.2 / train/slow_value_replay_max 2634.4 / train/loss/dyn 1.7 / train/loss/rep 1.7 / train/loss/image 4.4 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.0 / train/loss/repval 1.3 / train/opt/loss 8.1 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 405300.0 / fps/fps 22.5
+[384000] episode/score 2.7 / episode/length 250.0
+[384001] episode/score 5.3 / episode/length 250.0
+[384002] episode/score 2258.6 / episode/length 250.0
+[384003] episode/score 2.0 / episode/length 250.0
+[384004] episode/score 2632.6 / episode/length 250.0
+[384005] episode/score 2124.9 / episode/length 250.0
+[384006] episode/score 2.4 / episode/length 250.0
+[384007] episode/score 1754.8 / episode/length 250.0
+[384008] episode/score 1917.2 / episode/length 250.0
+[384009] episode/score 2564.4 / episode/length 250.0
+[384010] episode/score 2369.9 / episode/length 250.0
+[384011] episode/score 2655.4 / episode/length 250.0
+[384012] episode/score 5.8 / episode/length 250.0
+[384013] episode/score 10.9 / episode/length 250.0
+[384014] episode/score 2245.9 / episode/length 250.0
+[384015] episode/score 18.5 / episode/length 250.0
+[385568] train/dyn_entropy 35.6 / train/rep_entropy 33.3 / train/ret 0.4 / train/ret_005 1488.1 / train/ret_095 2915.6 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.4 / train/val 2008.7 / train/tar 2011.5 / train/slowval 1989.7 / train/weight 1.0 / train/action_entropy 0.4 / train/action_mean 0.0 / train/action_std 0.8 / train/action_min -3.7 / train/action_max 2.9 / train/ret_replay_mean 1918.0 / train/ret_replay_std 296.2 / train/ret_replay_min 1497.6 / train/ret_replay_max 2533.9 / train/value_replay_mean 1939.7 / train/value_replay_std 287.0 / train/value_replay_min 1537.9 / train/value_replay_max 2696.1 / train/slow_value_replay_mean 1920.5 / train/slow_value_replay_std 279.1 / train/slow_value_replay_min 1526.1 / train/slow_value_replay_max 2669.8 / train/loss/dyn 1.7 / train/loss/rep 1.7 / train/loss/image 5.1 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.2 / train/loss/repval 1.4 / train/opt/loss 9.0 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 410659.0 / fps/fps 22.8
+Evaluating the policy...
+[390016] episode/eval_score 217.2 / episode/eval_length 250.0 / episode/eval_success 0.0
+[390560] train/dyn_entropy 38.3 / train/rep_entropy 35.7 / train/ret 0.4 / train/ret_005 1378.1 / train/ret_095 2873.3 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 1.4 / train/val 2001.4 / train/tar 2013.2 / train/slowval 1996.3 / train/weight 1.0 / train/action_entropy -0.3 / train/action_mean -0.1 / train/action_std 0.7 / train/action_min -3.3 / train/action_max 3.6 / train/ret_replay_mean 1934.1 / train/ret_replay_std 490.3 / train/ret_replay_min 1312.3 / train/ret_replay_max 2938.8 / train/value_replay_mean 1939.4 / train/value_replay_std 465.0 / train/value_replay_min 1349.3 / train/value_replay_max 3034.2 / train/slow_value_replay_mean 1928.7 / train/slow_value_replay_std 456.9 / train/slow_value_replay_min 1363.0 / train/slow_value_replay_max 3031.0 / train/loss/dyn 2.2 / train/loss/rep 2.2 / train/loss/image 6.2 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.1 / train/loss/repval 1.4 / train/opt/loss 10.6 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 415983.0 / fps/fps 22.6
+[392000] episode/score 2218.4 / episode/length 250.0
+[392001] episode/score 12.7 / episode/length 250.0
+[392002] episode/score 9.4 / episode/length 250.0
+[392003] episode/score 1700.3 / episode/length 250.0
+[392004] episode/score 51.6 / episode/length 250.0
+[392005] episode/score 6.8 / episode/length 250.0
+[392006] episode/score 1826.2 / episode/length 250.0
+[392007] episode/score 685.7 / episode/length 250.0
+[392008] episode/score 2.2 / episode/length 250.0
+[392009] episode/score 15.5 / episode/length 250.0
+[392010] episode/score 2205.2 / episode/length 250.0
+[392011] episode/score 1759.4 / episode/length 250.0
+[392012] episode/score 2903.5 / episode/length 250.0
+[392013] episode/score 19.7 / episode/length 250.0
+[392014] episode/score 2040.1 / episode/length 250.0
+[392015] episode/score 1845.7 / episode/length 250.0
+[395552] train/dyn_entropy 36.1 / train/rep_entropy 34.4 / train/ret 0.5 / train/ret_005 1085.8 / train/ret_095 2527.3 / train/adv -0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 1.6 / train/val 1835.8 / train/tar 1831.5 / train/slowval 1853.0 / train/weight 1.0 / train/action_entropy 0.1 / train/action_mean 0.2 / train/action_std 0.8 / train/action_min -3.5 / train/action_max 3.7 / train/ret_replay_mean 1755.2 / train/ret_replay_std 531.1 / train/ret_replay_min 1010.9 / train/ret_replay_max 2597.9 / train/value_replay_mean 1786.0 / train/value_replay_std 553.3 / train/value_replay_min 1061.7 / train/value_replay_max 2622.2 / train/slow_value_replay_mean 1808.7 / train/slow_value_replay_std 559.9 / train/slow_value_replay_min 1070.6 / train/slow_value_replay_max 2630.0 / train/loss/dyn 1.7 / train/loss/rep 1.7 / train/loss/image 4.1 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.2 / train/loss/repval 1.4 / train/opt/loss 8.0 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 421308.0 / fps/fps 23.0
+Evaluating the policy...
+[400000] episode/eval_score 946.2 / episode/eval_length 250.0 / episode/eval_success 0.0
+[400000] episode/score 1587.2 / episode/length 250.0
+[400001] episode/score 15.0 / episode/length 250.0
+[400002] episode/score 3.2 / episode/length 250.0
+[400003] episode/score 6.6 / episode/length 250.0
+[400004] episode/score 336.6 / episode/length 250.0
+[400005] episode/score 475.5 / episode/length 250.0
+[400006] episode/score 1806.6 / episode/length 250.0
+[400007] episode/score 1661.0 / episode/length 250.0
+[400008] episode/score 1730.0 / episode/length 250.0
+[400009] episode/score 2489.7 / episode/length 250.0
+[400010] episode/score 8.4 / episode/length 250.0
+[400011] episode/score 31.6 / episode/length 250.0
+[400012] episode/score 9.3 / episode/length 250.0
+[400013] episode/score 22.8 / episode/length 250.0
+[400014] episode/score 262.4 / episode/length 250.0
+[400015] episode/score 940.4 / episode/length 250.0
+[400544] train/dyn_entropy 38.6 / train/rep_entropy 36.3 / train/ret 0.5 / train/ret_005 1337.9 / train/ret_095 2858.1 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 2.4 / train/val 2083.9 / train/tar 2104.2 / train/slowval 2095.0 / train/weight 1.0 / train/action_entropy -0.0 / train/action_mean 0.1 / train/action_std 0.8 / train/action_min -3.2 / train/action_max 3.4 / train/ret_replay_mean 2019.5 / train/ret_replay_std 421.9 / train/ret_replay_min 1330.3 / train/ret_replay_max 2692.6 / train/value_replay_mean 2019.8 / train/value_replay_std 352.7 / train/value_replay_min 1401.1 / train/value_replay_max 2641.5 / train/slow_value_replay_mean 2030.7 / train/slow_value_replay_std 340.4 / train/slow_value_replay_min 1419.0 / train/slow_value_replay_max 2647.8 / train/loss/dyn 2.0 / train/loss/rep 2.0 / train/loss/image 5.1 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.2 / train/loss/repval 1.5 / train/opt/loss 9.5 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 426633.0 / fps/fps 22.1
+[405568] train/dyn_entropy 39.1 / train/rep_entropy 36.5 / train/ret 0.3 / train/ret_005 1168.2 / train/ret_095 2767.1 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 0.2 / train/val 1575.4 / train/tar 1635.9 / train/slowval 1534.6 / train/weight 1.0 / train/action_entropy 1.4 / train/action_mean -0.0 / train/action_std 0.9 / train/action_min -3.4 / train/action_max 3.4 / train/ret_replay_mean 1581.8 / train/ret_replay_std 398.9 / train/ret_replay_min 1114.8 / train/ret_replay_max 2504.3 / train/value_replay_mean 1475.8 / train/value_replay_std 273.3 / train/value_replay_min 1142.0 / train/value_replay_max 2448.8 / train/slow_value_replay_mean 1440.4 / train/slow_value_replay_std 239.5 / train/slow_value_replay_min 1134.5 / train/slow_value_replay_max 2301.6 / train/loss/dyn 2.3 / train/loss/rep 2.3 / train/loss/image 6.6 / train/loss/rew 0.3 / train/loss/con 0.0 / train/loss/policy -0.1 / train/loss/value 1.5 / train/loss/repval 2.3 / train/opt/loss 11.6 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 431992.0 / fps/fps 23.0
+[408000] episode/score 9.5 / episode/length 250.0
+[408001] episode/score 1564.1 / episode/length 250.0
+[408002] episode/score 15.9 / episode/length 250.0
+[408003] episode/score 5.1 / episode/length 250.0
+[408004] episode/score 16.7 / episode/length 250.0
+[408005] episode/score 1624.1 / episode/length 250.0
+[408006] episode/score 1421.4 / episode/length 250.0
+[408007] episode/score 5.1 / episode/length 250.0
+[408008] episode/score 2569.1 / episode/length 250.0
+[408009] episode/score 10.1 / episode/length 250.0
+[408010] episode/score 2787.2 / episode/length 250.0
+[408011] episode/score 3381.0 / episode/length 250.0
+[408012] episode/score 365.9 / episode/length 250.0
+[408013] episode/score 1402.7 / episode/length 250.0
+[408014] episode/score 3.2 / episode/length 250.0
+[408015] episode/score 176.8 / episode/length 250.0
+Evaluating the policy...
+[410016] episode/eval_score 1215.2 / episode/eval_length 250.0 / episode/eval_success 0.1
+[410560] train/dyn_entropy 39.0 / train/rep_entropy 36.8 / train/ret 0.3 / train/ret_005 1126.5 / train/ret_095 2688.9 / train/adv -0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 1.8 / train/val 1609.8 / train/tar 1602.9 / train/slowval 1621.6 / train/weight 1.0 / train/action_entropy 1.1 / train/action_mean 0.0 / train/action_std 0.9 / train/action_min -3.7 / train/action_max 3.2 / train/ret_replay_mean 1540.7 / train/ret_replay_std 400.1 / train/ret_replay_min 1032.3 / train/ret_replay_max 2273.9 / train/value_replay_mean 1581.8 / train/value_replay_std 471.7 / train/value_replay_min 1041.3 / train/value_replay_max 3015.8 / train/slow_value_replay_mean 1594.5 / train/slow_value_replay_std 493.6 / train/slow_value_replay_min 1033.5 / train/slow_value_replay_max 3116.0 / train/loss/dyn 1.9 / train/loss/rep 1.9 / train/loss/image 4.3 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.3 / train/loss/repval 1.7 / train/opt/loss 8.8 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 437317.0 / fps/fps 22.4
+[415552] train/dyn_entropy 36.8 / train/rep_entropy 34.9 / train/ret 0.3 / train/ret_005 1061.2 / train/ret_095 2325.0 / train/adv -0.0 / train/adv_std 0.0 / train/con 1.0 / train/rew 2.3 / train/val 1458.3 / train/tar 1452.7 / train/slowval 1457.7 / train/weight 1.0 / train/action_entropy 1.5 / train/action_mean -0.0 / train/action_std 0.9 / train/action_min -4.4 / train/action_max 4.1 / train/ret_replay_mean 1421.0 / train/ret_replay_std 513.6 / train/ret_replay_min 974.2 / train/ret_replay_max 2707.6 / train/value_replay_mean 1433.6 / train/value_replay_std 497.7 / train/value_replay_min 1006.2 / train/value_replay_max 2677.6 / train/slow_value_replay_mean 1430.7 / train/slow_value_replay_std 485.0 / train/slow_value_replay_min 1018.7 / train/slow_value_replay_max 2603.5 / train/loss/dyn 1.8 / train/loss/rep 1.8 / train/loss/image 4.9 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.0 / train/loss/repval 1.3 / train/opt/loss 8.6 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 442642.0 / fps/fps 23.0
+[416000] episode/score 103.1 / episode/length 250.0
+[416001] episode/score 87.8 / episode/length 250.0
+[416002] episode/score 13.8 / episode/length 250.0
+[416003] episode/score 1835.8 / episode/length 250.0
+[416004] episode/score 1192.8 / episode/length 250.0
+[416005] episode/score 1830.7 / episode/length 250.0
+[416006] episode/score 2127.9 / episode/length 250.0
+[416007] episode/score 835.1 / episode/length 250.0
+[416008] episode/score 2173.3 / episode/length 250.0
+[416009] episode/score 2.7 / episode/length 250.0
+[416010] episode/score 206.3 / episode/length 250.0
+[416011] episode/score 207.3 / episode/length 250.0
+[416012] episode/score 1861.2 / episode/length 250.0
+[416013] episode/score 23.9 / episode/length 250.0
+[416014] episode/score 1077.6 / episode/length 250.0
+[416015] episode/score 12.3 / episode/length 250.0
+Evaluating the policy...
+[420000] episode/eval_score 804.2 / episode/eval_length 250.0 / episode/eval_success 0.0
+[420544] train/dyn_entropy 39.9 / train/rep_entropy 37.9 / train/ret 0.5 / train/ret_005 903.9 / train/ret_095 1977.1 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 2.5 / train/val 1375.0 / train/tar 1388.8 / train/slowval 1356.1 / train/weight 1.0 / train/action_entropy 1.0 / train/action_mean 0.1 / train/action_std 0.9 / train/action_min -3.9 / train/action_max 4.0 / train/ret_replay_mean 1340.8 / train/ret_replay_std 354.7 / train/ret_replay_min 906.5 / train/ret_replay_max 1981.1 / train/value_replay_mean 1343.2 / train/value_replay_std 368.5 / train/value_replay_min 899.6 / train/value_replay_max 2157.4 / train/slow_value_replay_mean 1326.6 / train/slow_value_replay_std 364.7 / train/slow_value_replay_min 892.1 / train/slow_value_replay_max 2176.5 / train/loss/dyn 2.3 / train/loss/rep 2.3 / train/loss/image 5.7 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.2 / train/loss/repval 1.4 / train/opt/loss 10.3 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 447966.0 / fps/fps 22.0
+[424000] episode/score 1744.2 / episode/length 250.0
+[424001] episode/score 2082.2 / episode/length 250.0
+[424002] episode/score 1946.0 / episode/length 250.0
+[424003] episode/score 25.8 / episode/length 250.0
+[424004] episode/score 2.3 / episode/length 250.0
+[424005] episode/score 20.8 / episode/length 250.0
+[424006] episode/score 1397.8 / episode/length 250.0
+[424007] episode/score 75.1 / episode/length 250.0
+[424008] episode/score 2815.4 / episode/length 250.0
+[424009] episode/score 1914.8 / episode/length 250.0
+[424010] episode/score 12.9 / episode/length 250.0
+[424011] episode/score 2672.7 / episode/length 250.0
+[424012] episode/score 11.0 / episode/length 250.0
+[424013] episode/score 1693.3 / episode/length 250.0
+[424014] episode/score 8.1 / episode/length 250.0
+[424015] episode/score 1885.1 / episode/length 250.0
+[425568] train/dyn_entropy 40.4 / train/rep_entropy 38.3 / train/ret 0.3 / train/ret_005 939.1 / train/ret_095 2792.7 / train/adv 0.0 / train/adv_std 0.0 / train/con 1.0 / train/rew 1.1 / train/val 1481.5 / train/tar 1495.1 / train/slowval 1457.2 / train/weight 1.0 / train/action_entropy 1.4 / train/action_mean -0.1 / train/action_std 0.9 / train/action_min -4.8 / train/action_max 4.1 / train/ret_replay_mean 1416.0 / train/ret_replay_std 482.4 / train/ret_replay_min 957.8 / train/ret_replay_max 2653.5 / train/value_replay_mean 1437.0 / train/value_replay_std 499.6 / train/value_replay_min 938.1 / train/value_replay_max 2697.6 / train/slow_value_replay_mean 1414.0 / train/slow_value_replay_std 482.2 / train/slow_value_replay_min 943.2 / train/slow_value_replay_max 2701.3 / train/loss/dyn 2.1 / train/loss/rep 2.1 / train/loss/image 6.1 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.2 / train/loss/repval 1.4 / train/opt/loss 10.5 / train/opt/lr 0.0 / train/opt/grad_scale 8192.0 / train/opt/updates 453325.0 / fps/fps 23.3
+Evaluating the policy...
+[430016] episode/eval_score 1232.5 / episode/eval_length 250.0 / episode/eval_success 0.0
+[430560] train/dyn_entropy 39.8 / train/rep_entropy 37.2 / train/ret 0.4 / train/ret_005 861.9 / train/ret_095 2373.1 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 1.6 / train/val 1459.0 / train/tar 1463.0 / train/slowval 1433.6 / train/weight 1.0 / train/action_entropy 0.5 / train/action_mean 0.0 / train/action_std 0.8 / train/action_min -3.3 / train/action_max 3.3 / train/ret_replay_mean 1402.7 / train/ret_replay_std 453.5 / train/ret_replay_min 869.2 / train/ret_replay_max 2564.5 / train/value_replay_mean 1409.6 / train/value_replay_std 449.6 / train/value_replay_min 903.6 / train/value_replay_max 2648.2 / train/slow_value_replay_mean 1380.1 / train/slow_value_replay_std 452.2 / train/slow_value_replay_min 891.0 / train/slow_value_replay_max 2635.4 / train/loss/dyn 2.0 / train/loss/rep 2.0 / train/loss/image 5.4 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.3 / train/loss/repval 1.5 / train/opt/loss 9.9 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 458650.0 / fps/fps 22.6
+[432000] episode/score 965.4 / episode/length 250.0
+[432001] episode/score 21.1 / episode/length 250.0
+[432002] episode/score 105.6 / episode/length 250.0
+[432003] episode/score 1384.2 / episode/length 250.0
+[432004] episode/score 2361.8 / episode/length 250.0
+[432005] episode/score 2164.1 / episode/length 250.0
+[432006] episode/score 2778.4 / episode/length 250.0
+[432007] episode/score 31.6 / episode/length 250.0
+[432008] episode/score 1742.1 / episode/length 250.0
+[432009] episode/score 1347.9 / episode/length 250.0
+[432010] episode/score 1025.1 / episode/length 250.0
+[432011] episode/score 25.2 / episode/length 250.0
+[432012] episode/score 207.0 / episode/length 250.0
+[432013] episode/score 36.3 / episode/length 250.0
+[432014] episode/score 7.5 / episode/length 250.0
+[432015] episode/score 1647.6 / episode/length 250.0
+[435552] train/dyn_entropy 38.7 / train/rep_entropy 37.0 / train/ret 0.4 / train/ret_005 1099.5 / train/ret_095 2960.5 / train/adv 0.0 / train/adv_std 0.0 / train/con 1.0 / train/rew 1.7 / train/val 1907.1 / train/tar 1909.2 / train/slowval 1894.5 / train/weight 1.0 / train/action_entropy 0.8 / train/action_mean -0.0 / train/action_std 0.9 / train/action_min -3.9 / train/action_max 3.3 / train/ret_replay_mean 1844.0 / train/ret_replay_std 574.8 / train/ret_replay_min 1156.2 / train/ret_replay_max 3383.4 / train/value_replay_mean 1851.2 / train/value_replay_std 540.2 / train/value_replay_min 1199.9 / train/value_replay_max 3251.7 / train/slow_value_replay_mean 1837.8 / train/slow_value_replay_std 530.4 / train/slow_value_replay_min 1187.9 / train/slow_value_replay_max 3177.9 / train/loss/dyn 1.8 / train/loss/rep 1.8 / train/loss/image 4.6 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.2 / train/loss/repval 1.3 / train/opt/loss 8.7 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 463975.0 / fps/fps 23.2
+Evaluating the policy...
+[440000] episode/eval_score 1592.6 / episode/eval_length 250.0 / episode/eval_success 0.3
+[440000] episode/score 1682.4 / episode/length 250.0
+[440001] episode/score 6.5 / episode/length 250.0
+[440002] episode/score 36.7 / episode/length 250.0
+[440003] episode/score 15.2 / episode/length 250.0
+[440004] episode/score 2250.3 / episode/length 250.0
+[440005] episode/score 1856.3 / episode/length 250.0
+[440006] episode/score 2006.7 / episode/length 250.0
+[440007] episode/score 1756.6 / episode/length 250.0
+[440008] episode/score 2063.0 / episode/length 250.0
+[440009] episode/score 9.7 / episode/length 250.0
+[440010] episode/score 2503.1 / episode/length 250.0
+[440011] episode/score 1623.6 / episode/length 250.0
+[440012] episode/score 1225.2 / episode/length 250.0
+[440013] episode/score 100.5 / episode/length 250.0
+[440014] episode/score 2716.9 / episode/length 250.0
+[440015] episode/score 2721.9 / episode/length 250.0
+[440544] train/dyn_entropy 40.8 / train/rep_entropy 38.7 / train/ret 0.3 / train/ret_005 991.6 / train/ret_095 2792.3 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 2.0 / train/val 1520.2 / train/tar 1538.8 / train/slowval 1508.9 / train/weight 1.0 / train/action_entropy 0.4 / train/action_mean 0.2 / train/action_std 0.8 / train/action_min -3.5 / train/action_max 3.8 / train/ret_replay_mean 1478.6 / train/ret_replay_std 451.1 / train/ret_replay_min 966.1 / train/ret_replay_max 2200.7 / train/value_replay_mean 1457.3 / train/value_replay_std 412.9 / train/value_replay_min 979.0 / train/value_replay_max 2211.8 / train/slow_value_replay_mean 1449.7 / train/slow_value_replay_std 404.7 / train/slow_value_replay_min 970.0 / train/slow_value_replay_max 2192.1 / train/loss/dyn 1.8 / train/loss/rep 1.8 / train/loss/image 4.2 / train/loss/rew 0.6 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.3 / train/loss/repval 1.6 / train/opt/loss 8.5 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 469300.0 / fps/fps 22.7
+[445568] train/dyn_entropy 40.2 / train/rep_entropy 37.0 / train/ret 0.5 / train/ret_005 1488.6 / train/ret_095 3091.8 / train/adv -0.0 / train/adv_std 0.0 / train/con 1.0 / train/rew 2.4 / train/val 2241.3 / train/tar 2228.2 / train/slowval 2255.4 / train/weight 1.0 / train/action_entropy 1.3 / train/action_mean 0.1 / train/action_std 0.9 / train/action_min -3.7 / train/action_max 3.4 / train/ret_replay_mean 2191.6 / train/ret_replay_std 576.8 / train/ret_replay_min 1252.7 / train/ret_replay_max 3405.3 / train/value_replay_mean 2203.6 / train/value_replay_std 572.0 / train/value_replay_min 1315.8 / train/value_replay_max 3431.7 / train/slow_value_replay_mean 2219.0 / train/slow_value_replay_std 559.2 / train/slow_value_replay_min 1339.6 / train/slow_value_replay_max 3401.8 / train/loss/dyn 1.6 / train/loss/rep 1.6 / train/loss/image 4.2 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.2 / train/loss/repval 1.3 / train/opt/loss 8.1 / train/opt/lr 0.0 / train/opt/grad_scale 8192.0 / train/opt/updates 474659.0 / fps/fps 23.0
+[448000] episode/score 4.8 / episode/length 250.0
+[448001] episode/score 1815.4 / episode/length 250.0
+[448002] episode/score 147.0 / episode/length 250.0
+[448003] episode/score 10.3 / episode/length 250.0
+[448004] episode/score 2586.1 / episode/length 250.0
+[448005] episode/score 8.4 / episode/length 250.0
+[448006] episode/score 2575.5 / episode/length 250.0
+[448007] episode/score 66.8 / episode/length 250.0
+[448008] episode/score 1765.5 / episode/length 250.0
+[448009] episode/score 2105.7 / episode/length 250.0
+[448010] episode/score 2424.9 / episode/length 250.0
+[448011] episode/score 1898.5 / episode/length 250.0
+[448012] episode/score 2239.0 / episode/length 250.0
+[448013] episode/score 2784.9 / episode/length 250.0
+[448014] episode/score 12.4 / episode/length 250.0
+[448015] episode/score 2324.7 / episode/length 250.0
+Evaluating the policy...
+[450016] episode/eval_score 1537.3 / episode/eval_length 250.0 / episode/eval_success 0.0
+[450560] train/dyn_entropy 41.2 / train/rep_entropy 38.4 / train/ret 0.3 / train/ret_005 1420.0 / train/ret_095 2935.9 / train/adv -0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 2.9 / train/val 1950.0 / train/tar 1947.7 / train/slowval 1998.1 / train/weight 1.0 / train/action_entropy 1.2 / train/action_mean 0.1 / train/action_std 0.9 / train/action_min -3.1 / train/action_max 3.6 / train/ret_replay_mean 1865.8 / train/ret_replay_std 399.6 / train/ret_replay_min 1334.4 / train/ret_replay_max 2828.0 / train/value_replay_mean 1897.7 / train/value_replay_std 366.5 / train/value_replay_min 1366.9 / train/value_replay_max 2964.5 / train/slow_value_replay_mean 1954.8 / train/slow_value_replay_std 400.4 / train/slow_value_replay_min 1376.0 / train/slow_value_replay_max 3047.5 / train/loss/dyn 1.9 / train/loss/rep 1.9 / train/loss/image 5.3 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.3 / train/loss/repval 1.6 / train/opt/loss 9.7 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 479983.0 / fps/fps 22.3
+[455552] train/dyn_entropy 39.2 / train/rep_entropy 36.8 / train/ret 0.3 / train/ret_005 1345.0 / train/ret_095 3379.1 / train/adv -0.0 / train/adv_std 0.0 / train/con 1.0 / train/rew 1.4 / train/val 1980.6 / train/tar 1939.8 / train/slowval 1990.4 / train/weight 1.0 / train/action_entropy 1.2 / train/action_mean 0.0 / train/action_std 0.9 / train/action_min -3.7 / train/action_max 3.4 / train/ret_replay_mean 1884.7 / train/ret_replay_std 591.9 / train/ret_replay_min 1299.2 / train/ret_replay_max 3587.7 / train/value_replay_mean 1971.3 / train/value_replay_std 571.3 / train/value_replay_min 1352.9 / train/value_replay_max 3598.4 / train/slow_value_replay_mean 1980.2 / train/slow_value_replay_std 569.8 / train/slow_value_replay_min 1354.7 / train/slow_value_replay_max 3600.1 / train/loss/dyn 1.8 / train/loss/rep 1.8 / train/loss/image 4.4 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.1 / train/loss/repval 1.4 / train/opt/loss 8.3 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 485308.0 / fps/fps 22.9
+[456000] episode/score 2912.2 / episode/length 250.0
+[456001] episode/score 1259.7 / episode/length 250.0
+[456002] episode/score 1679.6 / episode/length 250.0
+[456003] episode/score 2144.7 / episode/length 250.0
+[456004] episode/score 168.8 / episode/length 250.0
+[456005] episode/score 1835.8 / episode/length 250.0
+[456006] episode/score 272.9 / episode/length 250.0
+[456007] episode/score 1787.3 / episode/length 250.0
+[456008] episode/score 496.2 / episode/length 250.0
+[456009] episode/score 11.5 / episode/length 250.0
+[456010] episode/score 6.4 / episode/length 250.0
+[456011] episode/score 1942.8 / episode/length 250.0
+[456012] episode/score 2177.8 / episode/length 250.0
+[456013] episode/score 8.6 / episode/length 250.0
+[456014] episode/score 2247.7 / episode/length 250.0
+[456015] episode/score 2002.7 / episode/length 250.0
+Evaluating the policy...
+[460000] episode/eval_score 260.4 / episode/eval_length 250.0 / episode/eval_success 0.0
+[460544] train/dyn_entropy 37.8 / train/rep_entropy 35.7 / train/ret 0.4 / train/ret_005 1037.9 / train/ret_095 2890.2 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 1.9 / train/val 1807.5 / train/tar 1818.4 / train/slowval 1782.3 / train/weight 1.0 / train/action_entropy 1.7 / train/action_mean -0.0 / train/action_std 0.9 / train/action_min -4.7 / train/action_max 3.4 / train/ret_replay_mean 1742.3 / train/ret_replay_std 558.4 / train/ret_replay_min 1124.7 / train/ret_replay_max 3044.5 / train/value_replay_mean 1738.6 / train/value_replay_std 527.3 / train/value_replay_min 1041.2 / train/value_replay_max 3073.1 / train/slow_value_replay_mean 1710.8 / train/slow_value_replay_std 517.8 / train/slow_value_replay_min 1021.9 / train/slow_value_replay_max 3063.1 / train/loss/dyn 2.3 / train/loss/rep 2.3 / train/loss/image 6.5 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.3 / train/loss/repval 1.4 / train/opt/loss 11.2 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 490633.0 / fps/fps 22.4
+[464000] episode/score 2286.3 / episode/length 250.0
+[464001] episode/score 12.0 / episode/length 250.0
+[464002] episode/score 2.6 / episode/length 250.0
+[464003] episode/score 1813.1 / episode/length 250.0
+[464004] episode/score 1960.3 / episode/length 250.0
+[464005] episode/score 2956.4 / episode/length 250.0
+[464006] episode/score 1232.1 / episode/length 250.0
+[464007] episode/score 1106.7 / episode/length 250.0
+[464008] episode/score 2005.8 / episode/length 250.0
+[464009] episode/score 1863.9 / episode/length 250.0
+[464010] episode/score 2076.4 / episode/length 250.0
+[464011] episode/score 1789.2 / episode/length 250.0
+[464012] episode/score 2885.5 / episode/length 250.0
+[464013] episode/score 1983.2 / episode/length 250.0
+[464014] episode/score 3.1 / episode/length 250.0
+[464015] episode/score 8.0 / episode/length 250.0
+[465568] train/dyn_entropy 40.9 / train/rep_entropy 37.8 / train/ret 0.4 / train/ret_005 2014.4 / train/ret_095 3884.1 / train/adv -0.0 / train/adv_std 0.0 / train/con 1.0 / train/rew 2.4 / train/val 2768.9 / train/tar 2764.4 / train/slowval 2792.1 / train/weight 1.0 / train/action_entropy 1.5 / train/action_mean 0.2 / train/action_std 0.9 / train/action_min -4.4 / train/action_max 3.8 / train/ret_replay_mean 2691.0 / train/ret_replay_std 684.3 / train/ret_replay_min 1859.0 / train/ret_replay_max 4181.6 / train/value_replay_mean 2707.0 / train/value_replay_std 658.6 / train/value_replay_min 1823.8 / train/value_replay_max 4172.7 / train/slow_value_replay_mean 2729.6 / train/slow_value_replay_std 663.1 / train/slow_value_replay_min 1838.8 / train/slow_value_replay_max 4177.3 / train/loss/dyn 2.1 / train/loss/rep 2.1 / train/loss/image 4.9 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 0.9 / train/loss/repval 1.1 / train/opt/loss 8.8 / train/opt/lr 0.0 / train/opt/grad_scale 8192.0 / train/opt/updates 495992.0 / fps/fps 22.8
+Evaluating the policy...
+[470016] episode/eval_score 1457.7 / episode/eval_length 250.0 / episode/eval_success 0.3
+[470560] train/dyn_entropy 38.5 / train/rep_entropy 36.7 / train/ret 0.6 / train/ret_005 2265.5 / train/ret_095 3862.9 / train/adv 0.0 / train/adv_std 0.0 / train/con 1.0 / train/rew 3.2 / train/val 3211.8 / train/tar 3208.7 / train/slowval 3208.5 / train/weight 1.0 / train/action_entropy 0.4 / train/action_mean 0.1 / train/action_std 0.9 / train/action_min -3.7 / train/action_max 3.3 / train/ret_replay_mean 3136.3 / train/ret_replay_std 592.0 / train/ret_replay_min 2096.8 / train/ret_replay_max 4494.8 / train/value_replay_mean 3141.4 / train/value_replay_std 624.2 / train/value_replay_min 2072.3 / train/value_replay_max 4725.7 / train/slow_value_replay_mean 3135.9 / train/slow_value_replay_std 636.5 / train/slow_value_replay_min 2042.4 / train/slow_value_replay_max 4778.3 / train/loss/dyn 1.8 / train/loss/rep 1.8 / train/loss/image 4.5 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 0.9 / train/loss/repval 1.2 / train/opt/loss 8.2 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 501317.0 / fps/fps 22.7
+[472000] episode/score 2009.4 / episode/length 250.0
+[472001] episode/score 491.2 / episode/length 250.0
+[472002] episode/score 16.5 / episode/length 250.0
+[472003] episode/score 2815.4 / episode/length 250.0
+[472004] episode/score 2.4 / episode/length 250.0
+[472005] episode/score 2622.2 / episode/length 250.0
+[472006] episode/score 2893.2 / episode/length 250.0
+[472007] episode/score 2739.8 / episode/length 250.0
+[472008] episode/score 1840.5 / episode/length 250.0
+[472009] episode/score 16.4 / episode/length 250.0
+[472010] episode/score 2631.6 / episode/length 250.0
+[472011] episode/score 3548.5 / episode/length 250.0
+[472012] episode/score 3129.5 / episode/length 250.0
+[472013] episode/score 2051.4 / episode/length 250.0
+[472014] episode/score 1830.8 / episode/length 250.0
+[472015] episode/score 6.5 / episode/length 250.0
+[475552] train/dyn_entropy 40.4 / train/rep_entropy 37.8 / train/ret 0.3 / train/ret_005 1335.2 / train/ret_095 3313.1 / train/adv 0.0 / train/adv_std 0.0 / train/con 1.0 / train/rew 1.5 / train/val 1974.0 / train/tar 1986.0 / train/slowval 1979.5 / train/weight 1.0 / train/action_entropy 1.9 / train/action_mean -0.1 / train/action_std 0.9 / train/action_min -4.7 / train/action_max 3.7 / train/ret_replay_mean 1920.2 / train/ret_replay_std 609.2 / train/ret_replay_min 1202.2 / train/ret_replay_max 3329.3 / train/value_replay_mean 1903.3 / train/value_replay_std 522.7 / train/value_replay_min 1246.0 / train/value_replay_max 3080.4 / train/slow_value_replay_mean 1906.8 / train/slow_value_replay_std 507.2 / train/slow_value_replay_min 1269.3 / train/slow_value_replay_max 3021.6 / train/loss/dyn 2.1 / train/loss/rep 2.1 / train/loss/image 5.9 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.1 / train/loss/repval 1.4 / train/opt/loss 10.3 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 506642.0 / fps/fps 22.6
+Evaluating the policy...
+[480000] episode/eval_score 1489.9 / episode/eval_length 250.0 / episode/eval_success 0.2
+[480000] episode/score 17.2 / episode/length 250.0
+[480001] episode/score 20.7 / episode/length 250.0
+[480002] episode/score 2832.4 / episode/length 250.0
+[480003] episode/score 2246.3 / episode/length 250.0
+[480004] episode/score 600.7 / episode/length 250.0
+[480005] episode/score 28.7 / episode/length 250.0
+[480006] episode/score 1698.5 / episode/length 250.0
+[480007] episode/score 11.6 / episode/length 250.0
+[480008] episode/score 4.2 / episode/length 250.0
+[480009] episode/score 2508.7 / episode/length 250.0
+[480010] episode/score 76.7 / episode/length 250.0
+[480011] episode/score 169.3 / episode/length 250.0
+[480012] episode/score 2422.9 / episode/length 250.0
+[480013] episode/score 29.9 / episode/length 250.0
+[480014] episode/score 6.2 / episode/length 250.0
+[480015] episode/score 6.9 / episode/length 250.0
+[480544] train/dyn_entropy 40.0 / train/rep_entropy 37.1 / train/ret 0.3 / train/ret_005 1277.3 / train/ret_095 2830.4 / train/adv -0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 2.0 / train/val 1793.1 / train/tar 1775.8 / train/slowval 1799.9 / train/weight 1.0 / train/action_entropy 1.8 / train/action_mean 0.0 / train/action_std 0.9 / train/action_min -3.7 / train/action_max 3.3 / train/ret_replay_mean 1755.8 / train/ret_replay_std 344.5 / train/ret_replay_min 1201.7 / train/ret_replay_max 2484.4 / train/value_replay_mean 1760.8 / train/value_replay_std 354.5 / train/value_replay_min 1248.2 / train/value_replay_max 2756.1 / train/slow_value_replay_mean 1767.7 / train/slow_value_replay_std 352.1 / train/slow_value_replay_min 1269.2 / train/slow_value_replay_max 2809.1 / train/loss/dyn 1.9 / train/loss/rep 1.9 / train/loss/image 5.3 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.4 / train/loss/repval 1.8 / train/opt/loss 9.7 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 511966.0 / fps/fps 22.4
+[485568] train/dyn_entropy 39.6 / train/rep_entropy 38.2 / train/ret 0.5 / train/ret_005 1880.2 / train/ret_095 3356.4 / train/adv 0.0 / train/adv_std 0.0 / train/con 1.0 / train/rew 2.4 / train/val 2557.4 / train/tar 2556.1 / train/slowval 2577.4 / train/weight 1.0 / train/action_entropy 1.3 / train/action_mean 0.0 / train/action_std 0.9 / train/action_min -3.5 / train/action_max 4.1 / train/ret_replay_mean 2489.7 / train/ret_replay_std 420.5 / train/ret_replay_min 1543.7 / train/ret_replay_max 3231.0 / train/value_replay_mean 2509.1 / train/value_replay_std 397.8 / train/value_replay_min 1603.8 / train/value_replay_max 3267.4 / train/slow_value_replay_mean 2526.9 / train/slow_value_replay_std 395.4 / train/slow_value_replay_min 1613.9 / train/slow_value_replay_max 3286.0 / train/loss/dyn 1.8 / train/loss/rep 1.8 / train/loss/image 4.4 / train/loss/rew 0.5 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 1.1 / train/loss/repval 1.0 / train/opt/loss 8.3 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 517325.0 / fps/fps 22.9
+[488000] episode/score 2669.1 / episode/length 250.0
+[488001] episode/score 3899.1 / episode/length 250.0
+[488002] episode/score 8.5 / episode/length 250.0
+[488003] episode/score 2152.4 / episode/length 250.0
+[488004] episode/score 2023.6 / episode/length 250.0
+[488005] episode/score 28.4 / episode/length 250.0
+[488006] episode/score 2734.9 / episode/length 250.0
+[488007] episode/score 3.9 / episode/length 250.0
+[488008] episode/score 3851.3 / episode/length 250.0
+[488009] episode/score 157.8 / episode/length 250.0
+[488010] episode/score 265.2 / episode/length 250.0
+[488011] episode/score 2801.3 / episode/length 250.0
+[488012] episode/score 4.7 / episode/length 250.0
+[488013] episode/score 1732.6 / episode/length 250.0
+[488014] episode/score 7.1 / episode/length 250.0
+[488015] episode/score 497.4 / episode/length 250.0
+Evaluating the policy...
+[490016] episode/eval_score 1611.5 / episode/eval_length 250.0 / episode/eval_success 0.3
+[490560] train/dyn_entropy 39.1 / train/rep_entropy 36.3 / train/ret 0.4 / train/ret_005 2153.4 / train/ret_095 3857.5 / train/adv 0.0 / train/adv_std 0.0 / train/con 1.0 / train/rew 2.6 / train/val 2846.0 / train/tar 2855.1 / train/slowval 2854.5 / train/weight 1.0 / train/action_entropy 1.0 / train/action_mean -0.0 / train/action_std 0.9 / train/action_min -3.9 / train/action_max 3.1 / train/ret_replay_mean 2774.5 / train/ret_replay_std 655.9 / train/ret_replay_min 1932.0 / train/ret_replay_max 4190.1 / train/value_replay_mean 2773.9 / train/value_replay_std 641.9 / train/value_replay_min 1975.7 / train/value_replay_max 4196.6 / train/slow_value_replay_mean 2782.6 / train/slow_value_replay_std 636.2 / train/slow_value_replay_min 1991.7 / train/slow_value_replay_max 4195.4 / train/loss/dyn 1.9 / train/loss/rep 1.9 / train/loss/image 4.5 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy -0.0 / train/loss/value 0.9 / train/loss/repval 1.1 / train/opt/loss 8.3 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 522650.0 / fps/fps 22.6
+[495552] train/dyn_entropy 39.8 / train/rep_entropy 37.8 / train/ret 0.4 / train/ret_005 1875.5 / train/ret_095 3791.3 / train/adv 0.0 / train/adv_std 0.1 / train/con 1.0 / train/rew 1.3 / train/val 2636.1 / train/tar 2662.5 / train/slowval 2629.3 / train/weight 1.0 / train/action_entropy 1.8 / train/action_mean 0.1 / train/action_std 0.9 / train/action_min -3.8 / train/action_max 3.7 / train/ret_replay_mean 2501.2 / train/ret_replay_std 612.3 / train/ret_replay_min 1530.0 / train/ret_replay_max 3574.2 / train/value_replay_mean 2545.3 / train/value_replay_std 592.9 / train/value_replay_min 1664.5 / train/value_replay_max 3593.7 / train/slow_value_replay_mean 2535.5 / train/slow_value_replay_std 594.0 / train/slow_value_replay_min 1645.2 / train/slow_value_replay_max 3592.1 / train/loss/dyn 2.1 / train/loss/rep 2.1 / train/loss/image 4.7 / train/loss/rew 0.4 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.2 / train/loss/repval 1.4 / train/opt/loss 9.1 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 527975.0 / fps/fps 22.9
+[496000] episode/score 23.7 / episode/length 250.0
+[496001] episode/score 3059.5 / episode/length 250.0
+[496002] episode/score 7.2 / episode/length 250.0
+[496003] episode/score 3627.0 / episode/length 250.0
+[496004] episode/score 9.1 / episode/length 250.0
+[496005] episode/score 2318.7 / episode/length 250.0
+[496006] episode/score 1138.3 / episode/length 250.0
+[496007] episode/score 19.9 / episode/length 250.0
+[496008] episode/score 48.7 / episode/length 250.0
+[496009] episode/score 1944.0 / episode/length 250.0
+[496010] episode/score 2400.9 / episode/length 250.0
+[496011] episode/score 6.6 / episode/length 250.0
+[496012] episode/score 2659.5 / episode/length 250.0
+[496013] episode/score 2200.4 / episode/length 250.0
+[496014] episode/score 3411.8 / episode/length 250.0
+[496015] episode/score 2261.9 / episode/length 250.0
+Evaluating the policy...
+[500000] episode/eval_score 1347.5 / episode/eval_length 250.0 / episode/eval_success 0.2
+[500544] train/dyn_entropy 38.6 / train/rep_entropy 36.3 / train/ret 0.6 / train/ret_005 2155.3 / train/ret_095 4139.3 / train/adv 0.0 / train/adv_std 0.0 / train/con 1.0 / train/rew 3.3 / train/val 3275.6 / train/tar 3297.2 / train/slowval 3225.8 / train/weight 1.0 / train/action_entropy 1.1 / train/action_mean 0.2 / train/action_std 0.9 / train/action_min -3.8 / train/action_max 3.5 / train/ret_replay_mean 3196.6 / train/ret_replay_std 627.7 / train/ret_replay_min 2108.4 / train/ret_replay_max 4279.5 / train/value_replay_mean 3149.0 / train/value_replay_std 605.6 / train/value_replay_min 2077.9 / train/value_replay_max 4282.3 / train/slow_value_replay_mean 3094.9 / train/slow_value_replay_std 586.6 / train/slow_value_replay_min 2094.1 / train/slow_value_replay_max 4301.6 / train/loss/dyn 1.7 / train/loss/rep 1.7 / train/loss/image 4.0 / train/loss/rew 0.6 / train/loss/con 0.0 / train/loss/policy 0.0 / train/loss/value 1.1 / train/loss/repval 1.3 / train/opt/loss 8.0 / train/opt/lr 0.0 / train/opt/grad_scale 16384.0 / train/opt/updates 533300.0 / fps/fps 22.4
