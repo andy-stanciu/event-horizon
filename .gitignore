@@ -6,3 +6,4 @@ events.out.**
 *.pth
 AGENTS.md
 .venv
+__pycache__

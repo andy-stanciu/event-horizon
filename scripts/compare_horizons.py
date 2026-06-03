@@ -19,6 +19,9 @@ Options:
                               Plots land in <out>/<task>/<arch>/
     --show                    Open plots interactively after saving
     --smooth <int>            Rolling-window size for train/gap curves (default: 5)
+    --gap-bins <int>          Bin-average the noisy gap curve into N bins before
+                              smoothing; lower = cleaner, 0 disables (default: 120)
+    --no-gap-band             Hide the shaded std band on the gap plot
 
 Examples:
     python compare_horizons.py ../logdir/ --task walker_walk
@@ -196,8 +199,33 @@ def _bin_train(grouped_key, smooth=1, n_bins=200):
     return ref, mean_mat.mean(axis=0), std_mat.mean(axis=0)
 
 
-def _gap_series(runs, smooth=1):
-    """Derive imagination gap for a list of (run_name, series)."""
+def _bin_xy(ss, vv, n_bins):
+    """
+    Average (steps, vals) into n_bins equal-width bins along steps.
+    Collapses many noisy per-step points into a small number of stable
+    bin means before any rolling smooth is applied.  Empty bins dropped.
+    """
+    if n_bins <= 0 or len(ss) <= n_bins:
+        return ss, vv
+    edges   = np.linspace(ss.min(), ss.max(), n_bins + 1)
+    centers = (edges[:-1] + edges[1:]) / 2
+    c_out, m_out = [], []
+    for lo, hi, c in zip(edges[:-1], edges[1:], centers):
+        mask = (ss >= lo) & (ss < hi)
+        if mask.sum() == 0:
+            continue
+        c_out.append(c)
+        m_out.append(np.mean(vv[mask]))
+    return np.array(c_out), np.array(m_out)
+
+
+def _gap_series(runs, smooth=1, n_bins=120):
+    """
+    Derive imagination gap for a list of (run_name, series).
+    Each run is bin-averaged into n_bins (set n_bins=0 to disable) and then
+    rolling-smoothed, mirroring _bin_train, so the raw per-step volatility
+    of the gap signal is tamed before runs are combined.
+    """
     all_steps, all_vals = [], []
     for _, series in runs:
         gs, gv = steps_values(series, "train/imagination_gap")
@@ -209,6 +237,7 @@ def _gap_series(runs, smooth=1):
                 gs, gv = ir, iv - ev_i
         if gs is None:
             continue
+        gs, gv = _bin_xy(gs, gv, n_bins)
         all_steps.append(gs)
         all_vals.append(rolling_mean(gv, smooth))
 
@@ -324,7 +353,8 @@ def plot_train_comparison(grouped, out: Path, task: str, arch_label: str,
 # ── plot C: imagination gap ───────────────────────────────────────────────────
 
 def plot_gap_comparison(grouped, out: Path, task: str, arch_label: str,
-                        show: bool, smooth: int = 5):
+                        show: bool, smooth: int = 5, gap_bins: int = 120,
+                        band: bool = True):
     fig, ax = plt.subplots(figsize=(9, 5))
     ax.axhline(0, color="black", lw=0.9, linestyle="--", zorder=1)
     arches = sorted({a for a, _ in grouped})
@@ -334,11 +364,12 @@ def plot_gap_comparison(grouped, out: Path, task: str, arch_label: str,
     for i, (arch, h_val) in enumerate(keys):
         color = LINE_COLORS[i % len(LINE_COLORS)]
         ls    = ARCH_DASH.get(arch, "-")
-        cs, mv, sv = _gap_series(grouped[(arch, h_val)], smooth)
+        cs, mv, sv = _gap_series(grouped[(arch, h_val)], smooth, gap_bins)
         if cs is None:
             continue
         lbl = make_label(arch, h_val, None, multi_arch=(len(arches) > 1))
-        ax.fill_between(cs, mv - sv, mv + sv, color=color, alpha=0.15)
+        if band:
+            ax.fill_between(cs, mv - sv, mv + sv, color=color, alpha=0.15)
         ax.plot(cs, mv, color=color, lw=2, linestyle=ls, label=lbl)
         plotted = True
 
@@ -384,7 +415,7 @@ def plot_vpe_comparison(grouped, out: Path, task: str, arch_label: str,
 # ── plot E: 2×2 summary panel ────────────────────────────────────────────────
 
 def plot_summary_panel(grouped, out: Path, task: str, arch_label: str,
-                       show: bool, smooth: int = 5):
+                       show: bool, smooth: int = 5, gap_bins: int = 120):
     fig, axes = plt.subplots(2, 2, figsize=(14, 9))
     ax_eval, ax_train, ax_gap, ax_vpe = axes.flat
     ax_gap.axhline(0, color="black", lw=0.9, linestyle="--", zorder=1)
@@ -412,7 +443,7 @@ def plot_summary_panel(grouped, out: Path, task: str, arch_label: str,
             ax_train.plot(cs, mv, color=color, lw=2, linestyle=ls, label=lbl)
 
         # gap
-        cs, mv, sv = _gap_series(grouped[(arch, h_val)], smooth)
+        cs, mv, sv = _gap_series(grouped[(arch, h_val)], smooth, gap_bins)
         if cs is not None:
             ax_gap.fill_between(cs, mv - sv, mv + sv, color=color, alpha=0.15)
             ax_gap.plot(cs, mv, color=color, lw=2, linestyle=ls, label=lbl)
@@ -503,6 +534,12 @@ def main():
     parser.add_argument("--show", action="store_true")
     parser.add_argument("--smooth", type=int, default=5,
                         help="Rolling-window size for smoothed curves (default: 5)")
+    parser.add_argument("--gap-bins", type=int, default=120,
+                        help="Bin-average the noisy imagination-gap curve into this "
+                             "many equal-width bins before smoothing; lower = cleaner, "
+                             "0 disables binning (default: 120)")
+    parser.add_argument("--no-gap-band", action="store_true",
+                        help="Hide the shaded std band on the gap plot for a cleaner line")
     args = parser.parse_args()
 
     root      = args.root_dir.resolve()
@@ -523,9 +560,11 @@ def main():
     print("Generating comparison plots...")
     plot_eval_comparison(grouped, out, args.task, arch_label, args.show)
     plot_train_comparison(grouped, out, args.task, arch_label, args.show, args.smooth)
-    plot_gap_comparison(grouped, out, args.task, arch_label, args.show, args.smooth)
+    plot_gap_comparison(grouped, out, args.task, arch_label, args.show, args.smooth,
+                        args.gap_bins, band=not args.no_gap_band)
     plot_vpe_comparison(grouped, out, args.task, arch_label, args.show, args.smooth)
-    plot_summary_panel(grouped, out, args.task, arch_label, args.show, args.smooth)
+    plot_summary_panel(grouped, out, args.task, arch_label, args.show, args.smooth,
+                       args.gap_bins)
 
     print("\nSummary table:")
     write_comparison_summary(grouped, out, args.task, arch_label)
