@@ -1,0 +1,10 @@
+Run: dreamer_metaworld_pick-place_H60
+============================================================
+Eval score:
+  first=6.5 @ step 0
+  final=864.9 @ step 500,000
+  max  =974.3 @ step 450,016
+Train score:
+  first=3.2 @ step 8,000
+  final=986.5 @ step 496,015
+  max  =1410.0 @ step 472,001

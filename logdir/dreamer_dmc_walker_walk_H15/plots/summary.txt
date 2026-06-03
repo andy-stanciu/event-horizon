@@ -1,4 +1,4 @@
-Run: dreamer_dmc_walker_walk_H15_seed0
+Run: dreamer_dmc_walker_walk_H15
 ============================================================
 Eval score:
   first=22.2 @ step 0

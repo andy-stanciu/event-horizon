@@ -1,0 +1,17 @@
+- task=mw-pick-place
+- episodic=true
+- seed=1
+- steps=500000
+- horizon=5
+- model_size=5
+- episode_length=100
+- seed_steps=1000
+- data_dir=/homes/iws/andys22/579/event-horizon/logdir/tdmpc2_mw_pick_place_H5_seed1/buffer
+- save_video=false
+- save_agent=true
+- enable_wandb=false
+- wandb_project=none
+- wandb_entity=none
+- compile=false
+- work_dir=/homes/iws/andys22/579/event-horizon/logdir/tdmpc2_mw_pick_place_H5_seed1
+- exp_name=tdmpc2_mw_pick_place_H5_seed1

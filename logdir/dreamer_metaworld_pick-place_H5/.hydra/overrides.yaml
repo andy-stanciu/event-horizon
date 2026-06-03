@@ -1,0 +1,7 @@
+- logdir=/homes/iws/andys22/579/event-horizon/logdir/dreamer_metaworld_pick-place_H5_seed0
+- model.rep_loss=dreamer
+- env=metaworld
+- env.task=metaworld_pick-place
+- env.steps=501000
+- seed=0
+- batch_length=5

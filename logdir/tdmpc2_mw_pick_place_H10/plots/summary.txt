@@ -1,0 +1,12 @@
+Run: tdmpc2_mw_pick_place_H10
+============================================================
+Eval score:
+  first=2.0 @ step 0
+  final=2221.3 @ step 500,000
+  max  =2987.9 @ step 370,000
+Train score:
+  first=5.3 @ step 250
+  final=438.1 @ step 500,000
+  max  =4557.0 @ step 421,000
+Value pred error (final): -1288.60
+Imagination gap (final): 529.97
